@@ -1,0 +1,23 @@
+article { min-height: 300px; }
+nav img { width: 100%; max-width: 100%;}
+
+.affix {
+  position: fixed;
+  top: 20px;
+  width: inherit;
+  max-width: 165px;
+}
+
+img.fpo {width: 100%;}
+
+header {
+  position: relative;
+  height: 500px;
+  }
+header img.backgroundfill {
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  margin-left: -50%;
+  z-index: -1;
+}
