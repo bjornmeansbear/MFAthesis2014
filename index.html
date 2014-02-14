@@ -58,15 +58,15 @@
           </nav>
         </div>
         
-        <div class="col-sm-10">
+        <div class="col-sm-9 col-sm-offset-1">
         
           <article id="intro">
-            <p class="lead col-sm-8">This year’s Spring and Summer Graduate Exhibition at the Maryland Institute College of Art will present work to the MICA community and the public from January–July, 2014. The season includes Fine Art and Graphic Design exhibitions and critiques, gallery talks, installations, symposia, public programs, and student curated shows throughout the city of Baltimore.</p>
-            <p>I guess this text should go in its own file? or is it fine to just have in the HTML</p>
+            <div class="row">
+              <p class="lead col-sm-8">This year’s Spring and Summer Graduate Exhibition at the Maryland Institute College of Art will present work to the MICA community and the public from January–July, 2014. The season includes Fine Art and Graphic Design exhibitions and critiques, gallery talks, installations, symposia, public programs, and student curated shows throughout the city of Baltimore.</p>
+            </div>
+              <p>I guess this text should go in its own file? or is it fine to just have in the HTML</p>
           </article>
-    
-          <hr/>
-    
+        
           <article id="schedule">
             <h1>Schedule of Events</h1>
             <p>make this a JSON/YAML list? - schedule.yml</p>
@@ -82,9 +82,7 @@
               </li><!-- each show gets its own <li> -->
             </ul>
           </article>
-    
-          <hr/>
-    
+        
           <article id="galleries">
             <h1>Participating Galleries</h1>
             <p>Programs are spread across galleries; see student pages for individual locations.</p>
@@ -105,9 +103,7 @@
               </div>
             </section>
           </article>
-    
-          <hr/>
-    
+        
           <article id="students">
             <h1>Projects</h1>
             <p>Main column with grid of images that dynamically sorts/rearranges depending on sidebar sort selections</p>
@@ -156,22 +152,17 @@
       </div>
     </main>
 
-    <br/>
-    <br/>
-    <br/>
-
-    <footer style="background: yellow;">
+    <footer>
       <div class="container">
-        <img src="img/mica_lockup_transp.png" />
-        <ul class="footertext">
-          <li>Office of Graduate Studies</li>
-          <li>131 West North Avenue</li>
-          <li>Baltimore, MD 21201</li>
-          <li>410.225.5274</li>
-        </ul>
-        <br/>
-        <br/>
-        <br/>
+        <div class="row">
+          <img class="col-xs-4 col-sm-2" src="img/mica_lockup_transp.png" />
+          <ul class="col-xs-8 col-sm-2 col-sm-offset-8">
+            <li>Office of Graduate Studies</li>
+            <li>131 West North Avenue</li>
+            <li>Baltimore, MD 21201</li>
+            <li>410.225.5274</li>
+          </ul>
+        </div>
       </div>
     </footer>
 
