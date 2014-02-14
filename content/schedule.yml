@@ -1,0 +1,67 @@
+schedule:
+  -
+    startdate: 2014-01-24
+    enddate: 2014-02-16
+    program: "Teaching MA"
+    opening: "5–7pm, Jan 24"
+    
+  -
+    startdate: 2014-01-31
+    enddate: 2014-02-16
+    program: "Post-Baccalaureate Fine Art"
+    opening: "5–7pm, Jan 24"
+    
+  -
+    startdate: 2014-02-01
+    enddate: 2014-05-09
+    program: "Curatorial Practice MFA"
+
+  -
+    startdate: 2014-03-28
+    enddate: 2014-04-06
+    program:
+      - "Illustration Practice MFA"
+      - "Graphic Design MFA"
+      - "Post-Baccalaureate Graphic Design"
+    opening: "5–7pm, Jan 24"
+    
+  -
+    startdate: 2014-04-11
+    enddate: 2014-04-20
+    program:
+      - "Community Arts MFA"
+      - "Photographic & Electronic Media MFA"
+      - "Rinehart School of Sculpture MFA"
+    opening: "5–7pm, Jan 24"
+    
+  -
+    startdate: 2014-04-23
+    enddate: 2014-05-04
+    program: "Social Design MA"
+    opening: "5–7pm, Jan 24"
+
+  -
+    startdate: 2014-04-25
+    enddate: 2014-05-04
+    program:
+      - "LeRoy E. Hoffberger School of Painting MFA"
+      - "Mount Royal School of Art MFA"
+    opening: "5–7pm, Jan 24"
+    
+  -
+    startdate: 2014-05-03
+    program: "Critical Studies MA"
+    opening: "Symposium from 5–7pm, that day"
+
+  -
+    startdate: 2014-06-28
+    enddate: 2014-07-12
+    program: "Studio Art MFA"
+    opening: "5–7pm, Jan 24"
+
+  -
+    startdate: 2014-07-27
+    enddate: 2014-08-01
+    program: "Art Education MA"
+    opening: "5–7pm, Jan 24"
+
