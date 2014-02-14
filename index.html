@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Basic MFA site Template to get started</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    
+    <style>
+      article { min-height: 300px; }
+      nav img {max-width: 100%;}
+
+      .affix {
+        position: fixed;
+        top: 20px;
+        width: inherit;
+      }
+
+    </style>
+    
+    
+  </head>
+  <body data-spy="scroll" data-target=".mainnav">
+
+    <header style="background: green; height: 500px;">
+      <div class="container">
+        <h1>MICA Grad Show 2014</h1>
+        <p>a big image will be in the background here</p>
+        <p>The mockup they currently have has this as a giant slideshow, but I think we could just load 1 image randomly from some pool and have a different static image each time the page loads... is this easy with JS? I used to be able to do it with PHP really easily</p>
+      </div>
+      <br/>
+    </header>
+
+    <main class="container" style="padding-top: 40px;">
+      <div class="row">
+        
+        <div class="col-sm-2">
+          <nav class="mainnav" data-spy="affix" data-offset-top="540">
+            <ul class="nav nav-stacked nav-pills">
+              <li><a href="#intro">Welcome</a></li>
+              <li><a href="#schedule">Schedule</a></li>
+              <li><a href="#galleries">Galleries</a></li>
+              <li><a href="#students">Students</a>
+                <ul> <!-- this submenu only shows up when in students area -->
+                  <li>All Projects</li> <!-- what's the default sort in this mode? alphabetical by lastname? -->
+                  <li>Group By:
+                    <ul>
+                      <li>Program</li> <!-- these are dynmaic sorts list.js? -->
+                      <li>Gallery</li>
+                      <li>Show Date (Show Num?)</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="http://mica.edu/About_MICA.html">About MICA</a></li> <!-- where does this link to? -->
+              <li><img src="img/mica.png" /></li>
+            </ul>
+          </nav>
+        </div>
+        
+        <div class="col-sm-10">
+        
+          <article id="intro">
+            <p class="lead">This year’s Spring and Summer Graduate Exhibition at the Maryland Institute College of Art will present work to the MICA community and the public from January–July, 2014. The season includes Fine Art and Graphic Design exhibitions and critiques, gallery talks, installations, symposia, public programs, and student curated shows throughout the city of Baltimore.</p>
+          </article>
+    
+          <hr/>
+    
+          <article id="schedule">
+            <h1>Schedule of Events</h1>
+            <p>various dates...</p>
+            <p>make this a JSON list?</p>
+          </article>
+    
+          <hr/>
+    
+          <article id="galleries">
+            <h1>Participating Galleries</h1>
+            <section class="row">
+              <div class="col-sm-8">
+                <p>big map</p>
+                <button><a href="pdf/gradshow_2014_map.pdf">Download Map</a></button>
+              </div>
+              <p class="col-sm-4">sidebar of Gallery names and locations<br/> can be made into a JSON list</p>
+            </section>
+          </article>
+    
+          <hr/>
+    
+          <article id="students">
+            <h1>Projects</h1>
+            <p>Main column with grid of images that dynamically sorts/rearranges depending on sidebar sort selections</p>
+            <p>This is what comes from the Google docs and dropbox for the most part</p>
+            <p>Using ID# as the main thing to link student data and images together</p>
+            <p>It would be best if this worked more or less like the R&G dynamic list we've been working on... Except that it will show all student project entries by default... Lazy load useful here perhaps?</p>
+            <ul class="row">
+              <li class="col-sm-3">
+                <p>Square Thumbnail of work</p>
+                <p>FirstName LastName</p>
+                <p>Program</p>
+                <p>Gallery</p>
+                <p>Show Date (Show Num?)</p>
+              </li>
+              <li class="col-sm-3">
+                <p>Square Thumbnail of work</p>
+                <p>FirstName LastName</p>
+                <p>Program</p>
+                <p>Gallery</p>
+                <p>Show Date (Show Num?)</p>
+              </li>
+              <li class="col-sm-3">
+                <p>Square Thumbnail of work</p>
+                <p>FirstName LastName</p>
+                <p>Program</p>
+                <p>Gallery</p>
+                <p>Show Date (Show Num?)</p>
+              </li>
+              <li class="col-sm-3">
+                <p>Square Thumbnail of work</p>
+                <p>FirstName LastName</p>
+                <p>Program</p>
+                <p>Gallery</p>
+                <p>Show Date (Show Num?)</p>
+              </li>
+              <li class="col-sm-3">
+                <p>Square Thumbnail of work</p>
+                <p>FirstName LastName</p>
+                <p>Program</p>
+                <p>Gallery</p>
+                <p>Show Date (Show Num?)</p>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <br/>
+    <br/>
+    <br/>
+
+    <footer style="background: yellow;">
+      <div class="container">
+        <img src="img/mica_lockup_transp.png" />
+        <ul class="footertext">
+          <li>Office of Graduate Studies</li>
+          <li>131 West North Avenue</li>
+          <li>Baltimore, MD 21201</li>
+          <li>410.225.5274</li>
+        </ul>
+        <br/>
+        <br/>
+        <br/>
+      </div>
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/affix.js"></script>
+    <script src="js/scrollspy.js"></script>
+    
+  </body>
+</html>
