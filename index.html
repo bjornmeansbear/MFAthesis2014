@@ -91,15 +91,17 @@
                 <img class="fpo" src="img/draftmapplaceholder.png" /><br/><br/>
                 <button><a href="pdf/gradshow_2014_map.pdf">Download Map</a></button>
               </div>
-              <p class="col-sm-4">sidebar of Gallery names and locations<br/> can be made into a JSON/YAML list - galleries.yml</p>
-              <div class="gallery-infoblocks">
-                <!-- this is what prints out for each gallery -->
-                <div class="gallery-info">
-                  <h4>{{ title }}</h4>
-                  <p><strong>{{ gallery(ies) }}</strong></p>
-                  <p>{{ address }}</p>
-                </div>
-                <!-- end -->
+              <div  class="col-sm-4">
+<!--                 <p>sidebar of Gallery names and locations<br/> can be made into a JSON/YAML list - galleries.yml</p> -->
+                <ol id="galleries-data" class="gallery-infoblocks">
+                  <script id="gallery-template" type="text/x-handlebars-template">
+                    <li class="gallery-info">
+                      <h4>{{cells.B}}</h4>
+                      <p><strong>{{cells.A}}</strong></p>
+                      <p>{{cells.C}}</p>
+                    </li>
+                  </script>
+                </ol>
               </div>
             </section>
           </article>
@@ -110,44 +112,41 @@
             <p>This is what comes from the Google docs and dropbox for the most part</p>
             <p>Using ID# as the main thing to link student data and images together</p>
             <p>It would be best if this worked more or less like the R&G dynamic list we've been working on... Except that it will show all student project entries by default... Lazy load useful here perhaps?</p>
-            <ul class="row">
-              <li class="col-sm-3">
-                <p>Square Thumbnail of work</p>
-                <p>FirstName LastName</p>
-                <p>Program</p>
-                <p>Gallery</p>
-                <p>Show Date (Show Num?)</p>
-              </li>
-              <li class="col-sm-3">
-                <p>Square Thumbnail of work</p>
-                <p>FirstName LastName</p>
-                <p>Program</p>
-                <p>Gallery</p>
-                <p>Show Date (Show Num?)</p>
-              </li>
-              <li class="col-sm-3">
-                <p>Square Thumbnail of work</p>
-                <p>FirstName LastName</p>
-                <p>Program</p>
-                <p>Gallery</p>
-                <p>Show Date (Show Num?)</p>
-              </li>
-              <li class="col-sm-3">
-                <p>Square Thumbnail of work</p>
-                <p>FirstName LastName</p>
-                <p>Program</p>
-                <p>Gallery</p>
-                <p>Show Date (Show Num?)</p>
-              </li>
-              <li class="col-sm-3">
-                <p>Square Thumbnail of work</p>
-                <p>FirstName LastName</p>
-                <p>Program</p>
-                <p>Gallery</p>
-                <p>Show Date (Show Num?)</p>
-              </li>
+
+            <!-- holy crap, Sheetrock is working pretty well so far -->
+            <ul class="row grid-display" id="projects-demo">
+              <script id="students-template" type="text/x-handlebars-template">
+                <li class="col-sm-3 student thumb">
+                  <div class="block">
+                    <p>Somehow we need to feed an image here... and match it with the ID: {{cells.ID}}</p>
+                    <div class="info">
+                      <h4 class="name">{{cells.FirstName}} {{cells.LastName}}</h4>
+                      <p class="program">{{cells.Program}}</p>
+                      <p class="other">Also need show# >> this is in another doc, but perhaps this can just be added to the main SS?</p>
+                    </div>
+                  </div>
+                </li>
+              </script>
             </ul>
+
+            <ul class="row grid-display" id="gd-only-demo">
+              <h2>Just GD attempt</h2>
+              <script id="gd-template" type="text/x-handlebars-template">
+                <li class="col-sm-3 student thumb">
+                  <div class="block">
+                    <p>feed an image here... match it with the ID: {{cells.ID}}</p>
+                    <div class="info">
+                      <h4 class="name">{{cells.FirstName}} {{cells.LastName}}</h4>
+                      <p class="program">{{cells.Program}}</p>
+                      <p class="other">Also need show# >> this is in another doc, but perhaps this can just be added to the main SS?</p>
+                    </div>
+                  </div>
+                </li>
+              </script>
+            </ul>
+
           </article>
+          
         </div>
       </div>
     </main>
@@ -166,12 +165,59 @@
       </div>
     </footer>
 
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.js"></script>
     <script src="js/affix.js"></script>
     <script src="js/scrollspy.js"></script>
-    
+    <!-- Load Sheetrock from the local environment. -->
+    <script src="js/jquery.sheetrock.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.min.js"></script>
+
+    <script>
+      $('document').ready(function() {
+        // Define spreadsheet URL.
+        var studentSpreadsheet   = 'https://docs.google.com/spreadsheet/ccc?key=0Al-kEdVYvxtGdG1wOEFNUUNEWW1CaDBlbXBHYlhQN0E#gid=0';
+        var showDatesSpreadsheet = 'https://docs.google.com/spreadsheet/ccc?key=0Al-kEdVYvxtGdHZiZ2lQQjA1bkl0cGpGb0ZSZHJVRkE#gid=0';
+        var gallerySpreadsheet   = 'https://docs.google.com/spreadsheet/ccc?key=0Al-kEdVYvxtGdDNBZHFWZjB1YnVFX19CSWpHLWczb1E#gid=0';
+        var placementSpreadsheet = 'https://docs.google.com/spreadsheet/ccc?key=0AvPe_NdeKbxjdFFWU0lpSmJYV3NUSlIzcGU1cWRWTnc#gid=0';
+        
+        // Compile the Handlebars template for HR leaders.
+        var StudentTemplate = Handlebars.compile($('#students-template').html());
+        var GDTemplate      = Handlebars.compile($('#gd-template').html());
+        var galleryTemplate = Handlebars.compile($('#gallery-template').html());
+        
+        // Load all projects.
+        $('#projects-demo').sheetrock({
+          url: studentSpreadsheet,
+          sql: "select C,D,E,F order by D asc",
+          headersOff: true,
+          rowGroups: false,
+          rowHandler: StudentTemplate
+        });
+
+        // Load just GD projects.
+        $('#gd-only-demo').sheetrock({
+          url: studentSpreadsheet,
+          sql: "select C,D,E,F where %Program% = 'Graphic Design'",
+          headersOff: true,
+          rowGroups: false,
+          rowHandler: GDTemplate
+        });
+        
+        // Load galleries.
+        $('#galleries-data').sheetrock({
+          url: gallerySpreadsheet,
+          sql: "select A,B,C ",
+          headersOff: true,
+          rowGroups: false,
+          rowHandler: galleryTemplate
+        });
+
+      });
+    </script>
+
   </body>
 </html>
