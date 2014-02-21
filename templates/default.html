@@ -16,7 +16,7 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+
   </head>
   <body data-spy="scroll" data-target=".mainnav">
 
@@ -32,7 +32,7 @@
 
     <main class="container" style="padding-top: 40px;">
       <div class="row">
-        
+
         <div class="col-sm-2">
           <nav class="mainnav" data-spy="affix" data-offset-top="540">
             <ul class="nav nav-stacked nav-pills">
@@ -56,9 +56,9 @@
             </ul>
           </nav>
         </div>
-        
+
         <div class="col-sm-9 col-sm-offset-1">
-        
+
           <article id="intro">
             <div class="row">
               <p class="lead col-sm-8">This year’s Spring and Summer Graduate Exhibition at the Maryland Institute College of Art will present work to the MICA community and the public from January–July, 2014. The season includes Fine Art and Graphic Design exhibitions and critiques, gallery talks, installations, symposia, public programs, and student curated shows throughout the city of Baltimore.</p>
@@ -66,7 +66,7 @@
               <p>I guess this text should go in its own file? or is it fine to just have in the HTML</p>
               <p> comes from here: https://docs.google.com/document/d/181k7UtYfjSsumP4QQpTsjkRaun3wWPRWMQvleEg8KiM -- can this work as a way to make this section editable?</p>
           </article>
-        
+
           <article id="schedule">
             <h1>Schedule of Events</h1>
             <p>make this a JSON/YAML list? - schedule.yml</p>
@@ -82,7 +82,7 @@
               </li><!-- each show gets its own <li> -->
             </ul>
           </article>
-        
+
           <article id="galleries">
             <h1>Participating Galleries</h1>
             <p>Programs are spread across galleries; see student pages for individual locations.</p>
@@ -105,7 +105,7 @@
               </div>
             </section>
           </article>
-        
+
           <article id="students">
             <h1>Projects</h1>
             <p>Main column with grid of images that dynamically sorts/rearranges depending on sidebar sort selections</p>
@@ -146,7 +146,7 @@
             </ul>
 
           </article>
-          
+
         </div>
       </div>
     </main>
@@ -170,8 +170,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.js"></script>
-    <script src="js/affix.js"></script>
-    <script src="js/scrollspy.js"></script>
     <!-- Load Sheetrock from the local environment. -->
     <script src="js/jquery.sheetrock.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.min.js"></script>
@@ -183,12 +181,12 @@
         var showDatesSpreadsheet = 'https://docs.google.com/spreadsheet/ccc?key=0Al-kEdVYvxtGdHZiZ2lQQjA1bkl0cGpGb0ZSZHJVRkE#gid=0';
         var gallerySpreadsheet   = 'https://docs.google.com/spreadsheet/ccc?key=0Al-kEdVYvxtGdDNBZHFWZjB1YnVFX19CSWpHLWczb1E#gid=0';
         var placementSpreadsheet = 'https://docs.google.com/spreadsheet/ccc?key=0AvPe_NdeKbxjdFFWU0lpSmJYV3NUSlIzcGU1cWRWTnc#gid=0';
-        
+
         // Compile the Handlebars template for HR leaders.
         var StudentTemplate = Handlebars.compile($('#students-template').html());
         var GDTemplate      = Handlebars.compile($('#gd-template').html());
         var galleryTemplate = Handlebars.compile($('#gallery-template').html());
-        
+
         // Load all projects.
         $('#projects-demo').sheetrock({
           url: studentSpreadsheet,
@@ -206,7 +204,7 @@
           rowGroups: false,
           rowHandler: GDTemplate
         });
-        
+
         // Load galleries.
         $('#galleries-data').sheetrock({
           url: gallerySpreadsheet,
