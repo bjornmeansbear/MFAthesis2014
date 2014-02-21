@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Basic MFA site Template to get started</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/mfa2014.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body data-spy="scroll" data-target=".mainnav">
+
+    <header>
+      <img class="backgroundfill" src="img/id0518670.jpg" />
+      <div class="container">
+        <h1>MICA Grad Show 2014</h1>
+        <p>a big image will be in the background here</p>
+        <p>The mockup they currently have has this as a giant slideshow, but I think we could just load 1 image randomly from some pool and have a different static image each time the page loads... is this easy with JS? I used to be able to do it with PHP really easily</p>
+      </div>
+      <br/>
+    </header>
+
+    <main class="container" style="padding-top: 40px;">
+      <div class="row">
+        
+        <div class="col-sm-2">
+          <nav class="mainnav" data-spy="affix" data-offset-top="540">
+            <ul class="nav nav-stacked nav-pills">
+              <li><a href="#intro">Welcome</a></li>
+              <li><a href="#schedule">Schedule</a></li>
+              <li><a href="#galleries">Galleries</a></li>
+              <li><a href="#students">Students</a>
+                <ul> <!-- this submenu only shows up when in students area -->
+                  <li>All Projects</li> <!-- what's the default sort in this mode? alphabetical by lastname? -->
+                  <li>Group By:
+                    <ul>
+                      <li>Program</li> <!-- these are dynmaic sorts list.js? -->
+                      <li>Gallery</li>
+                      <li>Show Date (Show Num?)</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="http://mica.edu/About_MICA.html">About MICA</a></li> <!-- where does this link to? -->
+              <li><img src="img/mica.png" /></li>
+            </ul>
+          </nav>
+        </div>
+        
+        <div class="col-sm-9 col-sm-offset-1">
+        
+          <article id="intro">
+            <div class="row">
+              <p class="lead col-sm-8">This year’s Spring and Summer Graduate Exhibition at the Maryland Institute College of Art will present work to the MICA community and the public from January–July, 2014. The season includes Fine Art and Graphic Design exhibitions and critiques, gallery talks, installations, symposia, public programs, and student curated shows throughout the city of Baltimore.</p>
+            </div>
+              <p>I guess this text should go in its own file? or is it fine to just have in the HTML</p>
+              <p> comes from here: https://docs.google.com/document/d/181k7UtYfjSsumP4QQpTsjkRaun3wWPRWMQvleEg8KiM -- can this work as a way to make this section editable?</p>
+          </article>
+        
+          <article id="schedule">
+            <h1>Schedule of Events</h1>
+            <p>make this a JSON/YAML list? - schedule.yml</p>
+            <ul>
+              <li class="row showtime">
+                <div class="col-sm-4">
+                  <h3><date>{{ startdate }}</date>&ndash;<date>{{ enddate }}</date></h3>
+                  <p class="small">{{ opening }}</p>
+                </div>
+                <div class="col-sm-8">
+                  <p class="lead">{{ program(s) }}</p> <!-- print each program on its own line -->
+                </div>
+              </li><!-- each show gets its own <li> -->
+            </ul>
+          </article>
+        
+          <article id="galleries">
+            <h1>Participating Galleries</h1>
+            <p>Programs are spread across galleries; see student pages for individual locations.</p>
+            <section class="row">
+              <div class="col-sm-8">
+                <img class="fpo" src="img/draftmapplaceholder.png" /><br/><br/>
+                <button><a href="pdf/gradshow_2014_map.pdf">Download Map</a></button>
+              </div>
+              <div  class="col-sm-4">
+<!--                 <p>sidebar of Gallery names and locations<br/> can be made into a JSON/YAML list - galleries.yml</p> -->
+                <ol id="galleries-data" class="gallery-infoblocks">
+                  <script id="gallery-template" type="text/x-handlebars-template">
+                    <li class="gallery-info">
+                      <h4>{{cells.B}}</h4>
+                      <p><strong>{{cells.A}}</strong></p>
+                      <p>{{cells.C}}</p>
+                    </li>
+                  </script>
+                </ol>
+              </div>
+            </section>
+          </article>
+        
+          <article id="students">
+            <h1>Projects</h1>
+            <p>Main column with grid of images that dynamically sorts/rearranges depending on sidebar sort selections</p>
+            <p>This is what comes from the Google docs and dropbox for the most part</p>
+            <p>Using ID# as the main thing to link student data and images together</p>
+            <p>It would be best if this worked more or less like the R&G dynamic list we've been working on... Except that it will show all student project entries by default... Lazy load useful here perhaps?</p>
+
+            <!-- holy crap, Sheetrock is working pretty well so far -->
+            <ul class="row grid-display" id="projects-demo">
+              <script id="students-template" type="text/x-handlebars-template">
+                <li class="col-sm-3 student thumb">
+                  <div class="block">
+                    <p>Somehow we need to feed an image here... and match it with the ID: {{cells.ID}}</p>
+                    <div class="info">
+                      <h4 class="name">{{cells.FirstName}} {{cells.LastName}}</h4>
+                      <p class="program">{{cells.Program}}</p>
+                      <p class="other">Also need show# >> this is in another doc, but perhaps this can just be added to the main SS?</p>
+                    </div>
+                  </div>
+                </li>
+              </script>
+            </ul>
+
+            <ul class="row grid-display" id="gd-only-demo">
+              <h2>Just GD attempt</h2>
+              <script id="gd-template" type="text/x-handlebars-template">
+                <li class="col-sm-3 student thumb">
+                  <div class="block">
+                    <p>feed an image here... match it with the ID: {{cells.ID}}</p>
+                    <div class="info">
+                      <h4 class="name">{{cells.FirstName}} {{cells.LastName}}</h4>
+                      <p class="program">{{cells.Program}}</p>
+                      <p class="other">Also need show# >> this is in another doc, but perhaps this can just be added to the main SS?</p>
+                    </div>
+                  </div>
+                </li>
+              </script>
+            </ul>
+
+          </article>
+          
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <img class="col-xs-4 col-sm-2" src="img/mica_lockup_transp.png" />
+          <ul class="col-xs-8 col-sm-2 col-sm-offset-8">
+            <li>Office of Graduate Studies</li>
+            <li>131 West North Avenue</li>
+            <li>Baltimore, MD 21201</li>
+            <li>410.225.5274</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/affix.js"></script>
+    <script src="js/scrollspy.js"></script>
+    <!-- Load Sheetrock from the local environment. -->
+    <script src="js/jquery.sheetrock.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.min.js"></script>
+
+    <script>
+      $('document').ready(function() {
+        // Define spreadsheet URL.
+        var studentSpreadsheet   = 'https://docs.google.com/spreadsheet/ccc?key=0Al-kEdVYvxtGdG1wOEFNUUNEWW1CaDBlbXBHYlhQN0E#gid=0';
+        var showDatesSpreadsheet = 'https://docs.google.com/spreadsheet/ccc?key=0Al-kEdVYvxtGdHZiZ2lQQjA1bkl0cGpGb0ZSZHJVRkE#gid=0';
+        var gallerySpreadsheet   = 'https://docs.google.com/spreadsheet/ccc?key=0Al-kEdVYvxtGdDNBZHFWZjB1YnVFX19CSWpHLWczb1E#gid=0';
+        var placementSpreadsheet = 'https://docs.google.com/spreadsheet/ccc?key=0AvPe_NdeKbxjdFFWU0lpSmJYV3NUSlIzcGU1cWRWTnc#gid=0';
+        
+        // Compile the Handlebars template for HR leaders.
+        var StudentTemplate = Handlebars.compile($('#students-template').html());
+        var GDTemplate      = Handlebars.compile($('#gd-template').html());
+        var galleryTemplate = Handlebars.compile($('#gallery-template').html());
+        
+        // Load all projects.
+        $('#projects-demo').sheetrock({
+          url: studentSpreadsheet,
+          sql: "select C,D,E,F order by D asc",
+          headersOff: true,
+          rowGroups: false,
+          rowHandler: StudentTemplate
+        });
+
+        // Load just GD projects.
+        $('#gd-only-demo').sheetrock({
+          url: studentSpreadsheet,
+          sql: "select C,D,E,F where %Program% = 'Graphic Design'",
+          headersOff: true,
+          rowGroups: false,
+          rowHandler: GDTemplate
+        });
+        
+        // Load galleries.
+        $('#galleries-data').sheetrock({
+          url: gallerySpreadsheet,
+          sql: "select A,B,C ",
+          headersOff: true,
+          rowGroups: false,
+          rowHandler: galleryTemplate
+        });
+
+      });
+    </script>
+
+  </body>
+</html>
