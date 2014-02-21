@@ -4,6 +4,7 @@ header {
   }
   
 header img.backgroundfill {
+  display: none;
   position: absolute;
   left: 50%;
   width: 100%;
