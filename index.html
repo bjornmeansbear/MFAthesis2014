@@ -118,16 +118,18 @@
             <!-- holy crap, Sheetrock is working pretty well so far -->
             <ul class="row grid-display" id="projects-demo">
               <script id="students-template" type="text/x-mustache-template">
+                {{#student}}
                 <li class="col-sm-3 student thumb">
                   <div class="block">
                     <p>Somehow we need to feed an image here... and match it with the ID: {{cells.ID}}</p>
                     <div class="info">
-                      <h4 class="name">{{cells.FirstName}} {{cells.LastName}}</h4>
+                      <h4 class="name">{{firstname}} {{lastname}}</h4>
                       <p class="program">{{cells.Program}}</p>
                       <p class="other">Also need show# >> this is in another doc, but perhaps this can just be added to the main SS?</p>
                     </div>
                   </div>
                 </li>
+                {{/student}}
               </script>
             </ul>
 
