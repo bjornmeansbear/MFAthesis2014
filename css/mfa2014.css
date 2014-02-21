@@ -38,3 +38,53 @@ img.fpo {width: 100%;}
   font-size: 2em;
   line-height: 1.5;
 }
+
+ul#projects-demo {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+ul#projects-demo li {
+  list-style: none;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+ul#projects-demo .thumb .block {
+  background: #eee;
+  font-size: 1em;
+  text-transform: uppercase;
+  overflow: hidden;
+  position: relative;
+  height: 190px;
+}
+
+ul#projects-demo .thumb .block .info {
+  background: #FB7571 ;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  left:0;
+  right:0;
+  height: 50px;
+  overflow: hidden;
+}
+
+ul#projects-demo .thumb .block .info h4,
+ul#projects-demo .thumb .block .info p {
+  font-size: .9em;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+ul#projects-demo .thumb .block .info h4 {
+  color: white;
+}
+
+
+

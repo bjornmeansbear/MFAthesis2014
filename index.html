@@ -110,44 +110,25 @@
             <p>This is what comes from the Google docs and dropbox for the most part</p>
             <p>Using ID# as the main thing to link student data and images together</p>
             <p>It would be best if this worked more or less like the R&G dynamic list we've been working on... Except that it will show all student project entries by default... Lazy load useful here perhaps?</p>
-            <ul class="row">
-              <li class="col-sm-3">
-                <p>Square Thumbnail of work</p>
-                <p>FirstName LastName</p>
-                <p>Program</p>
-                <p>Gallery</p>
-                <p>Show Date (Show Num?)</p>
-              </li>
-              <li class="col-sm-3">
-                <p>Square Thumbnail of work</p>
-                <p>FirstName LastName</p>
-                <p>Program</p>
-                <p>Gallery</p>
-                <p>Show Date (Show Num?)</p>
-              </li>
-              <li class="col-sm-3">
-                <p>Square Thumbnail of work</p>
-                <p>FirstName LastName</p>
-                <p>Program</p>
-                <p>Gallery</p>
-                <p>Show Date (Show Num?)</p>
-              </li>
-              <li class="col-sm-3">
-                <p>Square Thumbnail of work</p>
-                <p>FirstName LastName</p>
-                <p>Program</p>
-                <p>Gallery</p>
-                <p>Show Date (Show Num?)</p>
-              </li>
-              <li class="col-sm-3">
-                <p>Square Thumbnail of work</p>
-                <p>FirstName LastName</p>
-                <p>Program</p>
-                <p>Gallery</p>
-                <p>Show Date (Show Num?)</p>
-              </li>
+
+            <!-- holy crap, Sheetrock is working pretty well so far -->
+            <ul class="row" id="projects-demo">
+              <script id="students-template" type="text/x-handlebars-template">
+                <li class="col-sm-3 student thumb">
+                  <div class="block">
+                    <p>Somehow we need to feed an image here... and match it with the ID: {{cells.ID}}</p>
+                    <div class="info">
+                      <h4 class="name">{{cells.FirstName}} {{cells.LastName}}</h4>
+                      <p class="program">{{cells.Program}}</p>
+                      <p class="other">Also need show# >> this is in another do, but perhaps this can just be added to the main SS?</p>
+                    </div>
+                  </div>
+                </li>
+              </script>
             </ul>
+
           </article>
+          
         </div>
       </div>
     </main>
@@ -166,12 +147,35 @@
       </div>
     </footer>
 
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.js"></script>
     <script src="js/affix.js"></script>
     <script src="js/scrollspy.js"></script>
-    
+    <!-- Load Sheetrock from the local environment. -->
+    <script src="js/jquery.sheetrock.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.min.js"></script>
+
+    <script>
+      $('document').ready(function() {
+        // Define spreadsheet URL.
+        var mySpreadsheet = 'https://docs.google.com/spreadsheet/ccc?key=0Al-kEdVYvxtGdG1wOEFNUUNEWW1CaDBlbXBHYlhQN0E#gid=0';
+        
+        // Compile the Handlebars template for HR leaders.
+        var StudentTemplate = Handlebars.compile($('#students-template').html());
+        
+        // Load all projects.
+        $('#projects-demo').sheetrock({
+          url: mySpreadsheet,
+          sql: "select C,D,E,F order by D asc",
+          headersOff: true,
+          rowGroups: false,
+          rowHandler: StudentTemplate
+        });
+      });
+    </script>
+
   </body>
 </html>
