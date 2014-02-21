@@ -39,7 +39,7 @@ img.fpo {width: 100%;}
   line-height: 1.5;
 }
 
-ul#projects-demo {
+ul.grid-display {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -47,13 +47,13 @@ ul#projects-demo {
   margin-left: -15px;
 }
 
-ul#projects-demo li {
+ul.grid-display li {
   list-style: none;
   margin-bottom: 30px;
   position: relative;
 }
 
-ul#projects-demo .thumb .block {
+ul.grid-display .thumb .block {
   background: #eee;
   font-size: 1em;
   text-transform: uppercase;
@@ -62,7 +62,7 @@ ul#projects-demo .thumb .block {
   height: 190px;
 }
 
-ul#projects-demo .thumb .block .info {
+ul.grid-display .thumb .block .info {
   background: #FB7571 ;
   padding: 10px;
   position: absolute;
@@ -73,8 +73,10 @@ ul#projects-demo .thumb .block .info {
   overflow: hidden;
 }
 
-ul#projects-demo .thumb .block .info h4,
-ul#projects-demo .thumb .block .info p {
+.gallery-info h4,
+.gallery-info p,
+ul.grid-display .thumb .block .info h4,
+ul.grid-display .thumb .block .info p {
   font-size: .9em;
   margin: 0;
   padding: 0;
@@ -82,7 +84,11 @@ ul#projects-demo .thumb .block .info p {
   letter-spacing: 1px;
 }
 
-ul#projects-demo .thumb .block .info h4 {
+.gallery-info h4 {
+  color: #FB7571;
+}
+
+ul.grid-display .thumb .block .info h4 {
   color: white;
 }
 
