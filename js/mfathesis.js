@@ -57,6 +57,10 @@ $(document).ready(function() {
       $('body').animate({ scrollTop: pos.top });
     });
   });
+  
+  var hph = $('header .ontop img.pattern').height();
+  $('header .ontop').height(hph);
+  
 });
 
 

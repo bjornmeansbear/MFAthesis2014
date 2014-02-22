@@ -9,6 +9,7 @@ header .ontop {
   background: transparent;
   position: absolute;
   bottom: 0;
+  z-index: 999;
 }
 
 header .ontop.sticky {
