@@ -1,15 +1,12 @@
 /** STILL TO DO After 21 Feb *******/
 /* Create some indication of Gallery filters so you know you've filtered it */
-/* Remove that #^$@# inset shadow on the open gallery dropdown label */
 /* Have a nicely eased scroll down to anchors from the nav */
 
 /* Constants ****************************
 
-Old Red: #f3421f;
-Newer old Red: #fb7571;
 Red, aka Neon Coral, aka the new hottness:#FF4C47
 
-*****/
+*****************************************/
 
 /** @font-face import **/
 @font-face {
@@ -286,7 +283,6 @@ ul.nav > li > a {
   color: #FF4C47;  
   background: 0;
   }
-  
 
 nav ul > li > ul {  /** First level subnav **/
   margin-left: 0;
@@ -311,6 +307,12 @@ nav ul > li > ul > li > ul {  /** Second level subnav in simpler nav **/
   
 div.input-group {margin: 10px 0;}
 
+.btn:active, 
+.btn.active,
+.btn-group.open .dropdown-toggle {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 
 /* Gallery Section Styles ******************/
 
