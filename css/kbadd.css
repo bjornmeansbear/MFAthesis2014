@@ -17,7 +17,8 @@ header .ontop {
 
 header .ontop img {
   position: relative;
-  bottom: 20px
+  bottom: 20px;
+  left: -15.8241758241758%;
 }
 
 header .ontop .sticky {
