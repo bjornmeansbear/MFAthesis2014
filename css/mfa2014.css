@@ -503,7 +503,13 @@ ul.program-peers li {
   overflow: scroll;
   padding: 0;
   margin: 0;
-  border: 15px solid #FF4C47;
+  border: 10px solid #EEE;
+}
+
+@media (min-width: 768px) {
+  .student-overlay {
+    border: 15px solid #EEE;
+  }
 }
 
 .student-overlay .close {
@@ -514,6 +520,7 @@ ul.program-peers li {
   font-size: 4em;
   height: 1em;
   width: 1em;
+  z-index: 9001;
 }
 
 .student-overlay .container {
