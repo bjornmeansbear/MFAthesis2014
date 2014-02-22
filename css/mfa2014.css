@@ -417,9 +417,12 @@ footer {
 .student-overlay article p {
   -moz-column-count: 2;
   -moz-column-gap: 1em;
+  -moz-column-fill: balance;
   -webkit-column-count: 2;
   -webkit-column-gap: 1em;
-  column-count:3;
-  column-gap: 1em,
+  -webkit-column-fill: balance;
+  column-count: 2;
+  column-gap: 1em;
+  column-fill: balance;
 }
 
