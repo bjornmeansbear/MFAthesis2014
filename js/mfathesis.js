@@ -42,13 +42,24 @@ $(document).ready(function() {
       student.showdate = _.bind(showDate, showdates, student.program);
     });
     var StudentTemplate = Hogan.compile($('#students-template').html());
+    var StudentOverlay = Hogan.compile($('#overlay-template').html());
     $('#projects-demo').html(StudentTemplate.render(data));
 
     var options = {
-      valueNames: [ 'name', 'program', 'exhibitionlocation', 'showdate' ]
+      valueNames: [ 'name', 'program', 'exhibitionlocation', 'showdate', 'id' ]
     };
 
     var studentlist = new List('students', options);
+    studentlist.on('updated', function() {
+      $('li.student').each(function(i,obj) {
+        var id = $(this).find('p.id').html();
+        $(this).off('click touch').on('click touch', function(e) {
+          var s = studentlist.get('id', id)[0].values();
+          console.log(s);
+          $('body').append(StudentOverlay.render(s));
+        });
+      });
+    });
     studentlist.sort('name', { order: 'asc' });
     studentlist.filter(function(item) {
       return item.values().name.length > 1;
