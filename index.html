@@ -289,7 +289,9 @@ P    X          F                K       J              F      J     Y      5   
               <article>
                 <p>{{ websitelongstatementupto500words }}</p>
                 <ul>
-                  <li>{{ list of other people from same program }}</li>
+                  {{#peers}}
+                  <li>{{ firstname }} {{ lastname }}</li>
+                  {{/peers}}
                 </ul>
               </article>
         

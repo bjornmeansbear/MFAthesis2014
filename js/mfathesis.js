@@ -42,9 +42,16 @@ $(document).ready(function() {
       return showdate;
     }
 
+    // Function for getting a list of other people in the same program
+    var sameProgram = function(program) {
+      var students = this;
+      return _.sortBy(_.where(students, { program: program }), 'firstname');
+    }
+
     // Map our showDate() function to a binding of showdates and the program name
     _.map(data.students, function(student) {
       student.showdate = _.bind(showDate, showdates, student.program);
+      student.peers = _.bind(sameProgram, data.students, student.program);
     });
 
     // Compile templates for the list and the overlay
