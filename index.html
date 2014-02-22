@@ -49,7 +49,6 @@
       <div class="container">
         <h1>MICA Grad Show 2014</h1>
         <p>a big image will be in the background here</p>
-        <p>The mockup they currently have has this as a giant slideshow, but I think we could just load 1 image randomly from some pool and have a different static image each time the page loads... is this easy with JS? I used to be able to do it with PHP really easily</p>
       </div>
       <br/>
     </header>
@@ -65,8 +64,13 @@
               <li><a href="#galleries">Galleries</a></li>
               <li><a href="#students">Students</a>
                 <ul> <!-- this submenu only shows up when in students area -->
+<<<<<<< HEAD
                   <li>All Projects</li> <!-- what's the default sort in this mode? alphabetical by lastname? -->
                   <li><span class="nav-label">Group By</span>
+=======
+                  <li><a href="#" class="sort-studentlist" data-type="all">All Projects</a></li> <!-- what's the default sort in this mode? alphabetical by lastname? -->
+                  <li>Group By:
+>>>>>>> e25dc0e0b2f7f62f8ffe39aacb5b4487b8bdb8fa
                     <ul>
                       <li><a href="#" class="sort-studentlist" data-type="program">Program</a></li> <!-- these are dynmaic sorts list.js? -->
                       <li>Gallery</li>
@@ -87,8 +91,7 @@
             <div class="row">
               <p class="lead col-sm-8">This year’s Spring and Summer Graduate Exhibition at the Maryland Institute College of Art will present work to the MICA community and the public from January–July, 2014. The season includes Fine Art and Graphic Design exhibitions and critiques, gallery talks, installations, symposia, public programs, and student curated shows throughout the city of Baltimore.</p>
             </div>
-              <p>I guess this text should go in its own file? or is it fine to just have in the HTML</p>
-              <p> comes from here: https://docs.google.com/document/d/181k7UtYfjSsumP4QQpTsjkRaun3wWPRWMQvleEg8KiM -- can this work as a way to make this section editable?</p>
+              <p>There is updated text for this - in content/aboutshow.md</p>
           </article>
         
           <article id="schedule">
@@ -183,50 +186,6 @@
     <script src="js/hogan.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/mfathesis.js"></script>
-
-    <!-- Load Sheetrock from the local environment. -->
-    <script>
-/*      $('document').ready(function() {
-        // Define spreadsheet URL.
-        var studentSpreadsheet   = 'https://docs.google.com/spreadsheet/ccc?key=0Al-kEdVYvxtGdG1wOEFNUUNEWW1CaDBlbXBHYlhQN0E#gid=0';
-        var showDatesSpreadsheet = 'https://docs.google.com/spreadsheet/ccc?key=0Al-kEdVYvxtGdHZiZ2lQQjA1bkl0cGpGb0ZSZHJVRkE#gid=0';
-        var gallerySpreadsheet   = 'https://docs.google.com/spreadsheet/ccc?key=0Al-kEdVYvxtGdDNBZHFWZjB1YnVFX19CSWpHLWczb1E#gid=0';
-        var placementSpreadsheet = 'https://docs.google.com/spreadsheet/ccc?key=0AvPe_NdeKbxjdFFWU0lpSmJYV3NUSlIzcGU1cWRWTnc#gid=0';
-        
-        // Compile the Handlebars template for HR leaders.
-        var StudentTemplate = Handlebars.compile($('#students-template').html());
-        var GDTemplate      = Handlebars.compile($('#gd-template').html());
-        var galleryTemplate = Handlebars.compile($('#gallery-template').html());
-        
-        // Load all projects.
-        $('#projects-demo').sheetrock({
-          url: studentSpreadsheet,
-          sql: "select C,D,E,F order by D asc",
-          headersOff: true,
-          rowGroups: false,
-          rowHandler: StudentTemplate
-        });
-
-        // Load just GD projects.
-        $('#gd-only-demo').sheetrock({
-          url: studentSpreadsheet,
-          sql: "select C,D,E,F where %Program% = 'Graphic Design'",
-          headersOff: true,
-          rowGroups: false,
-          rowHandler: GDTemplate
-        });
-        
-        // Load galleries.
-        $('#galleries-data').sheetrock({
-          url: gallerySpreadsheet,
-          sql: "select A,B,C ",
-          headersOff: true,
-          rowGroups: false,
-          rowHandler: galleryTemplate
-        });
-
-      }); */
-    </script>
 
   </body>
 </html>
