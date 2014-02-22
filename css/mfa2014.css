@@ -11,7 +11,7 @@ body {
   font-family: Calibre, "Trebuchet MS", sans-serif;
   line-height: 1.2em;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 16px;
   }
   
 h1, h2, h3, h4, h5 {
@@ -111,7 +111,7 @@ h1, h2, h3, h4, h5 {
 
 header {
   position: relative;
-  height: 500px;
+  height: 500px; /* WILL NEED TO MATCH HEIGHT OF IMAGES AS THEY SCALE, NOT BE FIXED. */
   color:#fff;
   }
   
@@ -140,7 +140,33 @@ nav li, ul {
     list-style: none;
     }
 
-ul.nav > li > a {
+nav a {
+  color:#000;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  }
+  
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  color: #f3421f;  
+  background: 0;
+  }
+
+nav a:hover, nav a:focus {
+  color: #f3421f;  
+  background: 0;
+  text-decoration: none;
+  color: #f3421f;  
+  background: 0;
+  }
+  
+nav a:active {
+  background-color: #f3421f;  
+  color: #fff;
+  text-decoration: none;
+  }
+  
+  ul.nav > li > a {
   color:#000;
   border-radius: 0;
   margin: 0;
@@ -151,19 +177,12 @@ ul.nav > li > a {
   border-bottom: 3px solid #f3421f;
   }
   
-.nav-pills li a:last-child {
-  margin-bottom: 30px;
-  }
-  
 .nav-pills li a:hover {
   color: #f3421f;  
   background: 0;
   }
   
-.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
-  color: #f3421f;  
-  background: 0;
-  }
+
 
 nav ul > li > ul {  /** First level subnav **/
   margin-left: 0;
