@@ -414,3 +414,23 @@ footer {
   overflow: scroll;
 }
 
+.student-overlay .table {
+  display: table;
+  vertical-align: middle;
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+}
+
+.student-overlay .tablecell {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+  width: 100%;
+}
+
+.student-overlay ul {
+  padding: 0;
+}

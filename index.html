@@ -250,54 +250,56 @@ P    X          F                K       J              F      J     Y      5   
     <script id="overlay-template" type="text/x-mustache-template">
       <div class="student-overlay alert alert-dismissible">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <div class="container">
-          <div class="row">
-        
-            <div class="col-sm-2">
-              <div>
-                <h2>{{ firstname }}</h2>
-                <h2>{{ middlename }}</h2>
-                <h2>{{ lastname }}</h2>
-        
+        <div class="table"><div class="tablecell">
+          <div class="container">
+            <div class="row">
+          
+              <div class="col-sm-2">
+                <div>
+                  <h2>{{ firstname }}</h2>
+                  <h2>{{ middlename }}</h2>
+                  <h2>{{ lastname }}</h2>
+          
+                  <ul>
+                    <li>{{program}}</li>
+                    <li>{{exhibitionlocation}}</li>
+                    <li>{{showdate}}</li>
+                  </ul>
+          
+                  <ul>
+                    <li>{{ urlofpersonalwebsite }}</li>
+                    <li>{{ personalemail }}</li>
+                  </ul>
+          
+                  <ul>
+                    <li>Prev</li>
+                    <li>Random?</li>
+                    <li>Next</li>
+                    <li>Close</li>
+                  </ul>
+          
+                </div>
+              </div>
+          
+              <div class="col-sm-9 col-sm-offset-1">
+          
                 <ul>
-                  <li>{{program}}</li>
-                  <li>{{exhibitionlocation}}</li>
-                  <li>{{showdate}}</li>
+                  <li>IMAGES! take use {{_id}} to match with Images...</li>
                 </ul>
-        
-                <ul>
-                  <li>{{ urlofpersonalwebsite }}</li>
-                  <li>{{ personalemail }}</li>
-                </ul>
-        
-                <ul>
-                  <li>Prev</li>
-                  <li>Random?</li>
-                  <li>Next</li>
-                  <li>Close</li>
-                </ul>
-        
+          
+                <article class="row">
+                  <p>{{ websitelongstatementupto500words }}</p>
+                  <ul>
+                    {{#peers}}
+                    <li>{{ firstname }} {{ lastname }}</li>
+                    {{/peers}}
+                  </ul>
+                </article>
+          
               </div>
             </div>
-        
-            <div class="col-sm-9 col-sm-offset-1">
-        
-              <ul>
-                <li>IMAGES! take use {{_id}} to match with Images...</li>
-              </ul>
-        
-              <article class="row">
-                <p>{{ websitelongstatementupto500words }}</p>
-                <ul>
-                  {{#peers}}
-                  <li>{{ firstname }} {{ lastname }}</li>
-                  {{/peers}}
-                </ul>
-              </article>
-        
-            </div>
           </div>
-        </div>
+        </div></div>
       </div>
 
     </script>
