@@ -434,3 +434,7 @@ footer {
 .student-overlay ul {
   padding: 0;
 }
+
+.program-peers ul li {
+  cursor: pointer;
+}
