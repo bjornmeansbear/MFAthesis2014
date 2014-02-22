@@ -210,15 +210,15 @@
           </article>
         
           <article id="students">
-            <h1>Projects</h1>
+            <h1>Students</h1>
 
             <ul class="list row grid-display" id="projects-demo">
               <script id="students-template" type="text/x-mustache-template">
                 {{#students}}
                 <li class="col-sm-3 student thumb">
                   <div class="block">
+                    <p>Somehow we need to feed an image here... and match it with the ID: {{id}} - Why is this printing as 5 letters not 6 numbers?</p>
                     <img src="img/thumbnails/{{id}}.jpg" />
-<!--                     <p>Somehow we need to feed an image here... and match it with the ID: {{id}} - images for thumbnails are in img/thumbnails/</p> -->
                     <div class="info">
                       <h4 class="name">{{firstname}} {{lastname}}</h4>
                       <p class="program">{{program}}</p>
