@@ -37,6 +37,8 @@ $(document).ready(function() {
                                                 }
         });
       }
+      var pos = $('#students').offset();
+      $('body').animate({ scrollTop: pos.top });
     });
   });
   
