@@ -60,13 +60,73 @@
               <li><a href="#intro">Welcome</a></li>
               <li><a href="#schedule">Schedule</a></li>
               <li><a href="#galleries">Galleries</a></li>
-              <li><a href="#students">Students</a>
+              <li><a href="#students">Students: Dream Nav</a>
                 <ul> <!-- this submenu only shows up when in students area -->
-                  <li><a href="#" class="sort-studentlist" data-type="all">All Projects</a></li> <!-- what's the default sort in this mode? alphabetical by lastname? -->
+                  <li>
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search <3">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                      </span>
+                    </div><!-- /input-group -->
+                  </li> <!-- Here's to hoping. -->
+                  <li><a href="#" class="sort-studentlist" data-type="all">All Projects</a></li>
+                  <li>
+                    <div class="btn-group">
+                      <button type="button" data-type="gallery" class="btn btn-default dropdown-toggle sort-studentlist" data-toggle="dropdown">
+                        <a href="#">Program </a><span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" id="gallery-filter">
+                        <li><a href="#" data-gallery="D center">D Center</a></li>
+                        <li><a href="#" data-gallery="Decker">Decker</a></li>
+                        <li><a href="#" data-gallery="Fox">Fox 3</a></li>
+                        <li><a href="#" data-gallery="Leidy">Leidy</a></li>
+                        <li><a href="#" data-gallery="Meyerhoff">Meyerhoff</a></li>
+                        <li><a href="#" data-gallery="Pinkard">Pinkard</a></li>                
+                        <li><a href="#" data-gallery="Riggs">Riggs/Leidy</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="btn-group">
+                      <button type="button" data-type="gallery" class="btn btn-default dropdown-toggle sort-studentlist" data-toggle="dropdown">
+                        <a href="#">Gallery </a><span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" id="gallery-filter">
+                        <li><a href="#" data-gallery="D center">D Center</a></li>
+                        <li><a href="#" data-gallery="Decker">Decker</a></li>
+                        <li><a href="#" data-gallery="Fox">Fox 3</a></li>
+                        <li><a href="#" data-gallery="Leidy">Leidy</a></li>
+                        <li><a href="#" data-gallery="Meyerhoff">Meyerhoff</a></li>
+                        <li><a href="#" data-gallery="Pinkard">Pinkard</a></li>                
+                        <li><a href="#" data-gallery="Riggs">Riggs/Leidy</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="btn-group">
+                      <button type="button" data-type="gallery" class="btn btn-default dropdown-toggle sort-studentlist" data-toggle="dropdown">
+                        <a href="#">Show Date </a><span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" id="gallery-filter">
+                        <li><a href="#" data-gallery="D center">D Center</a></li>
+                        <li><a href="#" data-gallery="Decker">Decker</a></li>
+                        <li><a href="#" data-gallery="Fox">Fox 3</a></li>
+                        <li><a href="#" data-gallery="Leidy">Leidy</a></li>
+                        <li><a href="#" data-gallery="Meyerhoff">Meyerhoff</a></li>
+                        <li><a href="#" data-gallery="Pinkard">Pinkard</a></li>                
+                        <li><a href="#" data-gallery="Riggs">Riggs/Leidy</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <li><a href="#">Students: Simpler Nav</a>
+                <ul> 
+                  <li><a href="#" class="sort-studentlist" data-type="all">All Projects</a></li>
                   <li><span class="nav-label">Filter By</span>
                     <ul>
-                      <li><a href="#" class="sort-studentlist" data-type="program">Program</a></li> <!-- these are dynmaic sorts list.js? -->
-                      <div class="btn-group">
+                      <li><a href="#" class="sort-studentlist" data-type="program">Program</a></li>                       
+                      <li><div class="btn-group">
                             <button type="button" data-type="gallery" class="btn btn-default dropdown-toggle sort-studentlist" data-toggle="dropdown">
                               <a href="#">Gallery</a>
                               <span class="caret"></span>
@@ -81,28 +141,8 @@
                               <li><a href="#" data-gallery="Riggs">Riggs/Leidy</a></li>
                             </ul>
                           </div>
-
                       </li>
                       <li><a href="#" class="sort-studentlist" data-type="showdate">Show Date</a></li>
-<!--
-                      <li>
-                          <div class="btn-group">
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                              Gallery
-                              <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" id="gallery-filter">
-                              <li><a href="#" data-gallery="D center">D Center</a></li>
-                              <li><a href="#" data-gallery="Decker">Decker</a></li>
-                              <li><a href="#" data-gallery="Fox">Fox 3</a></li>
-                              <li><a href="#" data-gallery="Leidy">Leidy</a></li>
-                              <li><a href="#" data-gallery="Meyerhoff">Meyerhoff</a></li>
-                              <li><a href="#" data-gallery="Pinkard">Pinkard</a></li>                
-                              <li><a href="#" data-gallery="Riggs">Riggs/Leidy</a></li>
-                            </ul>
-                          </div>
-                      </li>
--->
                     </ul>
                   </li>
                 </ul>
