@@ -16,13 +16,21 @@ $(document).ready(function() {
     });
 
     var options = {
-      valueNames: [ 'name', 'program' ]
+      valueNames: [ 'name', 'program', 'exhibitionlocation' ]
     };
 
     var studentlist = new List('students', options);
     studentlist.sort('name', { order: 'asc' });
     studentlist.filter(function(item) {
       return item.values().name.length > 1;
+    });
+    $('#gallery-filter a').on('click touch', function(e) {
+      e.preventDefault();
+      var gallery = $(this).data('gallery');
+      studentlist.filter(function(item) {
+        console.log(item.values().exhibitionlocation.toLowerCase(),gallery);
+        return item.values().exhibitionlocation.toLowerCase().indexOf(gallery.toLowerCase()) >= 0;
+      });
     });
     $('a.sort-studentlist').on('click touch', function(e) {
       e.preventDefault();
