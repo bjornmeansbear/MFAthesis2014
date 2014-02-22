@@ -166,16 +166,16 @@ article p {
     position: relative;
     width: 100%;
     overflow: hidden;
-    height: 210px;
-    max-height: 210px;
+    height: 240px;
+    max-height: 240px;
     }
     
   header img.backgroundfill {
     display: none;
     position: relative;
     z-index: -1;
-    height: 210px;
-    max-height: 210px;
+    height: 240px;
+    max-height: 240px;
     width: auto;
     top: 0;
     left:0;
@@ -191,6 +191,7 @@ article p {
   header .ontop .sticky {
     position: relative;
     bottom: 10px;
+    left:-160px;
   }
 
 @media (min-width: 768px) {
