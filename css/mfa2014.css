@@ -1,13 +1,24 @@
+/* Constants ****************************
+
+Red, aka Neon Coral, aka the new hottness: #f3421f;
+
+*****/
+
+
+/* Global Text Styles *******************/
+
 body {
   font-family: Calibre, "Trebuchet MS", sans-serif;
   line-height: 1.2em;
   font-weight: 500;
+  font-size: 15px;
   }
   
 h1, h2, h3, h4, h5 {
   font-weight: 700;
   }
-
+  
+/** @font-face import **/
 @font-face {
     font-family: 'Calibre';
     src: url('../type/cal-light.eot');
@@ -94,10 +105,14 @@ h1, h2, h3, h4, h5 {
     font-weight: 700;
     font-style: italic;
     }
-    
-    header {
+   
+
+/* Image Header Styles ******************/
+
+header {
   position: relative;
   height: 500px;
+  color:#fff;
   }
   
 header img.backgroundfill {
@@ -107,17 +122,37 @@ header img.backgroundfill {
   width: 100%;
   margin-left: -50%;
   z-index: -1;
-}
+  }
 
-footer {
-  background-color: #dadada;
-  margin-top: 6em;
-  min-height: 10em;
-  padding-top: 4em;
-  padding-bottom: 6em;
-}
 
-/*something*/
+
+/* Nav Styles ***************************/
+
+nav img {width: 100%;}
+.nav-pills li a {
+  font-weight: 700;
+  color:#000;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 2em;
+  padding-bottom:6px;
+  border-bottom: 3px solid #f3421f;
+  }
+  
+.nav-pills li a:hover {
+  color: #f3421f;  
+  background: 0;
+  }
+  
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  color: #f3421f;  
+  background: 0;
+  }
+
+
+
+/* Main Content Styles ******************/
 
 main article {
   padding: 2em 0;
@@ -130,8 +165,6 @@ main article {
   max-width: 165px;
 }
 
-nav img {width: 100%;}
-img.fpo {width: 100%;}
 
 #intro p.lead {
   font-weight: bold;
@@ -183,6 +216,18 @@ ul.grid-display .thumb .block .info p {
 
 ul.grid-display .thumb .block .info h4 {
   color: white;
+}
+
+
+
+/* Footer Styles ************************/
+
+footer {
+  background-color: #dadada;
+  margin-top: 6em;
+  min-height: 10em;
+  padding-top: 4em;
+  padding-bottom: 6em;
 }
 
 
