@@ -363,7 +363,25 @@ ul.grid-display li {
 }
 
 ul.grid-display .thumb {
-  height: 333px;
+  height: 277px;
+}
+
+@media (min-width: 768px) { 
+  ul.grid-display .thumb {
+    height: 255px;
+  }
+}
+
+@media (min-width: 992px) {
+  ul.grid-display .thumb {
+    height: 288px;
+  }
+}
+
+@media (min-width: 1200px) {
+  ul.grid-display .thumb {
+    height: 333px;
+  }
 }
 
 ul.grid-display .thumb .block {
