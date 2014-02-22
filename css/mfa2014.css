@@ -328,11 +328,18 @@ main article {
   padding: 2em 0;
 }
 
-.affix {
-  position: fixed;
-  top: 238px;
-  width: inherit;
-  max-width: 165px;
+.affix-top, .affix {
+  position: static;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .affix {
+    position: fixed;
+    top: 238px;
+    width: inherit;
+    max-width: 165px;
+  }
 }
 
 #intro p.lead {
