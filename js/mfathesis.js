@@ -5,7 +5,7 @@ $(document).ready(function() {
   $.getJSON('http://mfa.cape.io/items/client_data.json', function(data) {
     var StudentTemplate = Hogan.compile($('#students-template').html());
     $('#projects-demo').html(StudentTemplate.render(data));
-  
+
     //set all student thumb areas to same height (new design on the fly!)
     var thumbheight = -1;
     $('.grid-display .thumb').each(function() {
@@ -14,7 +14,7 @@ $(document).ready(function() {
     $('.grid-display .thumb').each(function() {
       $(this).height(thumbheight);
     });
-  
+
     var options = {
       valueNames: [ 'name', 'program' ]
     };
@@ -43,3 +43,4 @@ $(document).ready(function() {
   });
   
 });
+
