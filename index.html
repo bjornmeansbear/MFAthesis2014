@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Basic MFA site Template to get started</title>
-    
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -190,12 +189,44 @@
             <h1>Participating Galleries</h1>
             <p>Programs are spread across galleries; see student pages for individual locations.</p>
             <section class="row">
+             <div class="col-sm-9">
+                <img class="map" src="img/gradshow_2014_map.gif" />
+                <button><a href="pdf/gradshow_2014_map.pdf">Download Map</a></button>
+              </div>
+              <div  class="col-sm-3">
+                <ul id="galleries-data">
+                    <li><h4>Bunting Center</h4></li>
+                    <li><h5>Pinkard Gallery</h5></li>
+                    <li><p>1305 W. Mount Royal Ave. Baltimore, MD 21217</p></li>
+                    <li><h4>Fox Building</h4></li>
+                    <li><h5>Meyerhoff Gallery</h5></li>
+                    <li><h5>Decker Gallery</h5></li>
+                    <li><h5>Fox 3 Gallery</h5></li>
+                    <li><p>1303 W. Mount Royal Ave. Baltimore, MD 21217</p></li>
+                    <li><h4>Studio Center</h4></li>
+                    <li><h5>Riggs Gallery</h5></li>
+                    <li><h5>Leidy Gallery</h5></li>
+                    <li><p>131 W. North Ave. Baltimore, MD 21201</p></li>
+                    <li><h4>D Center</h4></li>
+                    <li><h5>D Center Gallery</h5></li>
+                    <li><p>18 W. North Ave.Baltimore, MD 21218</p></li>
+                    <li><h4>Off Campus</h4></li>
+                    <li><h5>Curatorial Practice</h5></li>
+                    <li><p>Curatorial Students take over individual galleries all across Baltimore. View the Curatorial Map »</p></li>
+                    
+                    
+                    Download This Map
+
+
+                    </li>
+                </ul>
+              </div>
+              <!-- Old potentially YAML version
               <div class="col-sm-8">
                 <img class="fpo" src="img/draftmapplaceholder.png" /><br/><br/>
                 <button><a href="pdf/gradshow_2014_map.pdf">Download Map</a></button>
               </div>
               <div  class="col-sm-4">
-<!--                 <p>sidebar of Gallery names and locations<br/> can be made into a JSON/YAML list - galleries.yml</p> -->
                 <ol id="galleries-data" class="gallery-infoblocks">
                   <script id="gallery-template" type="text/x-mustache-template">
                     <li class="gallery-info">
@@ -205,7 +236,7 @@
                     </li>
                   </script>
                 </ol>
-              </div>
+              </div>-->
             </section>
           </article>
         
