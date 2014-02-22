@@ -17,7 +17,16 @@ $(document).ready(function() {
     $('a.sort-studentlist').on('click touch', function(e) {
       e.preventDefault();
       var type = $(this).data('type');
-      studentlist.sort(type);
+      if (type === 'program') {
+        studentlist.sort('program', { sortFunction:  function(a,b) {
+                                                  if(a.values().program< b.values().program) return -1;
+                                                  if(a.values().program>b.values().program) return 1;
+                                                  if(a.values().name<b.values().name) return -1;
+                                                  if(a.values().name>b.values().name) return 1;
+                                                  return 0;
+                                                }
+        });
+      }
     });
   });
   
