@@ -29,6 +29,10 @@ header .ontop .sticky {
   z-index: 999;
 }
 
+ul.grid-display .thumb {
+  height: 333px;
+}
+
 ul.grid-display .thumb .block {
   background: transparent;
 }
