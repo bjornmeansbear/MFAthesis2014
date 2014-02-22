@@ -373,6 +373,12 @@ ul.grid-display .thumb .block .info {
   position: relative;
 }
 
+.thumb .block img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
 .gallery-info h4,
 .gallery-info p,
 ul.grid-display .thumb .block .info h4,
