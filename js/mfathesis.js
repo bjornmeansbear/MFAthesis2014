@@ -4,28 +4,25 @@ $(document).ready(function() {
   
   $.getJSON('http://mfa.cape.io/items/client_data.json', function(data) {
     var showdates = [{
-      name: ["Hoffberger"],
-      date: '4/25/2013'
-    }, {
       name: ["Post Bac FA"],
       date: '1/31/2014'
     }, {
       name: ["Graphic Design", "Post Bac GD", "Illustration Practice"],
       date: '3/28/2014'
     }, {
-      name: "Social Design",
+      name: ["Social Design"],
       date: '4/23/2014'
     }, {
-      name: ["Photo & Electronic Media", "Community Arts", "Photo & Electronic Media"],
+      name: ["Rinehart", "Photo & Electronic Media", "Community Arts", "Photo & Electronic Media"],
       date: '4/11/2014'
     }, {
       name: ["MA Teaching"],
       date: '1/24/2014'
     }, {
-      name: ["Mount Royal"],
+      name: ["Mount Royal","Hoffberger"],
       date: '4/25/2014'
     }, {
-      name: ['Rinehart', 'Curatorial'],
+      name: ['Curatorial'],
       date: 'Not available'
     }, {
       name: ["Critical Studies"],
@@ -48,7 +45,7 @@ $(document).ready(function() {
     $('#projects-demo').html(StudentTemplate.render(data));
 
     var options = {
-      valueNames: [ 'name', 'program', 'exhibitionlocation' ]
+      valueNames: [ 'name', 'program', 'exhibitionlocation', 'showdate' ]
     };
 
     var studentlist = new List('students', options);
@@ -61,6 +58,15 @@ $(document).ready(function() {
       var gallery = $(this).data('gallery');
       studentlist.filter(function(item) {
         return item.values().exhibitionlocation.toLowerCase().indexOf(gallery.toLowerCase()) >= 0;
+      });
+      var pos = $('#students').offset();
+      $('body').animate({ scrollTop: pos.top });
+    });
+    $('#showdate-filter a').on('click touch', function(e) {
+      e.preventDefault();
+      var showdate = $(this).data('showdate');
+      studentlist.filter(function(item) {
+        return item.values().showdate.indexOf(showdate) >= 0;
       });
       var pos = $('#students').offset();
       $('body').animate({ scrollTop: pos.top });
