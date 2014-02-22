@@ -55,8 +55,13 @@ $(document).ready(function() {
         var id = $(this).find('p.id').html();
         $(this).off('click touch').on('click touch', function(e) {
           var s = studentlist.get('id', id)[0].values();
-          console.log(s);
+          var pos = document.body.scrollTop;
           $('body').append(StudentOverlay.render(s));
+          $('html,body').css('overflow','hidden').height($(window).height());
+          $('.student-overlay button.close').on('click touch', function(e) {
+            $('html,body').css('overflow','auto').css('height', '');
+            $('body').animate({ scrollTop: pos }, 0);
+          });
         });
       });
     });
@@ -97,12 +102,12 @@ $(document).ready(function() {
       if (type === 'program') {
         studentlist.filter();
         studentlist.sort('program', { sortFunction:  function(a,b) {
-                                                  if(a.values().program< b.values().program) return -1;
-                                                  if(a.values().program>b.values().program) return 1;
-                                                  if(a.values().name<b.values().name) return -1;
-                                                  if(a.values().name>b.values().name) return 1;
-                                                  return 0;
-                                                }
+                                                      if(a.values().program< b.values().program) return -1;
+                                                      if(a.values().program>b.values().program) return 1;
+                                                      if(a.values().name<b.values().name) return -1;
+                                                      if(a.values().name>b.values().name) return 1;
+                                                      return 0;
+                                                    }
         });
       } else if (type === 'all') {
         studentlist.filter();
