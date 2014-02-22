@@ -67,8 +67,25 @@
                   <li><span class="nav-label">Group By</span>
                     <ul>
                       <li><a href="#" class="sort-studentlist" data-type="program">Program</a></li> <!-- these are dynmaic sorts list.js? -->
-                      <li><a href="#" class="sort-studentlist" data-type="gallery">Gallery</a></li>
+                      <div class="btn-group">
+                            <button type="button" data-type="gallery" class="btn btn-default dropdown-toggle sort-studentlist" data-toggle="dropdown">
+                              <a href="#">Gallery</a>
+                              <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" id="gallery-filter">
+                              <li><a href="#" data-gallery="D center">D Center</a></li>
+                              <li><a href="#" data-gallery="Decker">Decker</a></li>
+                              <li><a href="#" data-gallery="Fox">Fox 3</a></li>
+                              <li><a href="#" data-gallery="Leidy">Leidy</a></li>
+                              <li><a href="#" data-gallery="Meyerhoff">Meyerhoff</a></li>
+                              <li><a href="#" data-gallery="Pinkard">Pinkard</a></li>                
+                              <li><a href="#" data-gallery="Riggs">Riggs/Leidy</a></li>
+                            </ul>
+                          </div>
+
+                      </li>
                       <li><a href="#" class="sort-studentlist" data-type="showdate">Show Date</a></li>
+<!--
                       <li>
                           <div class="btn-group">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -86,7 +103,7 @@
                             </ul>
                           </div>
                       </li>
-                      <li>Show Date (Show Num?)</li>
+-->
                     </ul>
                   </li>
                 </ul>
