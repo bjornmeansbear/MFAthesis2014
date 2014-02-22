@@ -67,7 +67,7 @@ $(window).scroll(function(){
   var s = $(window).scrollTop();
   $("header > img.backgroundfill").css("transform","translateY(" + (s*-1.1) + "px)");
 
-  if (s >= 380) {
+  if (s >= 404) {
     $('header .ontop .pattern').addClass('sticky');
   }
 
