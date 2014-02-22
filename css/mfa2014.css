@@ -1,13 +1,13 @@
 /** STILL TO DO After 21 Feb *******/
 /* Create some indication of Gallery filters so you know you've filtered it */
 /* Remove that #^$@# inset shadow on the open gallery dropdown label */
-/* Remove that #^$@# inset shadow on the open gallery dropdown label */
+/* Have a nicely eased scroll down to anchors from the nav */
 
 
 
 /* Constants ****************************
 
-Red, aka Neon Coral, aka the new hottness: #f3421f;
+Old Red: #f3421f;
 Red, aka Neon Coral, aka the new hottness: #fb7571;
 
 *****/
@@ -160,8 +160,7 @@ button.btn.btn-default.dropdown-toggle.sort-studentlist {
   padding: 12px 0;
   }
   
-  
-nav img {width: 75%;}
+.mainnav {padding-bottom: 60px;}
 
 nav, button.btn.btn-default.dropdown-toggle.sort-studentlist, .dropdown-menu > li > a{
   font-weight: 700;
@@ -219,7 +218,6 @@ nav a:active {
   }
   
 
-
 nav ul > li > ul {  /** First level subnav **/
   margin-left: 0;
   padding-left: 0;
@@ -234,7 +232,7 @@ nav ul > li > ul > li > ul {  /** Second level subnav **/
 
 .nav-label {
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 300;
   }
 
 
@@ -245,6 +243,8 @@ nav ul > li > ul > li > ul {  /** Second level subnav **/
 main article {
   padding: 2em 0;
 }
+
+h1 {color: #fb7571}
 
 .affix {
   position: fixed;
@@ -257,7 +257,8 @@ main article {
 #intro p.lead {
   font-weight: bold;
   font-size: 2em;
-  line-height: 1.5;
+  line-height: 1.25;
+  color:#000;
 }
 
 ul.grid-display {
