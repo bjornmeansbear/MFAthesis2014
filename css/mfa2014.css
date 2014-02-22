@@ -3,8 +3,6 @@
 /* Remove that #^$@# inset shadow on the open gallery dropdown label */
 /* Have a nicely eased scroll down to anchors from the nav */
 
-
-
 /* Constants ****************************
 
 Old Red: #f3421f;
@@ -220,11 +218,15 @@ button.btn.btn-default.dropdown-toggle.sort-studentlist {
   color: #FF4C47; 
   }
   
-.dropdown-menu {
+.dropdown-menu { /* if in dropdown mode */
   left: 80px;
-  top:-10px;
+  top:-20px;
   padding: 12px 0;
   }
+
+.dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu { /* when in dropup mode */
+  bottom: -20px;
+}
 
 nav, button.btn.btn-default.dropdown-toggle.sort-studentlist, .dropdown-menu > li > a{
   font-weight: 700;
