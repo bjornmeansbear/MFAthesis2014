@@ -28,9 +28,10 @@ $(document).ready(function() {
       e.preventDefault();
       var gallery = $(this).data('gallery');
       studentlist.filter(function(item) {
-        console.log(item.values().exhibitionlocation.toLowerCase(),gallery);
         return item.values().exhibitionlocation.toLowerCase().indexOf(gallery.toLowerCase()) >= 0;
       });
+      var pos = $('#students').offset();
+      $('body').animate({ scrollTop: pos.top });
     });
     $('a.sort-studentlist').on('click touch', function(e) {
       e.preventDefault();
