@@ -1,10 +1,13 @@
 
 header > img.backgroundfill {
   position: relative;
+  height: 100%;
+  width: auto;
 }
 
 header .ontop img {
     position: relative;
+    bottom: 20px
 }
 header .ontop {
     position: absolute;
@@ -30,4 +33,6 @@ ul.grid-display .thumb .block .info {
 ul.grid-display .thumb .block .info h4 {
   color: #f3421f;
 }
+
+
 
