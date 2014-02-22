@@ -1,6 +1,8 @@
 
 header > img.backgroundfill {
   position: relative;
+  height: 100%;
+  width: auto;
 }
 
 header .ontop img {
@@ -10,4 +12,6 @@ header .ontop {
     position: absolute;
     bottom: 0;
 }
+
+
 
