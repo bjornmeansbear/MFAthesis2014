@@ -440,3 +440,7 @@ ul.program-peers li {
 .program-peers ul li {
   cursor: pointer;
 }
+
+#slideshow {
+  margin-bottom: 30px;
+}
