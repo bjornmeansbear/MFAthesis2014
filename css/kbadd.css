@@ -1,3 +1,9 @@
 
-
+header .ontop img {
+    position: relative;
+}
+header .ontop {
+    position: absolute;
+    bottom: 0;
+}
 
