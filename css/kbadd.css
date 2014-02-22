@@ -24,7 +24,7 @@ header .ontop .sticky {
   background: white;
   background: rgba(255,255,255,.75);
   position: fixed;
-  top: -176px;
+  top: -264px;
   bottom: auto;
   z-index: 999;
 }
