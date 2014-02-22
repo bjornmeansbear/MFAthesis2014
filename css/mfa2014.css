@@ -62,17 +62,13 @@ ul.grid-display .thumb .block {
   text-transform: uppercase;
   overflow: hidden;
   position: relative;
-  height: 190px;
 }
 
 ul.grid-display .thumb .block .info {
   background: #FB7571 ;
   padding: 10px;
-  position: absolute;
-  bottom: 0;
-  left:0;
-  right:0;
   height: 50px;
+  position: relative;
   overflow: hidden;
 }
 

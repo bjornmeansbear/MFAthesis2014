@@ -13,4 +13,14 @@ $(document).ready(function() {
     studentlist.sort('name', { order: 'asc' });
     console.log(studentlist.matchingItems);
   });
+  
+  //set all student thumb areas to same height (new design on the fly!)
+  var thumbheight = -1;
+  $('ul.grid-display li.thumb').each(function() {
+    thumbheight = thumbheight > $(this).height() ? thumbheight : $(this).height();
+  });
+  $('ul.grid-display li.thumb').each(function() {
+    $(this).height(thumbheight);
+  });
+  
 });
