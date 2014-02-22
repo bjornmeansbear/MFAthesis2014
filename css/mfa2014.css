@@ -140,7 +140,7 @@ nav li, ul {
     list-style: none;
     }
 
-.nav-pills li a {
+ul.nav > li > a {
   color:#000;
   border-radius: 0;
   margin: 0;
