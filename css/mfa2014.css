@@ -199,6 +199,8 @@ article p {
     position: relative;
     width: 100%;
     overflow: hidden;
+    height: 600px;
+    max-height: 600px;
     }
     
   header img.backgroundfill {
@@ -206,6 +208,7 @@ article p {
     position: relative;
     z-index: -1;
     height: 600px;
+    max-height: 600px;
     width: auto;
     top: 0;
     left:0;
@@ -456,7 +459,10 @@ ul.grid-display .thumb .block .info p {
   letter-spacing: 1px;
 }
 
-#intro { padding-top: .66em; }
+#intro { padding-top: 2em; }
+@media (min-width: 768px) {
+  #intro { padding-top: .66em; }
+}
 
 /* Footer Styles ************************/
 
