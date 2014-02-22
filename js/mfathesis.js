@@ -60,7 +60,7 @@ $(document).ready(function() {
         return item.values().exhibitionlocation.toLowerCase().indexOf(gallery.toLowerCase()) >= 0;
       });
       var pos = $('#students').offset();
-      $('body').animate({ scrollTop: pos.top });
+      $('body').animate({ scrollTop: pos.top-150 });
     });
     $('#showdate-filter a').on('click touch', function(e) {
       e.preventDefault();
@@ -69,7 +69,7 @@ $(document).ready(function() {
         return item.values().showdate.indexOf(showdate) >= 0;
       });
       var pos = $('#students').offset();
-      $('body').animate({ scrollTop: pos.top });
+      $('body').animate({ scrollTop: pos.top-150 });
     });
     $('a.sort-studentlist').on('click touch', function(e) {
       e.preventDefault();
@@ -92,7 +92,7 @@ $(document).ready(function() {
         studentlist.sort('name', {order: 'asc'});
       }
       var pos = $('#students').offset();
-      $('body').animate({ scrollTop: pos.top });
+      $('body').animate({ scrollTop: pos.top-150 });
     });
   });
   
