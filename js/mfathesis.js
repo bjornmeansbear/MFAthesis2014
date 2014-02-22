@@ -65,9 +65,9 @@ $(document).ready(function() {
 // Parallax Scrolling for the SiteName -->
 $(window).scroll(function(){
   var s = $(window).scrollTop();
-  $("header > img.backgroundfill").css("transform","translateY(" + (s*-1.1) + "px)");
+  $("header > img.backgroundfill").css("transform","translateY(" + (s*-1.075) + "px)");
 
-  if (s >= 404) {
+  if (s >= 400) {
     $('header .ontop .pattern').addClass('sticky');
   }
 
