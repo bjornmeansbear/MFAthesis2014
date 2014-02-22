@@ -172,7 +172,7 @@ header {
   
 header img.backgroundfill {
   display: none;
-  position: absolute;
+  position: relative;
   z-index: -1;
   height: 600px;
   width: auto;
