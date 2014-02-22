@@ -14,7 +14,7 @@ $(document).ready(function() {
       name: ["Social Design"],
       date: '4/23/2014'
     }, {
-      name: ["Rinehart", "Photo & Electronic Media", "Community Arts", "Photo & Electronic Media"],
+      name: ["Rinehart", "Photo & Electronic Media", "Community Arts"],
       date: '4/11/2014'
     }, {
       name: ["MA Teaching"],
@@ -185,7 +185,6 @@ $(document).ready(function() {
   });
   
 });
-
 
 // Parallax Scrolling for the SiteName -->
 $(window).scroll(function(){
