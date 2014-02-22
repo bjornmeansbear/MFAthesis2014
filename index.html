@@ -133,24 +133,26 @@ P    X          F                K       J              F      J     Y      5   
         
           <article id="intro">
             <div class="row">
-              <p class="lead col-sm-9">This year’s Spring and Summer Graduate Exhibition at the Maryland Institute College of Art will present work to the MICA community and the public from January–July, 2014. The season includes Fine Art and Graphic Design exhibitions and critiques, gallery talks, installations, symposia, public programs, and student curated shows throughout the city of Baltimore.</p>
+              <p class="lead col-sm-10">This year’s Spring and Summer Graduate Exhibition at the Maryland Institute College of Art will present work to the MICA community and the public from January–July, 2014. The season includes Fine Art and Graphic Design exhibitions and critiques, gallery talks, installations, symposia, public programs, and student curated shows throughout the city of Baltimore.</p>
             </div>
               <p>There is updated text for this - in content/aboutshow.md</p>
           </article>
         
           <article id="schedule">
             <h1>Schedule of Events</h1>
-            <p>make this a JSON/YAML list? - schedule.yml</p>
+            <p>place content/schedule.yml here</p>
             <ul>
+              {{#?}}
               <li class="row showtime">
                 <div class="col-sm-4">
                   <h3><date>{{ startdate }}</date>&ndash;<date>{{ enddate }}</date></h3>
                   <p class="small">{{ opening }}</p>
                 </div>
                 <div class="col-sm-8">
-                  <p class="lead">{{ program(s) }}</p> <!-- print each program on its own line -->
+                  {{#program}}<p class="lead">{{.}}</p>{{/program}} <!-- print each program on its own line -->
                 </div>
               </li><!-- each show gets its own <li> -->
+              {{/?}}
             </ul>
           </article>
         
