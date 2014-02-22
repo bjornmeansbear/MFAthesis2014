@@ -1,12 +1,14 @@
 /** STILL TO DO After 21 Feb *******/
-/* Match header height to that of images so it scales nicely instead of being fixed. */
 /* Create some indication of Gallery filters so you know you've filtered it */
+/* Remove that #^$@# inset shadow on the open gallery dropdown label */
+/* Remove that #^$@# inset shadow on the open gallery dropdown label */
 
 
 
 /* Constants ****************************
 
 Red, aka Neon Coral, aka the new hottness: #f3421f;
+Red, aka Neon Coral, aka the new hottness: #fb7571;
 
 *****/
 
@@ -117,7 +119,6 @@ h1, h2, h3, h4, h5 {
 
 header {
   position: relative;
-  height: 500px; 
   color:#fff;
   }
   
@@ -150,7 +151,7 @@ button.btn.btn-default.dropdown-toggle.sort-studentlist {
   box-shadow: inset 0;
   -moz-box-shadow: inset 0;
   -webkit-box-shadow: inset 0;
-  color: #f3421f; 
+  color: #fb7571; 
   }
   
 .dropdown-menu {
@@ -162,7 +163,7 @@ button.btn.btn-default.dropdown-toggle.sort-studentlist {
   
 nav img {width: 75%;}
 
-nav, button.btn.btn-default.dropdown-toggle.sort-studentlist, .dropdown-menu > li > a {
+nav, button.btn.btn-default.dropdown-toggle.sort-studentlist, .dropdown-menu > li > a{
   font-weight: 700;
   font-size: 16px;
   color:#666;
@@ -172,28 +173,31 @@ nav li, ul {
     list-style: none;
     }
 
-nav a {
+nav a, .dropdown-menu > li > a {
   color:#000;
+  }
+  
+nav a{
   border-radius: 0;
   margin: 0;
   padding: 0;
   }
   
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
-  color: #f3421f;  
+  color: #fb7571;  
   background: 0;
   }
 
 nav a:hover, nav a:focus {
-  color: #f3421f;  
+  color: #fb7571;  
   background: 0;
   text-decoration: none;
-  color: #f3421f;  
+  color: #fb7571;  
   background: 0;
   }
   
 nav a:active {
-  background-color: #f3421f;  
+  background-color: #fb7571;  
   color: #fff;
   text-decoration: none;
   }
@@ -206,11 +210,11 @@ nav a:active {
   padding-top: 1.25em;
   padding-bottom: 4px;
   margin-bottom: 10px;
-  border-bottom: 3px solid #f3421f;
+  border-bottom: 3px solid #fb7571;
   }
   
 .nav-pills li a:hover {
-  color: #f3421f;  
+  color: #fb7571;  
   background: 0;
   }
   
