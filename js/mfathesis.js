@@ -100,8 +100,8 @@ $(document).ready(function() {
           return item.values().name.length > 1;
         });
       }
-      var pos = $('#students').offset();
-      $('body').animate({ scrollTop: pos.top-150 });
+      // var pos = $('#students').offset();
+      // $('body').animate({ scrollTop: pos.top-150 });
     });
     // Process gallery filter
     $('#gallery-filter a').on('click touch', function(e) {
