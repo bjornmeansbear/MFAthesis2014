@@ -461,12 +461,11 @@ ul.program-peers li {
 }
 
 .student-overlay .close {
-  background: #FF4C47;
-  color: white;
+  color:;
   float: none;
   position: fixed;
-  top:0;
-  right:0;
+  top:5px;
+  right:5px;
   font-size: 4em;
   height: 1em;
   width: 1em;
