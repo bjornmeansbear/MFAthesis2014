@@ -449,14 +449,15 @@ ul.program-peers li {
 .student-overlay {
   z-index: 9000;
   background: #fff;
-  width: 100%;
-  height: 100%;
   position: fixed;
   top:0;
   bottom:0;
   left:0;
   right:0;
   overflow: scroll;
+  padding: 0;
+  margin: 0;
+  border: 15px solid #FF4C47;
 }
 
 .student-overlay .close {
@@ -469,6 +470,9 @@ ul.program-peers li {
   width: 1em;
 }
 
+.student-overlay .container {
+  padding-top: 30px;
+}
 .student-overlay ul {
   padding: 0;
 }
