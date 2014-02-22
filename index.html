@@ -47,8 +47,8 @@
       <img src="img/headers/id0536542.jpg" class="backgroundfill">
       <img src="img/headers/id0539860.jpg" class="backgroundfill">
       <div class="container">
-        <h1>MICA Grad Show 2014</h1>
-        <p>a big image will be in the background here</p>
+        <h1 style="display:none;">MICA Grad Show 2014</h1>
+        <img src="img/header_pattern.png" />
       </div>
       <br/>
     </header>
@@ -68,8 +68,24 @@
                   <li><span class="nav-label">Group By</span>
                     <ul>
                       <li><a href="#" class="sort-studentlist" data-type="program">Program</a></li> <!-- these are dynmaic sorts list.js? -->
+<<<<<<< HEAD
                       <li><a href="#" class="sort-studentlist" data-type="gallery">Gallery</a></li>
                       <li><a href="#" class="sort-studentlist" data-type="showdate">Show Date</a></li>
+=======
+                      <li>
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                              Gallery
+                              <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" id="gallery-filter">
+                              <li><a href="#" data-gallery="Riggs">Riggs/Leidy Gallery</a></li>
+                              <li><a href="#" data-gallery="Decker">Decker</a></li>
+                            </ul>
+                          </div>
+                      </li>
+                      <li>Show Date (Show Num?)</li>
+>>>>>>> a987d11d92c859c61b943982bec1af79ad7489fd
                     </ul>
                   </li>
                 </ul>
@@ -147,7 +163,7 @@
                     <div class="info">
                       <h4 class="name">{{firstname}} {{lastname}}</h4>
                       <p class="program">{{program}}</p>
-                      <!-- <p class="other">Also need show# >> this is in another doc, but perhaps this can just be added to the main SS?</p> -->
+                      <p class="exhibitionlocation" style="display:none">{{exhibitionlocation}}</p>
                     </div>
                   </div>
                 </li>
