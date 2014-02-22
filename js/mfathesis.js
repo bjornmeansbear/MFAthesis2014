@@ -58,9 +58,6 @@ $(document).ready(function() {
     });
   });
   
-  var hph = $('header .ontop img.pattern').height();
-  $('header .ontop').height(hph);
-  
 });
 
 
