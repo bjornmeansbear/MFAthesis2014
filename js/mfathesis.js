@@ -10,7 +10,7 @@ $(document).ready(function() {
     };
 
     var studentlist = new List('students', options);
-
+    studentlist.sort('name', { order: 'asc' });
     console.log(studentlist.matchingItems);
   });
 });
