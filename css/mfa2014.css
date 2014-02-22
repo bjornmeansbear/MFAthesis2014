@@ -506,12 +506,6 @@ ul.program-peers li {
   border: 10px solid #EEE;
 }
 
-@media (min-width: 768px) {
-  .student-overlay {
-    border: 15px solid #EEE;
-  }
-}
-
 .student-overlay .close {
   float: none;
   position: fixed;
@@ -521,6 +515,23 @@ ul.program-peers li {
   height: 1em;
   width: 1em;
   z-index: 9001;
+}
+
+@media (min-width: 768px) {
+  .student-overlay {
+    border: 15px solid #EEE;
+  }
+}
+
+@media (min-width: 992px) {
+  .student-overlay {
+    border: 20px solid #EEE;
+  }
+  .student-overlay .close {
+    top:7px;
+    right:9px;
+  }
+  
 }
 
 .student-overlay .container {
@@ -545,3 +556,5 @@ ul.program-peers li {
 #slideshow {
   margin-bottom: 30px;
 }
+
+.student-overlay article { padding-bottom: 30px; }
