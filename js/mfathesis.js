@@ -37,6 +37,7 @@ $(document).ready(function() {
       e.preventDefault();
       var type = $(this).data('type');
       if (type === 'program') {
+        studentlist.filter();
         studentlist.sort('program', { sortFunction:  function(a,b) {
                                                   if(a.values().program< b.values().program) return -1;
                                                   if(a.values().program>b.values().program) return 1;
@@ -56,6 +57,4 @@ $(document).ready(function() {
       $('body').animate({ scrollTop: pos.top });
     });
   });
-  
 });
-
