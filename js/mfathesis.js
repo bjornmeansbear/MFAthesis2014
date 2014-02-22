@@ -65,7 +65,11 @@ $(document).ready(function() {
     };
     var studentlist = new List('students', options);
     
+    // Event to trigger to link up the peers on the student overlay
     $(window).on('activatePeers', function() {
+      $('ul.program-peers li').removeClass('active');
+      $('span[id="id-'+sessionStorage.activestudent+'"]').parent().addClass('active');
+      // When closing the window, revert the body overflow and scroll position
       $('.student-overlay button.close').on('click touch', function(e) {
         $('html,body').css('overflow','auto').css('height', '');
         $('body').animate({ scrollTop: sessionStorage.scrollpos }, 0);
@@ -75,6 +79,7 @@ $(document).ready(function() {
         var s = _.where(data.students, { _id:id })[0];
         $('.student-overlay').remove();
         $('body').append(StudentOverlay.render(s));
+        sessionStorage.activestudent = s._id;
         $(window).trigger('activatePeers');
       });
     });
@@ -88,6 +93,7 @@ $(document).ready(function() {
         $(this).off('click touch').on('click touch', function(e) {
           // Get the student information from the list
           var s = _.where(data.students, { id:id })[0];
+          sessionStorage.activestudent = s._id;
           // Save the current scroll position
           sessionStorage.scrollpos = document.body.scrollTop;
           // Append the overlay to the body
