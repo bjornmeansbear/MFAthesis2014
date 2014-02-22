@@ -36,6 +36,12 @@ $(document).ready(function() {
                                                   return 0;
                                                 }
         });
+      } else if (type === 'all') {
+        studentlist.filter();
+        studentlist.filter(function(item) {
+          return item.values().name.length > 1;
+        });
+        studentlist.sort('name', {order: 'asc'});
       }
       var pos = $('#students').offset();
       $('body').animate({ scrollTop: pos.top });
