@@ -8,7 +8,8 @@
 /* Constants ****************************
 
 Old Red: #f3421f;
-Red, aka Neon Coral, aka the new hottness: #fb7571;
+Newer old Red: #fb7571;
+Red, aka Neon Coral, aka the new hottness:#FF4C47
 
 *****/
 
@@ -151,7 +152,7 @@ button.btn.btn-default.dropdown-toggle.sort-studentlist {
   box-shadow: inset 0;
   -moz-box-shadow: inset 0;
   -webkit-box-shadow: inset 0;
-  color: #fb7571; 
+  color: #FF4C47; 
   }
   
 .dropdown-menu {
@@ -182,20 +183,20 @@ nav a{
   }
   
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
-  color: #fb7571;  
+  color: #FF4C47;  
   background: 0;
   }
 
 nav a:hover, nav a:focus {
-  color: #fb7571;  
+  color: #FF4C47;  
   background: 0;
   text-decoration: none;
-  color: #fb7571;  
+  color: #FF4C47;  
   background: 0;
   }
   
 nav a:active {
-  background-color: #fb7571;  
+  background-color: #FF4C47;  
   color: #fff;
   text-decoration: none;
   }
@@ -208,11 +209,11 @@ ul.nav > li > a {
   padding-top: 1.25em;
   padding-bottom: 4px;
   margin-bottom: 10px;
-  border-bottom: 3px solid #fb7571;
+  border-bottom: 3px solid #FF4C47;
   }
   
 .nav-pills li a:hover {
-  color: #fb7571;  
+  color: #FF4C47;  
   background: 0;
   }
   
@@ -247,7 +248,7 @@ main article {
   padding: 2em 0;
 }
 
-h1 {color: #fb7571}
+h1 {color: #FF4C47}
 
 .affix {
   position: fixed;
@@ -303,7 +304,7 @@ ul.grid-display .thumb .block .info p {
 }
 
 .gallery-info h4 {
-  color: #FB7571;
+  color: #FF4C47;
 }
 
 ul.grid-display .thumb .block .info h4 {
