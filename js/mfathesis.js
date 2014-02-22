@@ -3,6 +3,47 @@ $(document).ready(function() {
   $('header img.backgroundfill:nth-of-type('+_.random(1,$('header img.backgroundfill').length)+')').show();
   
   $.getJSON('http://mfa.cape.io/items/client_data.json', function(data) {
+    var showdates = [{
+      name: ["Hoffberger"],
+      date: '4/25/2013'
+    }, {
+      name: ["Post Bac FA"],
+      date: '1/31/2014'
+    }, {
+      name: ["Graphic Design", "Post Bac GD", "Illustration Practice"],
+      date: '3/28/2014'
+    }, {
+      name: "Social Design",
+      date: '4/23/2014'
+    }, {
+      name: ["Photo & Electronic Media", "Community Arts", "Photo & Electronic Media"],
+      date: '4/11/2014'
+    }, {
+      name: ["MA Teaching"],
+      date: '1/24/2014'
+    }, {
+      name: ["Mount Royal"],
+      date: '4/25/2014'
+    }, {
+      name: ['Rinehart', 'Curatorial'],
+      date: 'Not available'
+    }, {
+      name: ["Critical Studies"],
+      date: '5/3/2014'
+    }];
+    var showDate = function(program) {
+      var showdate = '';
+      var shows = this;
+      for (var i = 0; i<shows.length; i++) {
+        if (_.indexOf(shows[i].name, program) > -1) {
+          showdate = shows[i].date;
+        }
+      }
+      return showdate;
+    }
+    _.map(data.students, function(student) {
+      student.showdate = _.bind(showDate, showdates, student.program);
+    });
     var StudentTemplate = Hogan.compile($('#students-template').html());
     $('#projects-demo').html(StudentTemplate.render(data));
 
@@ -66,4 +107,3 @@ $(window).scroll(function(){
   }
 
 });
-
