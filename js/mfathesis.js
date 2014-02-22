@@ -67,11 +67,11 @@ $(window).scroll(function(){
   $("header > img.backgroundfill").css("transform","translateY(" + (s*-1.1) + "px)");
 
   if (s >= 380) {
-    $('header .ontop').addClass('sticky');
+    $('header .ontop .pattern').addClass('sticky');
   }
 
   else {
-    $('header .ontop').removeClass('sticky');
+    $('header .ontop .pattern').removeClass('sticky');
   }
 
 });

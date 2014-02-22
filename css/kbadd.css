@@ -13,19 +13,19 @@ header .ontop {
   background: transparent;
   position: absolute;
   bottom: 0;
-  z-index: 999;
-}
-
-header .ontop.sticky {
-  background: rgba(255,255,255,.5);
-  position: fixed;
-  top: -540px;
-  
 }
 
 header .ontop img {
   position: relative;
   bottom: 20px
+}
+
+header .ontop .sticky {
+  background: rgba(255,255,255,.5);
+  position: fixed;
+  top: -540px;
+  bottom: auto;
+  z-index: 999;
 }
 
 ul.grid-display .thumb .block {
