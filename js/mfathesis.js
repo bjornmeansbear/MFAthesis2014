@@ -14,5 +14,10 @@ $(document).ready(function() {
     studentlist.filter(function(item) {
       return item.values().name.length > 1;
     });
+    $('a.sort-studentlist').on('click touch', function(e) {
+      e.preventDefault();
+      var type = $(this).data('type');
+      studentlist.sort(type);
+    });
   });
 });
