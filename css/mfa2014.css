@@ -128,16 +128,31 @@ header img.backgroundfill {
 
 /* Nav Styles ***************************/
 
-nav img {width: 100%;}
-.nav-pills li a {
+nav img {width: 75%;}
+
+nav {
   font-weight: 700;
+  font-size: 16px;
+  color:#666;
+  }
+  
+nav li, ul {
+    list-style: none;
+    }
+
+.nav-pills li a {
   color:#000;
   border-radius: 0;
   margin: 0;
   padding: 0;
-  margin-bottom: 2em;
-  padding-bottom:6px;
+  padding-top: 1.25em;
+  padding-bottom: 4px;
+  margin-bottom: 10px;
   border-bottom: 3px solid #f3421f;
+  }
+  
+.nav-pills li a:last-child {
+  margin-bottom: 30px;
   }
   
 .nav-pills li a:hover {
@@ -148,6 +163,23 @@ nav img {width: 100%;}
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
   color: #f3421f;  
   background: 0;
+  }
+
+nav ul > li > ul {  /** First level subnav **/
+  margin-left: 0;
+  padding-left: 0;
+  line-height: 1.5em;
+  }
+  
+nav ul > li > ul > li > ul {  /** Second level subnav **/
+  margin-left: 0;
+  padding-left: 15px;
+  margin-bottom: 10px;
+  }
+
+.nav-label {
+  text-transform: uppercase;
+  font-weight: 900;
   }
 
 
