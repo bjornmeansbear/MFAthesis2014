@@ -162,11 +162,8 @@ ul.grid-display .thumb .block {
 }
 
 ul.grid-display .thumb .block .info {
-  background: #FB7571 ;
   padding: 10px;
-  height: 50px;
   position: relative;
-  overflow: hidden;
 }
 
 .gallery-info h4,
