@@ -71,6 +71,15 @@ $(document).ready(function() {
       var pos = $('#students').offset();
       $('body').animate({ scrollTop: pos.top-150 });
     });
+    $('#program-filter a').on('click touch', function(e) {
+      e.preventDefault();
+      var program = $(this).data('program');
+      studentlist.filter(function(item) {
+        return item.values().program.indexOf(program) >= 0;
+      });
+      var pos = $('#students').offset();
+      $('body').animate({ scrollTop: pos.top-150 });
+    });
     $('a.sort-studentlist').on('click touch', function(e) {
       e.preventDefault();
       var type = $(this).data('type');
