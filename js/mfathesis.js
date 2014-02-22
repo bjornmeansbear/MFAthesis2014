@@ -3,6 +3,7 @@ $(document).ready(function() {
   $('header img.backgroundfill:nth-of-type('+_.random(1,$('header img.backgroundfill').length)+')').show();
   
   $.getJSON('http://mfa.cape.io/items/client_data.json', function(data) {
+    // Programs grouped by showdates as taken from the actual data
     var showdates = [{
       name: ["Post Bac FA"],
       date: '1/31/2014'
@@ -28,6 +29,8 @@ $(document).ready(function() {
       name: ["Critical Studies"],
       date: '5/3/2014'
     }];
+
+    // Function to convert a program into a showdate
     var showDate = function(program) {
       var showdate = '';
       var shows = this;
@@ -38,26 +41,39 @@ $(document).ready(function() {
       }
       return showdate;
     }
+
+    // Map our showDate() function to a binding of showdates and the program name
     _.map(data.students, function(student) {
       student.showdate = _.bind(showDate, showdates, student.program);
     });
+
+    // Compile templates for the list and the overlay
     var StudentTemplate = Hogan.compile($('#students-template').html());
     var StudentOverlay = Hogan.compile($('#overlay-template').html());
+    
+    // Render the template for the list and initialize list.js
     $('#projects-demo').html(StudentTemplate.render(data));
-
     var options = {
       valueNames: [ 'name', 'program', 'exhibitionlocation', 'showdate', 'id' ]
     };
-
     var studentlist = new List('students', options);
+    
+    // Things to do when the studentlist is updated
     studentlist.on('updated', function() {
       $('li.student').each(function(i,obj) {
+        // Retrieve the id for the current list item
         var id = $(this).find('p.id').html();
+        // Click handler for the list item
         $(this).off('click touch').on('click touch', function(e) {
+          // Get the student information from the list
           var s = studentlist.get('id', id)[0].values();
+          // Save the current scroll position
           var pos = document.body.scrollTop;
+          // Append the overlay to the body
           $('body').append(StudentOverlay.render(s));
+          // Set the window height to eliminate scrolling
           $('html,body').css('overflow','hidden').height($(window).height());
+          // When we close the window, rest the body overflow and scroll position
           $('.student-overlay button.close').on('click touch', function(e) {
             $('html,body').css('overflow','auto').css('height', '');
             $('body').animate({ scrollTop: pos }, 0);
@@ -65,10 +81,14 @@ $(document).ready(function() {
         });
       });
     });
+    // Initially, sort the list by ascending first name
     studentlist.sort('name', { order: 'asc' });
+    // Filter out bad results
     studentlist.filter(function(item) {
       return item.values().name.length > 1;
     });
+
+    // Process gallery filter
     $('#gallery-filter a').on('click touch', function(e) {
       e.preventDefault();
       var gallery = $(this).data('gallery');
@@ -78,6 +98,8 @@ $(document).ready(function() {
       var pos = $('#students').offset();
       $('body').animate({ scrollTop: pos.top-150 });
     });
+
+    // Process the showdate filter
     $('#showdate-filter a').on('click touch', function(e) {
       e.preventDefault();
       var showdate = $(this).data('showdate');
@@ -87,6 +109,8 @@ $(document).ready(function() {
       var pos = $('#students').offset();
       $('body').animate({ scrollTop: pos.top-150 });
     });
+
+    // Process the program filter 
     $('#program-filter a').on('click touch', function(e) {
       e.preventDefault();
       var program = $(this).data('program');
@@ -96,6 +120,8 @@ $(document).ready(function() {
       var pos = $('#students').offset();
       $('body').animate({ scrollTop: pos.top-150 });
     });
+
+    // Sorting methods
     $('a.sort-studentlist').on('click touch', function(e) {
       e.preventDefault();
       var type = $(this).data('type');
