@@ -88,6 +88,21 @@ $(document).ready(function() {
       return item.values().name.length > 1;
     });
 
+    // Search on input keyup
+    $('input#search-students').on('keyup', function() {
+      var search = $(this).val();
+      if (search.length > 0) {
+        studentlist.filter(function (item) {
+          return item.values().name.toLowerCase().indexOf(search.toLowerCase()) >= 0;
+        });
+      } else {
+        studentlist.filter(function(item) {
+          return item.values().name.length > 1;
+        });
+      }
+      var pos = $('#students').offset();
+      $('body').animate({ scrollTop: pos.top-150 });
+    });
     // Process gallery filter
     $('#gallery-filter a').on('click touch', function(e) {
       e.preventDefault();
