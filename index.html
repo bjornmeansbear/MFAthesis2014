@@ -210,7 +210,7 @@ P    X          F                K       J              F      J     Y      5   
             <ul class="list row grid-display" id="projects-demo">
               <script id="students-template" type="text/x-mustache-template">
                 {{#students}}
-                <li class="col-sm-3 student thumb {{id}}">
+                <li class="col-sm-3 student thumb {{_id}}">
                   <div class="block">
                     <img src="img/thumbnails/{{_id}}.jpg" /> <!-- decent start to thumbnails -->
                     <div class="info">
@@ -218,7 +218,7 @@ P    X          F                K       J              F      J     Y      5   
                       <p class="program">{{program}}</p>
                       <p class="exhibitionlocation">{{exhibitionlocation}}</p>
                       <p class="show-date showdate">{{showdate}}</p>
-                      <p class="id" style="display:none">{{id}}</p>
+                      <p class="id" style="display:none">{{_id}}</p>
                     </div>
                   </div>
                 </li>
@@ -253,6 +253,54 @@ P    X          F                K       J              F      J     Y      5   
         <p>{{name}}</p>
         <p>{{program}}</p>
       </div>
+      
+      <div class="container">
+        <div class="row">
+      
+          <div class="col-sm-2">
+            <div>
+              <h2>{{First Name }}</h2>
+              <h2>{{Middle Name }}</h2>
+              <h2>{{Last Name }}</h2>
+      
+              <ul>
+                <li>{{program}}</li>
+                <li>{{exhibitionlocation}}</li>
+                <li>{{showdate}}</li>
+              </ul>
+      
+              <ul>
+                <li>{{ URL of Personal Website }}</li>
+                <li>{{ Personal Email }}</li>
+              </ul>
+      
+              <ul>
+                <li>Prev</li>
+                <li>Random?</li>
+                <li>Next</li>
+                <li>Close</li>
+              </ul>
+      
+            </div>
+          </div>
+      
+          <div class="col-sm-9 col-sm-offset-1">
+      
+            <ul>
+              <li>IMAGES! take use {{_id}} to match with Images...</li>
+            </ul>
+      
+            <article>
+              <p>{{ Website Long Statement / Up to 500 words }}</p>
+              <ul>
+                <li>{{ list of other people from same program }}</li>
+              </ul>
+            </article>
+      
+          </div>
+        </div>
+      </div>
+
     </script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
