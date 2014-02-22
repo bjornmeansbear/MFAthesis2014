@@ -6,16 +6,6 @@ $(document).ready(function() {
     var StudentTemplate = Hogan.compile($('#students-template').html());
     $('#projects-demo').html(StudentTemplate.render(data));
 
-    //set all student thumb areas to same height (new design on the fly!)
-    /*var thumbheight = -1;
-    $('.grid-display .thumb').each(function() {
-      thumbheight = thumbheight > $(this).height() ? thumbheight : $(this).height();
-    });
-    $('.grid-display .thumb').each(function() {
-      $(this).height(thumbheight);
-    });
-    */
-    
     var options = {
       valueNames: [ 'name', 'program', 'exhibitionlocation' ]
     };
