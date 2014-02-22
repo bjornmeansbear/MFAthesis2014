@@ -1,4 +1,8 @@
 
+header {
+  position: relative;
+}
+
 header > img.backgroundfill {
   position: relative;
   height: 100%;
@@ -7,7 +11,8 @@ header > img.backgroundfill {
 
 header .ontop {
   background: transparent;
-  position: relative;
+  position: absolute;
+  bottom: 0;
   z-index: 999;
 }
 
