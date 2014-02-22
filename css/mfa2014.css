@@ -273,10 +273,9 @@ ul.nav > li > a {
   border-radius: 0;
   margin: 0;
   padding: 0;
-  padding-top: 1.25em;
-  padding-bottom: 4px;
-  margin-bottom: 10px;
-  border-bottom: 3px solid #FF4C47;
+  padding-top: 16px;
+  padding-bottom: 3px;
+  border-bottom: 2px solid #FF4C47;
   }
   
 .nav-pills li a:hover {
