@@ -397,7 +397,8 @@ footer {
 }
 
 /* Overlay related styles */
-#projects-demo li {
+#projects-demo li, 
+ul.program-peers li {
   cursor: pointer;
 }
 
