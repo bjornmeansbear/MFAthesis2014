@@ -247,7 +247,6 @@ nav a{
   border-radius: 0;
   margin: 0;
   padding: 0;
-  letter-spacing: 1px;
   }
   
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
@@ -277,6 +276,7 @@ ul.nav > li > a {
   padding-top: 16px;
   padding-bottom: 3px;
   border-bottom: 2px solid #FF4C47;
+  letter-spacing: 1px;
   }
   
 .nav-pills li a:hover {
