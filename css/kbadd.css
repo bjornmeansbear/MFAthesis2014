@@ -1,8 +1,6 @@
 
 header > img.backgroundfill {
   position: relative;
-  height: 100%;
-  width: auto;
 }
 
 header .ontop img {
@@ -13,5 +11,23 @@ header .ontop {
     bottom: 0;
 }
 
+ul.grid-display .thumb .block {
+  background: transparent;
+}
 
+ul.grid-display .thumb .block > p:first-of-type {
+  height: 189px;
+  display: table-cell;
+  vertical-align: middle;
+  border: 1px solid;
+  margin-bottom:15px;
+}
+
+ul.grid-display .thumb .block .info {
+  padding: 15px 0;
+}
+
+ul.grid-display .thumb .block .info h4 {
+  color: #f3421f;
+}
 
