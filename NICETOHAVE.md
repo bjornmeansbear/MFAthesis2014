@@ -11,4 +11,3 @@ Break into new line for next program / header. See thumbnails_below design file 
 
 ## Add statement to student thumbnail on hover
 Along with a lovely neon coral overlay. 
-
