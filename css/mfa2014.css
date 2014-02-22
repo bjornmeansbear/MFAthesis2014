@@ -414,15 +414,23 @@ footer {
   overflow: scroll;
 }
 
-.student-overlay article p {
-  -moz-column-count: 2;
-  -moz-column-gap: 1em;
-  -moz-column-fill: balance;
-  -webkit-column-count: 2;
-  -webkit-column-gap: 1em;
-  -webkit-column-fill: balance;
-  column-count: 2;
-  column-gap: 1em;
-  column-fill: balance;
+.student-overlay .table {
+  display: table;
+  vertical-align: middle;
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
 }
 
+.student-overlay .tablecell {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+  width: 100%;
+}
+
+.student-overlay ul {
+  padding: 0;
+}
