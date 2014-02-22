@@ -65,6 +65,20 @@ $(document).ready(function() {
     };
     var studentlist = new List('students', options);
     
+    $(window).on('activatePeers', function() {
+      $('.student-overlay button.close').on('click touch', function(e) {
+        $('html,body').css('overflow','auto').css('height', '');
+        $('body').animate({ scrollTop: sessionStorage.scrollpos }, 0);
+      });
+      $('ul.program-peers li').on('click touch', function(e) {
+        var id = $(this).find('.id').html();
+        var s = _.where(data.students, { _id:id })[0];
+        $('.student-overlay').remove();
+        $('body').append(StudentOverlay.render(s));
+        $(window).trigger('activatePeers');
+      });
+    });
+
     // Things to do when the studentlist is updated
     studentlist.on('updated', function() {
       $('li.student').each(function(i,obj) {
@@ -74,18 +88,14 @@ $(document).ready(function() {
         $(this).off('click touch').on('click touch', function(e) {
           // Get the student information from the list
           var s = _.where(data.students, { id:id })[0];
-          console.log(s);
           // Save the current scroll position
-          var pos = document.body.scrollTop;
+          sessionStorage.scrollpos = document.body.scrollTop;
           // Append the overlay to the body
           $('body').append(StudentOverlay.render(s));
           // Set the window height to eliminate scrolling
           $('html,body').css('overflow','hidden').height($(window).height());
           // When we close the window, rest the body overflow and scroll position
-          $('.student-overlay button.close').on('click touch', function(e) {
-            $('html,body').css('overflow','auto').css('height', '');
-            $('body').animate({ scrollTop: pos }, 0);
-          });
+          $(window).trigger('activatePeers');
         });
       });
     });
