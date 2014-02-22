@@ -13,6 +13,87 @@ Red, aka Neon Coral, aka the new hottness:#FF4C47
 
 *****/
 
+/** @font-face import **/
+@font-face {
+    font-family: 'Calibre';
+    src: url('../type/cal-light.eot');
+    src: url('../type/cal-light.eot?#iefix') format('embedded-opentype'),
+         url('../type/cal-light.woff') format('woff'),
+         url('../type/cal-light.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    }
+    
+    
+@font-face {
+    font-family: 'Calibre';
+    src: url('../type/cal-regular.eot');
+    src: url('../type/cal-regular.eot?#iefix') format('embedded-opentype'),
+         url('../type/cal-regular.woff') format('woff'),
+         url('../type/cal-regular.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    }
+
+@font-face {
+    font-family: 'Calibre';
+    src: url('../type/cal-medium.eot');
+    src: url('../type/cal-medium.eot?#iefix') format('embedded-opentype'),
+         url('../type/cal-medium.woff') format('woff'),
+         url('../type/cal-medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    }
+
+@font-face {
+    font-family: 'Calibre';
+    src: url('../type/cal-semibold.eot');
+    src: url('../type/cal-semibold.eot?#iefix') format('embedded-opentype'),
+         url('../type/cal-semibold.woff') format('woff'),
+         url('../type/cal-semibold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    }
+
+@font-face {
+    font-family: 'Calibre';
+    src: url('../type/cal-lightitalic.eot');
+    src: url('../type/cal-lightitalic.eot?#iefix') format('embedded-opentype'),
+         url('../type/cal-lightitalic.woff') format('woff'),
+         url('../type/cal-lightitalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    }
+
+@font-face {
+    font-family: 'Calibre';
+    src: url('../type/cal-regularitalic.eot');
+    src: url('../type/cal-regularitalic.eot?#iefix') format('embedded-opentype'),
+         url('../type/cal-regularitalic.woff') format('woff'),
+         url('../type/cal-regularitalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    }
+
+@font-face {
+    font-family: 'Calibre';
+    src: url('../type/cal-mediumitalic.eot');
+    src: url('../type/cal-mediumitalic.eot?#iefix') format('embedded-opentype'),
+         url('../type/cal-mediumitalic.woff') format('woff'),
+         url('../type/cal-mediumitalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    }
+
+@font-face {
+    font-family: 'Calibre';
+    src: url('../type/cal-semibolditalic.eot');
+    src: url('../type/cal-semibolditalic.eot?#iefix') format('embedded-opentype'),
+         url('../type/cal-semibolditalic.woff') format('woff'),
+         url('../type/cal-semibolditalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    }
 
 /* Global Text Styles *******************/
 
@@ -27,6 +108,11 @@ h1, h2, h3, h4, h5 {
   font-weight: 700;
   }
 
+h1 {
+  font-size: 45px;
+  color: #FF4C47;
+  margin-bottom: 20px;
+  }
 
 h4  {
   color: #FF4C47;
@@ -71,101 +157,10 @@ p a:active {
   border-bottom: 2px solid #FF4C47;
   }
   
-  
 article p {
   margin-bottom: 15px;
   }
   
-  
-/** @font-face import **/
-@font-face {
-    font-family: 'Calibre';
-    src: url('../type/cal-light.eot');
-    src: url('../type/cal-light.eot?#iefix') format('embedded-opentype'),
-         url('../type/cal-light.woff') format('woff'),
-         url('../type/cal-light.ttf') format('truetype');
-    font-weight: 100;
-    font-style: normal;
-    }
-    
-    
-@font-face {
-    font-family: 'Calibre';
-    src: url('../type/cal-regular.eot');
-    src: url('../type/cal-regular.eot?#iefix') format('embedded-opentype'),
-         url('../type/cal-regular.woff') format('woff'),
-         url('../type/cal-regular.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-    }
-
-
-@font-face {
-    font-family: 'Calibre';
-    src: url('../type/cal-medium.eot');
-    src: url('../type/cal-medium.eot?#iefix') format('embedded-opentype'),
-         url('../type/cal-medium.woff') format('woff'),
-         url('../type/cal-medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-    }
-
-
-@font-face {
-    font-family: 'Calibre';
-    src: url('../type/cal-semibold.eot');
-    src: url('../type/cal-semibold.eot?#iefix') format('embedded-opentype'),
-         url('../type/cal-semibold.woff') format('woff'),
-         url('../type/cal-semibold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-    }
-
-
-@font-face {
-    font-family: 'Calibre';
-    src: url('../type/cal-lightitalic.eot');
-    src: url('../type/cal-lightitalic.eot?#iefix') format('embedded-opentype'),
-         url('../type/cal-lightitalic.woff') format('woff'),
-         url('../type/cal-lightitalic.ttf') format('truetype');
-    font-weight: 100;
-    font-style: italic;
-    }
-
-
-@font-face {
-    font-family: 'Calibre';
-    src: url('../type/cal-regularitalic.eot');
-    src: url('../type/cal-regularitalic.eot?#iefix') format('embedded-opentype'),
-         url('../type/cal-regularitalic.woff') format('woff'),
-         url('../type/cal-regularitalic.ttf') format('truetype');
-    font-weight: 300;
-    font-style: italic;
-    }
-
-
-@font-face {
-    font-family: 'Calibre';
-    src: url('../type/cal-mediumitalic.eot');
-    src: url('../type/cal-mediumitalic.eot?#iefix') format('embedded-opentype'),
-         url('../type/cal-mediumitalic.woff') format('woff'),
-         url('../type/cal-mediumitalic.ttf') format('truetype');
-    font-weight: 500;
-    font-style: italic;
-    }
-
-
-@font-face {
-    font-family: 'Calibre';
-    src: url('../type/cal-semibolditalic.eot');
-    src: url('../type/cal-semibolditalic.eot?#iefix') format('embedded-opentype'),
-         url('../type/cal-semibolditalic.woff') format('woff'),
-         url('../type/cal-semibolditalic.ttf') format('truetype');
-    font-weight: 700;
-    font-style: italic;
-    }
-   
-
 /* Image Header Styles ******************/
 
 header {
@@ -178,16 +173,32 @@ header {
 header img.backgroundfill {
   display: none;
   position: absolute;
-  left: 50%;
-  width: 100%;
-  margin-left: -50%;
   z-index: -1;
-  }
+  height: 100%;
+  width: auto;
+}
 
+header .ontop {
+  background: transparent;
+  position: absolute;
+  bottom: 0;
+}
 
+header .ontop img {
+  position: relative;
+  bottom: 20px;
+}
+
+header .ontop .sticky {
+  background: white;
+  background: rgba(255,255,255,.75);
+  position: fixed;
+  top: -398px;
+  bottom: auto;
+  z-index: 999;
+}
 
 /* Nav Styles ***************************/
-
 
 button.btn.btn-default.dropdown-toggle.sort-studentlist {
   border: 0;
@@ -212,7 +223,6 @@ button.btn.btn-default.dropdown-toggle.sort-studentlist {
   top:-10px;
   padding: 12px 0;
   }
-  
 
 nav, button.btn.btn-default.dropdown-toggle.sort-studentlist, .dropdown-menu > li > a{
   font-weight: 700;
@@ -304,18 +314,11 @@ div.input-group {margin: 10px 0;}
   padding: 0;
   }
 
-
 /* Main Content Styles ******************/
 
 main article {
   padding: 2em 0;
 }
-
-h1 {
-  font-size: 45px;
-  color: #FF4C47;
-  margin-bottom: 20px;
-  }
 
 .affix {
   position: fixed;
@@ -323,7 +326,6 @@ h1 {
   width: inherit;
   max-width: 165px;
 }
-
 
 #intro p.lead {
   font-weight: bold;
@@ -346,8 +348,12 @@ ul.grid-display li {
   position: relative;
 }
 
+ul.grid-display .thumb {
+  height: 333px;
+}
+
 ul.grid-display .thumb .block {
-  background: #eee;
+  background: transparent;
   font-size: 1em;
   text-transform: uppercase;
   overflow: hidden;
@@ -355,7 +361,7 @@ ul.grid-display .thumb .block {
 }
 
 ul.grid-display .thumb .block .info {
-  padding: 10px;
+  padding: 15px 0;
   position: relative;
 }
 
@@ -370,15 +376,12 @@ ul.grid-display .thumb .block .info p {
   letter-spacing: 1px;
 }
 
-.gallery-info h4 {
+.gallery-info h4,
+ul.grid-display .thumb .block .info h4 {
   color: #FF4C47;
 }
 
-ul.grid-display .thumb .block .info h4 {
-  color: white;
-}
-
-
+#intro { padding-top: .66em; }
 
 /* Footer Styles ************************/
 
