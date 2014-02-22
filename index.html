@@ -116,9 +116,9 @@
             <p>It would be best if this worked more or less like the R&G dynamic list we've been working on... Except that it will show all student project entries by default... Lazy load useful here perhaps?</p>
 
             <!-- holy crap, Sheetrock is working pretty well so far -->
-            <ul class="row grid-display" id="projects-demo">
+            <ul class="list row grid-display" id="projects-demo">
               <script id="students-template" type="text/x-mustache-template">
-                {{#student}}
+                {{#students}}
                 <li class="col-sm-3 student thumb">
                   <div class="block">
                     <p>Somehow we need to feed an image here... and match it with the ID: {{id}}</p>
@@ -129,7 +129,7 @@
                     </div>
                   </div>
                 </li>
-                {{/student}}
+                {{/students}}
               </script>
             </ul>
 
