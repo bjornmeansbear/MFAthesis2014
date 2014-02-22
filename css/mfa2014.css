@@ -121,6 +121,8 @@ h1, h2, h3, h4, h5 {
 header {
   position: relative;
   color:#fff;
+  width: 100%;
+  overflow: hidden;
   }
   
 header img.backgroundfill {
@@ -258,6 +260,8 @@ h4  {
   font-weight: 900;
   margin: 0;
   padding: 0;
+  text-transform: uppercase;
+  margin: 15px 0 3px 0;
   }
 
 h5 {
