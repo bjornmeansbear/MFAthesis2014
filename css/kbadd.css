@@ -5,13 +5,22 @@ header > img.backgroundfill {
   width: auto;
 }
 
-header .ontop img {
-    position: relative;
-    bottom: 20px
-}
 header .ontop {
-    position: absolute;
-    bottom: 0;
+  background: transparent;
+  position: absolute;
+  bottom: 0;
+}
+
+header .ontop.sticky {
+  background: rgba(255,255,255,.5);
+  position: fixed;
+  top: -540px;
+  
+}
+
+header .ontop img {
+  position: relative;
+  bottom: 20px
 }
 
 ul.grid-display .thumb .block {
@@ -33,5 +42,4 @@ ul.grid-display .thumb .block .info {
 ul.grid-display .thumb .block .info h4 {
   color: #f3421f;
 }
-
 
