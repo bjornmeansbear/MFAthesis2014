@@ -220,12 +220,12 @@ button.btn.btn-default.dropdown-toggle.sort-studentlist {
   
 .dropdown-menu { /* if in dropdown mode */
   left: 80px;
-  top:-20px;
+  top:-15px;
   padding: 12px 0;
   }
 
 .dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu { /* when in dropup mode */
-  bottom: -20px;
+  bottom: -15px;
 }
 
 nav, button.btn.btn-default.dropdown-toggle.sort-studentlist, .dropdown-menu > li > a{
