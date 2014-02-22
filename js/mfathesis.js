@@ -68,11 +68,43 @@ $(document).ready(function() {
     // Event to trigger to link up the peers on the student overlay
     $(window).on('activatePeers', function() {
       $('ul.program-peers li').removeClass('active');
-      $('span[id="id-'+sessionStorage.activestudent+'"]').parent().addClass('active');
+      var $active = $('span[id="id-'+sessionStorage.activestudent+'"]');
+      var previous_id = $active.parent().prev().find('.id:hidden').html();
+      var next_id = $active.parent().next().find('.id:hidden').html();
+      console.log(next_id);
+      $active.parent().addClass('active');
       // When closing the window, revert the body overflow and scroll position
       $('.student-overlay button.close').on('click touch', function(e) {
         $('html,body').css('overflow','auto').css('height', '');
         $('body').animate({ scrollTop: sessionStorage.scrollpos }, 0);
+      });
+      $('span.glyphicon-chevron-left').off().on('click touch', function(e) {
+        if (_.isUndefined(previous_id) == false) {
+          var s = _.where(data.students, { _id:previous_id })[0];
+          $('.student-overlay').remove();
+          $('body').append(StudentOverlay.render(s));
+          sessionStorage.activestudent = s._id;
+          $(window).trigger('activatePeers');
+        }
+      });
+      $('span.glyphicon-chevron-right').off().on('click touch', function(e) {
+        if (_.isUndefined(next_id) == false) {
+          var s = _.where(data.students, { _id:next_id })[0];
+          $('.student-overlay').remove();
+          $('body').append(StudentOverlay.render(s));
+          sessionStorage.activestudent = s._id;
+          $(window).trigger('activatePeers');
+        }
+      });
+      //glyphicon-random
+      $('span.glyphicon-random').off().on('click touch', function(e) {
+        var random_id = $('.program-peers li:nth-of-type('+_.random(1,$('.program-peers li').length)+')').find('.id:hidden').html();
+        console.log(random_id,$('.program-peers li').length);
+        var s = _.where(data.students, { _id:random_id })[0];
+        $('.student-overlay').remove();
+        $('body').append(StudentOverlay.render(s));
+        sessionStorage.activestudent = s._id;
+        $(window).trigger('activatePeers');
       });
       $('ul.program-peers li').on('click touch', function(e) {
         var id = $(this).find('.id').html();
