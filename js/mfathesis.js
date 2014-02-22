@@ -64,5 +64,14 @@ $(document).ready(function() {
 $(window).scroll(function(){
   var s = $(window).scrollTop();
   $("header > img.backgroundfill").css("transform","translateY(" + (s*-1.1) + "px)");
+
+  if (s >= 380) {
+    $('header .ontop img.pattern').addClass('sticky');
+  }
+
+  else {
+    $('header .ontop img.pattern').removeClass('sticky');
+  }
+
 });
 
