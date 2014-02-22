@@ -102,18 +102,22 @@ body {
   font-size: 16px;
   }
   
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   }
 
+h1, h2, h3, h4,
+.gallery-info h4,
+.thumb .block .info h4 {
+  color: #FF4C47;
+}
+
 h1 {
   font-size: 45px;
-  color: #FF4C47;
   margin-bottom: 20px;
   }
 
 h4  {
-  color: #FF4C47;
   font-size: 16px;
   font-weight: 900;
   margin: 0;
@@ -380,11 +384,6 @@ ul.grid-display .thumb .block .info p {
   letter-spacing: 1px;
 }
 
-.gallery-info h4,
-ul.grid-display .thumb .block .info h4 {
-  color: #FF4C47;
-}
-
 #intro { padding-top: .66em; }
 
 /* Footer Styles ************************/
@@ -397,22 +396,33 @@ footer {
   padding-bottom: 6em;
 }
 
+/* Overlay related styles */
+#projects-demo li {
+  cursor: pointer;
+}
 
 .student-overlay {
   z-index: 9000;
   background: #fff;
   width: 100%;
   height: 100%;
-}
-
-.student-overlay {
   position: fixed;
   top:0;
   bottom:0;
   left:0;
   right:0;
+  overflow: scroll;
 }
 
-#projects-demo li {
-  cursor: pointer;
+.student-overlay article p {
+  -moz-column-count: 2;
+  -moz-column-gap: 1em;
+  -moz-column-fill: balance;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 1em;
+  -webkit-column-fill: balance;
+  column-count: 2;
+  column-gap: 1em;
+  column-fill: balance;
 }
+
