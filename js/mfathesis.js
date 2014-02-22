@@ -11,6 +11,8 @@ $(document).ready(function() {
 
     var studentlist = new List('students', options);
     studentlist.sort('name', { order: 'asc' });
-    console.log(studentlist.matchingItems);
+    studentlist.filter(function(item) {
+      return item.values().name.length > 1;
+    });
   });
 });
