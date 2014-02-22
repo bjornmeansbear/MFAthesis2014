@@ -250,53 +250,50 @@ P    X          F                K       J              F      J     Y      5   
     <script id="overlay-template" type="text/x-mustache-template">
       <div class="student-overlay alert alert-dismissible">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <p>{{name}}</p>
-        <p>{{program}}</p>
-      </div>
-      
-      <div class="container">
-        <div class="row">
-      
-          <div class="col-sm-2">
-            <div>
-              <h2>{{First Name }}</h2>
-              <h2>{{Middle Name }}</h2>
-              <h2>{{Last Name }}</h2>
-      
-              <ul>
-                <li>{{program}}</li>
-                <li>{{exhibitionlocation}}</li>
-                <li>{{showdate}}</li>
-              </ul>
-      
-              <ul>
-                <li>{{ URL of Personal Website }}</li>
-                <li>{{ Personal Email }}</li>
-              </ul>
-      
-              <ul>
-                <li>Prev</li>
-                <li>Random?</li>
-                <li>Next</li>
-                <li>Close</li>
-              </ul>
-      
+        <div class="container">
+          <div class="row">
+        
+            <div class="col-sm-2">
+              <div>
+                <h2>{{ firstname }}</h2>
+                <h2>{{ middlename }}</h2>
+                <h2>{{ lastname }}</h2>
+        
+                <ul>
+                  <li>{{program}}</li>
+                  <li>{{exhibitionlocation}}</li>
+                  <li>{{showdate}}</li>
+                </ul>
+        
+                <ul>
+                  <li>{{ URL of Personal Website }}</li>
+                  <li>{{ Personal Email }}</li>
+                </ul>
+        
+                <ul>
+                  <li>Prev</li>
+                  <li>Random?</li>
+                  <li>Next</li>
+                  <li>Close</li>
+                </ul>
+        
+              </div>
             </div>
-          </div>
-      
-          <div class="col-sm-9 col-sm-offset-1">
-      
-            <ul>
-              <li>IMAGES! take use {{_id}} to match with Images...</li>
-            </ul>
-      
-            <article>
-              <p>{{ Website Long Statement / Up to 500 words }}</p>
+        
+            <div class="col-sm-9 col-sm-offset-1">
+        
               <ul>
-                <li>{{ list of other people from same program }}</li>
+                <li>IMAGES! take use {{_id}} to match with Images...</li>
               </ul>
-            </article>
-      
+        
+              <article>
+                <p>{{ Website Long Statement / Up to 500 words }}</p>
+                <ul>
+                  <li>{{ list of other people from same program }}</li>
+                </ul>
+              </article>
+        
+            </div>
           </div>
         </div>
       </div>

@@ -66,7 +66,8 @@ $(document).ready(function() {
         // Click handler for the list item
         $(this).off('click touch').on('click touch', function(e) {
           // Get the student information from the list
-          var s = studentlist.get('id', id)[0].values();
+          var s = _.where(data.students, { id:id })[0];
+          console.log(s);
           // Save the current scroll position
           var pos = document.body.scrollTop;
           // Append the overlay to the body
@@ -100,8 +101,6 @@ $(document).ready(function() {
           return item.values().name.length > 1;
         });
       }
-      // var pos = $('#students').offset();
-      // $('body').animate({ scrollTop: pos.top-150 });
     });
     // Process gallery filter
     $('#gallery-filter a').on('click touch', function(e) {
