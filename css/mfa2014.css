@@ -414,23 +414,24 @@ footer {
   overflow: scroll;
 }
 
-.student-overlay .table {
-  display: table;
-  vertical-align: middle;
+.student-overlay .close {
+  float: none;
   position: absolute;
-  top:0;
-  left:0;
-  bottom:0;
-  right:0;
-}
-
-.student-overlay .tablecell {
-  display: table-cell;
-  vertical-align: middle;
-  height: 100%;
-  width: 100%;
+  top:0.1em;
+  right:0.1em;
+  font-size: 4em;
+  height: 1em;
+  width: 1em;
 }
 
 .student-overlay ul {
   padding: 0;
+}
+
+.student-overlay h2 {
+  margin: 0;
+}
+
+.student-overlay h2:last-of-type {
+  margin-bottom: .66em;
 }
