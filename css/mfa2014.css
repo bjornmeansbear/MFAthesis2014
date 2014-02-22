@@ -291,7 +291,7 @@ h1 {color: #FF4C47}
 
 .affix {
   position: fixed;
-  top: 244px;
+  top: 200px;
   width: inherit;
   max-width: 165px;
 }
