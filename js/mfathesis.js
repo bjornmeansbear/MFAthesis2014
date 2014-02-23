@@ -80,7 +80,7 @@ $(document).ready(function() {
         $('body').animate({ scrollTop: sessionStorage.scrollpos }, 0);
       });
       // Navigate to the previous person on the list
-      $('span.glyphicon-chevron-left').off().on('click touch', function(e) {
+      $('.student-nav span.glyphicon-chevron-left').off().on('click touch', function(e) {
         if (_.isUndefined(previous_id) == false) {
           hash.add({id:previous_id});
         }
@@ -97,7 +97,7 @@ $(document).ready(function() {
         hash.add({id:random_id});
       });
       // Create click handlers for each person in the same program
-      $('.student-nav ul.program-peers li').on('click touch', function(e) {
+      $('ul.program-peers li').on('click touch', function(e) {
         var id = $(this).find('.id').html();
         hash.add({id:id});
       });
