@@ -232,4 +232,11 @@ $(window).scroll(function(){
     $('header .ontop .pattern').removeClass('sticky');
   }
 
+  $('ul.nav > li > a').on('click touch', function(e) {
+    e.preventDefault();
+    offset = $(this.hash).offset().top - 150;
+    $('html, body').stop().animate({
+      scrollTop: offset
+    }, 400);
+  });
 });
