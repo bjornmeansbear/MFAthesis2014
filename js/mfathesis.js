@@ -86,18 +86,18 @@ $(document).ready(function() {
         }
       });
       // Navigate to the next person on the list
-      $('span.glyphicon-chevron-right').off().on('click touch', function(e) {
+      $('.student-nav span.glyphicon-chevron-right').off().on('click touch', function(e) {
         if (_.isUndefined(next_id) == false) {
           hash.add({id:next_id});
         }
       });
       // Navigate to a random person in the list
-      $('span.glyphicon-random').off().on('click touch', function(e) {
+      $('.student-nav span.glyphicon-random').off().on('click touch', function(e) {
         var random_id = $('.program-peers li:nth-of-type('+_.random(1,$('.program-peers li').length)+')').find('.id:hidden').html();
         hash.add({id:random_id});
       });
       // Create click handlers for each person in the same program
-      $('ul.program-peers li').on('click touch', function(e) {
+      $('.student-nav ul.program-peers li').on('click touch', function(e) {
         var id = $(this).find('.id').html();
         hash.add({id:id});
       });
@@ -213,8 +213,10 @@ $(document).ready(function() {
       var pos = $('#students').offset();
       $('body').animate({ scrollTop: pos.top-150 });
     });
+    if (window.location.hash.length > 0) {
+      $(window).trigger('hashchange');
+    }
   });
-  
 });
 
 // Parallax Scrolling for the SiteName -->
