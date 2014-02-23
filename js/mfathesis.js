@@ -235,6 +235,7 @@ $(window).scroll(function(){
   $('ul.nav > li > a').on('click touch', function(e) {
     e.preventDefault();
     offset = $(this.hash).offset().top - 150;
+    if ($(this).attr('href') == '#intro') offset = 0;
     $('html, body').stop().animate({
       scrollTop: offset
     }, 400);
