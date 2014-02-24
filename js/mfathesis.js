@@ -110,6 +110,7 @@ $(document).ready(function() {
         var s = _.where(data.students, { _id:id })[0];
         $('.student-overlay').remove();
         $('body').append(StudentOverlay.render(s));
+        $('html,body').css('overflow','hidden').height($(window).height());
         sessionStorage.activestudent = s._id;
         $(window).trigger('activatePeers');
       }
@@ -128,10 +129,6 @@ $(document).ready(function() {
           hash.add({id:s._id});
           // Save the current scroll position
           sessionStorage.scrollpos = document.body.scrollTop;
-          // Append the overlay to the body
-          $('body').append(StudentOverlay.render(s));
-          // Set the window height to eliminate scrolling
-          $('html,body').css('overflow','hidden').height($(window).height());
           // When we close the window, rest the body overflow and scroll position
           $(window).trigger('activatePeers');
         });
