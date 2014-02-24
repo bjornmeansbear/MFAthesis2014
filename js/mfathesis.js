@@ -64,24 +64,55 @@ $(document).ready(function() {
       valueNames: [ 'name', 'program', 'exhibitionlocation', 'showdate', 'id' ]
     };
     var studentlist = new List('students', options);
-    
+
     // Event to trigger to link up the peers on the student overlay
     $(window).on('activatePeers', function() {
       $('ul.program-peers li').removeClass('active');
-      $('span[id="id-'+sessionStorage.activestudent+'"]').parent().addClass('active');
+      // Get the active element and previous and next for button usage
+      var $active = $('span[id="id-'+sessionStorage.activestudent+'"]');
+      var previous_id = $active.parent().prev().find('.id:hidden').html();
+      var next_id = $active.parent().next().find('.id:hidden').html();
+      $active.parent().addClass('active');
       // When closing the window, revert the body overflow and scroll position
       $('.student-overlay button.close').on('click touch', function(e) {
+        hash.remove('id');
         $('html,body').css('overflow','auto').css('height', '');
         $('body').animate({ scrollTop: sessionStorage.scrollpos }, 0);
       });
+      // Navigate to the previous person on the list
+      $('.student-nav span.glyphicon-chevron-left').off().on('click touch', function(e) {
+        if (_.isUndefined(previous_id) == false) {
+          hash.add({id:previous_id});
+        }
+      });
+      // Navigate to the next person on the list
+      $('.student-nav span.glyphicon-chevron-right').off().on('click touch', function(e) {
+        if (_.isUndefined(next_id) == false) {
+          hash.add({id:next_id});
+        }
+      });
+      // Navigate to a random person in the list
+      $('.student-nav span.glyphicon-random').off().on('click touch', function(e) {
+        var random_id = $('.program-peers li:nth-of-type('+_.random(1,$('.program-peers li').length)+')').find('.id:hidden').html();
+        hash.add({id:random_id});
+      });
+      // Create click handlers for each person in the same program
       $('ul.program-peers li').on('click touch', function(e) {
         var id = $(this).find('.id').html();
+        hash.add({id:id});
+      });
+    });
+
+    // Process items on hashchange
+    $(window).on('hashchange', function(e) {
+      var id = hash.get('id');
+      if (_.isUndefined(id) == false) {
         var s = _.where(data.students, { _id:id })[0];
         $('.student-overlay').remove();
         $('body').append(StudentOverlay.render(s));
         sessionStorage.activestudent = s._id;
         $(window).trigger('activatePeers');
-      });
+      }
     });
 
     // Things to do when the studentlist is updated
@@ -94,6 +125,7 @@ $(document).ready(function() {
           // Get the student information from the list
           var s = _.where(data.students, { id:id })[0];
           sessionStorage.activestudent = s._id;
+          hash.add({id:s._id});
           // Save the current scroll position
           sessionStorage.scrollpos = document.body.scrollTop;
           // Append the overlay to the body
@@ -173,7 +205,6 @@ $(document).ready(function() {
                                                     }
         });
       } else if (type === 'all') {
-        studentlist.filter();
         studentlist.filter(function(item) {
           return item.values().name.length > 1;
         });
@@ -182,8 +213,10 @@ $(document).ready(function() {
       var pos = $('#students').offset();
       $('body').animate({ scrollTop: pos.top-150 });
     });
+    if (window.location.hash.length > 0) {
+      $(window).trigger('hashchange');
+    }
   });
-  
 });
 
 // Parallax Scrolling for the SiteName -->
@@ -199,4 +232,12 @@ $(window).scroll(function(){
     $('header .ontop .pattern').removeClass('sticky');
   }
 
+  $('ul.nav > li > a').on('click touch', function(e) {
+    e.preventDefault();
+    offset = $(this.hash).offset().top - 150;
+    if ($(this).attr('href') == '#intro') offset = 0;
+    $('html, body').stop().animate({
+      scrollTop: offset
+    }, 400);
+  });
 });
