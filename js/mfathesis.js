@@ -78,17 +78,26 @@ $(document).ready(function() {
       $('.student-overlay button.close').on('click touch', function(e) {
         hash.remove('id');
         $('html,body').css('overflow','auto').css('height', '');
+        if (_.isUndefined(sessionStorage.overlaypos) == false) {
+          delete(sessionStorage.overlaypos);
+        }
         $('body').animate({ scrollTop: sessionStorage.scrollpos }, 0);
       });
       // Navigate to the previous person on the list
       $('.student-nav span.glyphicon-chevron-left').off().on('click touch', function(e) {
         if (_.isUndefined(previous_id) == false) {
+          if (_.isUndefined(sessionStorage.overlaypos) == false) {
+            delete(sessionStorage.overlaypos);
+          }
           hash.add({id:previous_id});
         }
       });
       // Navigate to the next person on the list
       $('.student-nav span.glyphicon-chevron-right').off().on('click touch', function(e) {
         if (_.isUndefined(next_id) == false) {
+          if (_.isUndefined(sessionStorage.overlaypos) == false) {
+            delete(sessionStorage.overlaypos);
+          }
           hash.add({id:next_id});
         }
       });
@@ -100,6 +109,7 @@ $(document).ready(function() {
       // Create click handlers for each person in the same program
       $('ul.program-peers li').on('click touch', function(e) {
         var id = $(this).find('.id').html();
+        sessionStorage.overlaypos = $('.student-overlay').scrollTop();
         hash.add({id:id});
       });
     });
@@ -112,6 +122,9 @@ $(document).ready(function() {
         $('.student-overlay').remove();
         $('body').append(StudentOverlay.render(s));
         $('html,body').css('overflow','hidden').height($(window).height());
+        if (_.isUndefined(sessionStorage.overlaypos) == false) {
+          $('.student-overlay').animate({ scrollTop: sessionStorage.overlaypos }, 0);
+        }
         sessionStorage.activestudent = s._id;
         $(window).trigger('activatePeers');
       }
