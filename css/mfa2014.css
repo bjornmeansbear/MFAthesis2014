@@ -393,6 +393,9 @@ main article {
   }
 }
 
+#schedule ul {padding: 0;}
+#schedule ul h3 {margin: 0;}
+
 ul.grid-display {
   list-style: none;
   margin: 0;
