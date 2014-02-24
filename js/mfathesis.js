@@ -45,6 +45,7 @@ $(document).ready(function() {
     // Function for getting a list of other people in the same program
     var sameProgram = function(program) {
       var students = this;
+      program = program.replace('&amp;','&');
       return _.sortBy(_.where(students, { program: program }), 'firstname');
     }
 
