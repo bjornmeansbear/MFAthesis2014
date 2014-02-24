@@ -179,9 +179,10 @@ $(document).ready(function() {
     // Process the program filter 
     $('#program-filter a').on('click touch', function(e) {
       e.preventDefault();
-      var program = $(this).data('program');
+      var program = decodeURIComponent($(this).data('program'));
       studentlist.filter(function(item) {
-        return item.values().program.indexOf(program) >= 0;
+        console.log(program, decodeURIComponent(item.values().program)); 
+        return item.values().program.replace('&amp;','&').toLowerCase().indexOf(program.toLowerCase()) >= 0;
       });
       var pos = $('#students').offset();
       $('body').animate({ scrollTop: pos.top-150 });
