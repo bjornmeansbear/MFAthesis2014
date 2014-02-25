@@ -55,13 +55,15 @@ $(document).ready(function() {
       return slideshow[id];
     }
 
+    // Used for the indicators
     var slideShowcount = function(id) {
       var slideshow = this;
       var r = [];
-      for (var i=0; i<slideshow[id].length; i++) {
-        r.push(i);
+      if (_.isUndefined(slideshow[id] == false)) {
+        for (var i=0; i<slideshow[id].length; i++) {
+          r.push(i);
+        }
       }
-      console.log(r)
       return r;
     }
 
