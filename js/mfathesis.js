@@ -52,6 +52,7 @@ $(document).ready(function() {
     // Slideshow items
     var slideShow = function(id) {
       var slideshow = this;
+      if (_.isUndefined(slideshow[id])) return [];
       return slideshow[id];
     }
 
@@ -142,11 +143,11 @@ $(document).ready(function() {
         $('.student-overlay').remove();
         $('body').append(StudentOverlay.render(s));
         $('html,body').css('overflow','hidden').height($(window).height());
+        $('div.carousel-inner div.item:nth-of-type(1)').addClass('active');
+        $('#slideshow ol.carousel-indicators li:nth-of-type(1)').addClass('active');
         if (_.isUndefined(sessionStorage.overlaypos) == false) {
           $('.student-overlay').animate({ scrollTop: sessionStorage.overlaypos }, 0);
         }
-        $('div.carousel-inner div.item:nth-of-type(1)').addClass('active');
-        $('#slideshow ol.carousel-indicators li:nth-of-type(1)').addClass('active');
         sessionStorage.activestudent = s._id;
         $(window).trigger('activatePeers');
       }
