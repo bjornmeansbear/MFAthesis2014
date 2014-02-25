@@ -49,10 +49,28 @@ $(document).ready(function() {
       return _.sortBy(_.where(students, { program: program }), 'firstname');
     }
 
+    // Slideshow items
+    var slideShow = function(id) {
+      var slideshow = this;
+      return slideshow[id];
+    }
+
+    var slideShowcount = function(id) {
+      var slideshow = this;
+      var r = [];
+      for (var i=0; i<slideshow[id].length; i++) {
+        r.push(i);
+      }
+      console.log(r)
+      return r;
+    }
+
     // Map our showDate() function to a binding of showdates and the program name
     _.map(data.students, function(student) {
       student.showdate = _.bind(showDate, showdates, student.program);
       student.peers = _.bind(sameProgram, data.students, student.program);
+      student.slideshow = _.bind(slideShow, data.slideshow, student._id);
+      student.slideshowcount = _.bind(slideShowcount, data.slideshow, student._id);
     });
 
     // Compile templates for the list and the overlay
@@ -125,6 +143,8 @@ $(document).ready(function() {
         if (_.isUndefined(sessionStorage.overlaypos) == false) {
           $('.student-overlay').animate({ scrollTop: sessionStorage.overlaypos }, 0);
         }
+        $('div.carousel-inner div.item:nth-of-type(1)').addClass('active');
+        $('#slideshow ol.carousel-indicators li:nth-of-type(1)').addClass('active');
         sessionStorage.activestudent = s._id;
         $(window).trigger('activatePeers');
       }
