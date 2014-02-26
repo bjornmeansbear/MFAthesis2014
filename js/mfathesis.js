@@ -156,6 +156,7 @@ $(document).ready(function() {
         if (_.isUndefined(sessionStorage.overlaypos) == false) {
           delete(sessionStorage.overlaypos);
         }
+        $('body').animate({ scrollTop: sessionStorage.scrollpos }, 0);
       }
     });
 
