@@ -152,6 +152,10 @@ $(document).ready(function() {
         $(window).trigger('activatePeers');
       } else {
         $('.student-overlay').remove();
+        $('html,body').css('overflow','auto').css('height', '');
+        if (_.isUndefined(sessionStorage.overlaypos) == false) {
+          delete(sessionStorage.overlaypos);
+        }
       }
     });
 
