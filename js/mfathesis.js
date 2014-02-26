@@ -150,6 +150,8 @@ $(document).ready(function() {
         }
         sessionStorage.activestudent = s._id;
         $(window).trigger('activatePeers');
+      } else {
+        $('.student-overlay').remove();
       }
     });
 
