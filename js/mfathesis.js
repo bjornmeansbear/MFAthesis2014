@@ -104,6 +104,14 @@ $(document).ready(function() {
         }
         $('body').animate({ scrollTop: sessionStorage.scrollpos }, 0);
       });
+      $('.student-overlay img.logo').on('click touch', function(e) {
+        hash.remove('id');
+        $('html,body').css('overflow','auto').css('height', '');
+        if (_.isUndefined(sessionStorage.overlaypos) == false) {
+          delete(sessionStorage.overlaypos);
+        }
+        $('body').animate({ scrollTop: sessionStorage.scrollpos }, 0);
+      });
       // Navigate to the previous person on the list
       $('.student-nav span.glyphicon-chevron-left').off().on('click touch', function(e) {
         if (_.isUndefined(previous_id) == false) {

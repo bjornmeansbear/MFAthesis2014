@@ -380,8 +380,8 @@ P    X          F                K       J              F      J     Y      5   
                 </ul>
 
                 <ul class="student-links nav nav-pills">
-                  <li><a target="_blank" href="{{ urlofpersonalwebsite }}"><span class="glyphicon glyphicon-cloud"></span></a></li>
-                  <li><a target="_blank" href="mailto:{{ personalemail }}"><span class="glyphicon glyphicon-send"></span></a></li>
+                  {{#urlofpersonalwebsite}}<li><a target="_blank" href="{{ urlofpersonalwebsite }}"><span class="glyphicon glyphicon-cloud"></span></a></li>{{/urlofpersonalwebsite}}
+                  {{#personalemail}}<li><a target="_blank" href="mailto:{{ personalemail }}"><span class="glyphicon glyphicon-send"></span></a></li>{{/personalemail}}
                 </ul>
         
                 <ul class="student-nav nav nav-pills nav-justified">
@@ -439,8 +439,8 @@ P    X          F                K       J              F      J     Y      5   
             </div> <!-- end center column with images and texts -->
           </div>
         </div>
-      </div>
-
+        <img data-dismiss="alert" aria-hidden="true" class="logo" src="img/logo.png" /> <!-- can this also make the overlay close? -->
+      </div><!-- END OVERLAY -->
     </script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -511,6 +511,12 @@ ul.program-peers li {
   border: 10px solid #EEE;
 }
 
+.student-overlay img.logo {
+  position: fixed;
+  left: 45px;
+  bottom: 45px;
+}
+
 .student-overlay .close {
   float: none;
   position: fixed;
