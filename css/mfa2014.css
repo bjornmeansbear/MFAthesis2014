@@ -103,18 +103,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   }
 
-h1, h2, h3, h4,
-.gallery-info h4,
-.thumb .block .info h4 {
-  color: #FF4C47;
-}
-
 h1 {
   font-size: 45px;
   margin-bottom: 20px;
   }
 
-h4  {
+h4 {
   font-size: 16px;
   font-weight: 900;
   margin: 0;
@@ -129,6 +123,14 @@ h5 {
   font-weight: 900;
   margin: 0 0 2px 0;
   padding: 0;
+}
+
+h1, h2, h3, h4,
+aside h4,
+.alert h4,
+.gallery-info h4,
+.thumb .block .info h4 {
+  color: #FF4C47;
 }
 
 p {
@@ -561,3 +563,17 @@ ul.program-peers li {
 }
 
 .student-overlay article { padding-bottom: 30px; }
+
+.student-overlay .student-info ul.nav-pills {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+.student-overlay .student-info ul.student-links li:first-child {
+  margin-right: .5em;
+}
+
+.student-overlay .student-info ul.student-nav li {
+  margin-right: 1em;
+  cursor: pointer;
+}

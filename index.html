@@ -367,7 +367,7 @@ P    X          F                K       J              F      J     Y      5   
         <div class="container">
           <div class="row">
         
-            <div class="col-xs-12 col-sm-4 col-md-2">
+            <div class="col-xs-12 col-sm-4 col-md-2 student-info">
               <div>
                 <h2>{{ firstname }}</h2>
                 <h2>{{ middlename }}</h2>
@@ -379,12 +379,12 @@ P    X          F                K       J              F      J     Y      5   
                   <li>{{showdate}}</li>
                 </ul>
 
-                <ul class="student-links">
-                  <li><a href="{{ urlofpersonalwebsite }}"><span class="glyphicon glyphicon-cloud"></span></a></li>
-                  <li><a href="mailto:{{ personalemail }}"><span class="glyphicon glyphicon-send"></span></a></li>
+                <ul class="student-links nav nav-pills">
+                  <li><a target="_blank" href="{{ urlofpersonalwebsite }}"><span class="glyphicon glyphicon-cloud"></span></a></li>
+                  <li><a target="_blank" href="mailto:{{ personalemail }}"><span class="glyphicon glyphicon-send"></span></a></li>
                 </ul>
         
-                <ul class="student-nav">
+                <ul class="student-nav nav nav-pills nav-justified">
                   <li><span class="glyphicon glyphicon-chevron-left"></span></li>
                   <li><span class="glyphicon glyphicon-random"></span></li>
                   <li><span class="glyphicon glyphicon-chevron-right"></span></li>
