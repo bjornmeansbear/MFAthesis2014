@@ -17,21 +17,17 @@
 * NOUR change schedule dates to "Feb 11" in html
 * TEAMKAIANDTIM make program names in schedule link to filtered students, dates too.
 * Dates: Feb 11 format
-
-   ** in schedule, put it in
-
-   ** add JS for duration date (K)
-
-
-* "Get directions" in map links
+  * in schedule, put it in
+  * add JS for duration date (K)
+* EMMA "Get directions" in map links
 * Fix text link style
 * Mark filter and search somewhere...
 * New text icon; page with folded corner?
 * Clean up text under thumbnail
 * On search, push to section
 * EMMA "Search by name"
-* EMMA Match footer styles
-* EMMA Add in links to r and y: richbstudio.com, yingxizhou.info
+* _EMMA Match footer styles_
+* _EMMA Add in links to r and y: richbstudio.com, yingxizhou.info_
 
 ## Indiv Student Page Stuff
 * Fixed height slideshow
