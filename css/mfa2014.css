@@ -410,7 +410,19 @@ main article {
 }
 
 #schedule ul {padding: 0;}
-#schedule ul h3 {margin: 0;}
+#schedule ul h3 {
+	margin: 0; 
+	color:black;
+	font-size: 20px;
+}
+
+#schedule .lead {
+	font-size:20px;
+}
+
+#schedule .small {
+color: #FF4C47;
+}
 
 ul.grid-display {
   list-style: none;
