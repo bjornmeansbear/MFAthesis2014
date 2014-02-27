@@ -631,14 +631,13 @@ footer p, footer p a, footer li, footer li a {
   margin-bottom: 30px;
   }
   
-div.carousel-inner {
+.carousel-inner > .item {
   height: 600px;
   }
-  
-div.carousel-inner img {
-  max-height: 100%;
-  }
 
+.carousel-inner > .item > img {
+  height: 100%;
+  }
 
   
 .carousel-control {
