@@ -417,7 +417,9 @@ main article {
 }
 
 #schedule .lead {
+	margin: 0; 
 	font-size:20px;
+	line-height:21px;
 }
 
 #schedule .small {
