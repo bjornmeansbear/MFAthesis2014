@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MICA Grad Show 2014: Critical Studies</title>
+
+<!--
+Y                   T             5       X           0       I         0           H
+    S       H   J     8      ]               8      D               T           W
+         M            Y            M  I  C  A               ]              P
+U             O            U        ----------    0               M     T        I
+       2            J   Y        0    G  R  A  D      I     5      S         Y
+  I       9    H            ]        ----------                         H          7
+3       H              E           S  H  O  W      D    E    4      O           E
+    F              8     5        ----------                    ]           I      U
+                Y              G      2  0  1  4         D              R     
+  O      Q          U                 ----------    F          G   P            Y   9
+             6       N       [     E         W              G             2  
+P    X          F                K       J              F      J     Y      5       L
+-->
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/mfa2014.css" rel="stylesheet">
+    <link href="css/kbadd.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Favicons--> 
+  	<link rel="shortcut icon" href="img/favicon.ico">
+  	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  	<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+  	<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+    
+  </head>
+  
+  <body class="critical">
+
+    <main class="container">
+
+      <button type="button" class="close"><a href="/">&times;</a></button>
+        <div class="container">
+          <div class="row">
+        
+            <div class="col-xs-12 col-sm-4 col-md-2 student-info">
+
+              <ul class="student-nav nav nav-pills nav-justified">
+                <li><span class="glyphicon glyphicon-chevron-left"></span></li>
+                <li><span class="glyphicon glyphicon-random"></span></li>
+                <li><span class="glyphicon glyphicon-chevron-right"></span></li>
+              </ul>
+
+              <div>
+                <h2>{{ firstname }}</h2>
+                <h2>{{ middlename }}</h2>
+                <h2>{{ lastname }}</h2>
+        
+                <ul>
+                  <li>{{program}}</li>
+                  <li>{{exhibitionlocation}}</li>
+                  <li>{{showdate}}</li>
+                </ul>
+
+                <ul class="student-links nav nav-pills">
+                  {{#urlofpersonalwebsite}}<li><a target="_blank" href="{{ urlofpersonalwebsite }}"  target="_blank"><span class="glyphicon glyphicon-cloud"></span></a></li>{{/urlofpersonalwebsite}}
+                  {{#personalemail}}<li><a target="_blank" href="mailto:{{ personalemail }}"  target="_blank"><span class="glyphicon glyphicon-send"></span></a></li>{{/personalemail}}
+                </ul>
+        
+              </div>
+            </div>
+        
+            <div class="col-xs-12 col-sm-8 col-md-9">
+              <div id="slideshow" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  {{#slideshowcount}}
+                  <li data-target="#slideshow" data-slide-to="{{.}}"></li>
+                  {{/slideshowcount}}
+                </ol>
+              
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                  {{#slideshow}}
+                  <div class="item">
+                    <img src="http://mfa.cape.io/{{.}}">
+                  </div>
+                  {{/slideshow}}
+                </div>
+                
+                <!-- Controls -->
+                <a class="left carousel-control" href="#slideshow" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#slideshow" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+              </div><!-- end SS -->
+
+              <article class="row">
+                <p class="col-xs-12 col-md-9">{{ websitelongstatementupto500words }}</p>
+
+                <div class="clearfix visible-sm"></div>
+                
+                <aside class="col-xs-12 col-md-3 program-list">
+                  <h4>{{program}}</h4>
+                  <ul class="program-peers">
+                    {{#peers}}
+                    <li><a>{{ firstname }} {{ lastname }} <span id="id-{{_id}}" style="display:none" class="id">{{_id}}</span></a></li>
+                    {{/peers}}
+                  </ul>
+                </aside>
+    
+              </article>
+        
+            </div> <!-- end center column with images and texts -->
+          </div>
+        </div>
+        
+      <a href="/"><img class="logo" src="img/logo.png" /></a>
+
+    </main>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/hash.min.js"></script>
+    <script src="js/lodash.min.js"></script>
+    <script src="js/list.min.js"></script>
+    <script src="js/hogan.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/mfathesis.js"></script>
+
+  </body>
+</html>

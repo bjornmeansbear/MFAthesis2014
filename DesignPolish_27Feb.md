@@ -1,16 +1,16 @@
 ## Responsive Stuff
-* KRISTIAN Mobile: navbar
+* _KRISTIAN Mobile: navbar_ « styled nicely, but breaks overlay.
 * tablet breaking point
 
 ## Content Stuff
 * NOUR Find missing images 
 * class to hide students if they freak
 * make the program names all the same
-* how can we push
+* how can we push (Emma and nour to tell site to regrab and compile images from DB and data from google)
 * make images better
 
 ## Main Page Stuff
-* extend semitransp white in header to have padding
+* _extend semitransp white in header to have padding_
 * bold small is too fat on some screens
 * Program names in schedule should link
 * NOUR redesign schedule, esp. openings
@@ -21,10 +21,10 @@
   * add JS for duration date (K)
 * _EMMA "Get directions" in map links_
 * _EMMA Fix text link style_
-* Mark filter and search somewhere. In desction header, Search: Term or Search: Filter? Or, in left nav?
-* New text icon; page with folded corner?
+* Mark filter and search somewhere. In section header, Search: Term or Search: Filter? Or, in left nav?
+* Nour: New text icon; page with folded corner?
 * Clean up text under thumbnail
-* On search, push to section
+* On search, scroll page down to section
 * _EMMA "Search by name"_
 * _EMMA Match footer styles_
 * _EMMA Add in links to r and y: richbstudio.com, yingxizhou.info_

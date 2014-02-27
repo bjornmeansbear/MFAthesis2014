@@ -225,6 +225,7 @@ article p {
   header .ontop img {
     position: relative;
     bottom: 20px;
+    padding-bottom: 10px;
   }
   
   header .ontop .sticky {

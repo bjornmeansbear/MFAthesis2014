@@ -45,3 +45,12 @@ body { padding-top: 60px; }
   border-bottom: 1px solid #FF4C47;
 }
 
+.showtime {
+  margin-bottom: 20px;
+}
+
+.showtime p.lead {
+  margin-bottom: 0;
+}
+
+
