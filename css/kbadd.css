@@ -67,3 +67,13 @@ li.add-top { margin-top: 7px; }
   }
 }
 
+main { position: relative; }
+.affix-bottom {
+  position: absolute;
+  top: inherit;
+  bottom: 321px;
+}
+
+.student.thumb {
+  cursor: pointer;
+}
