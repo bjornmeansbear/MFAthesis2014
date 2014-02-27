@@ -68,12 +68,26 @@ li.add-top { margin-top: 7px; }
 }
 
 main { position: relative; }
+
 .affix-bottom {
-  position: absolute;
-  top: inherit;
+  position: fixed;
   bottom: 321px;
+  top: inherit;
+  width: inherit;
+  max-width: 165px;
+  z-index: 1;
 }
 
 .student.thumb {
   cursor: pointer;
+}
+
+/** some slideshow stuff **/
+
+.carousel-inner > .item > img, 
+.carousel-inner > .item > a > img {
+  display: block;
+  max-width: auto;
+  height: auto;
+  margin: 0 auto;
 }

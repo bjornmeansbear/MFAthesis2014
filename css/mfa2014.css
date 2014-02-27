@@ -574,19 +574,19 @@ footer p, footer p a, footer li, footer li a {
 @media (min-width: 768px) {
   .student-overlay {
     border: 15px solid #EEE;
-    }
-    }
+  }
+}
 
 @media (min-width: 992px) {
   .student-overlay {
     border: 20px solid #EEE;
-    }
+  }
   .student-overlay .close {
     top:7px;
     right:9px;
-    }
-  
   }
+  
+}
 
 .student-overlay .container {
   padding-top: 30px;
@@ -705,14 +705,17 @@ footer p, footer p a, footer li, footer li a {
 
 #slideshow {
   margin-bottom: 30px;
+  text-align: center;
+  background: #EEEEEE;
   }
   
 .carousel-inner > .item {
   height: 600px;
+  text-align: center;
   }
 
 .carousel-inner > .item > img {
-  height: 100%;
+  max-height: 100%;
   }
 
   
