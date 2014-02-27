@@ -233,7 +233,7 @@ article p {
     position: fixed;
     top: -398px;
     bottom: auto;
-    z-index: 999;
+    z-index: 9;
   }
 }
 
@@ -398,6 +398,7 @@ main article {
     top: 238px;
     width: inherit;
     max-width: 165px;
+    z-index: 99;
   }
 
   #intro p.lead {
