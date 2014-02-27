@@ -1,44 +1,44 @@
 ## Responsive Stuff
-Mobile: navbar
-tablet breaking point
+* Mobile: navbar
+* tablet breaking point
 
 ## Content Stuff
-NOUR Find missing images 
-class to hide students if they freak
-make the program names all the same
-how can we push
-make images better
+* NOUR Find missing images 
+* class to hide students if they freak
+* make the program names all the same
+* how can we push
+* make images better
 
 ## Main Page Stuff
-extend semitransp white in header to have padding
-bold small is too fat on some screens
-Program names in schedule should link
-NOUR redesign schedule, esp. openings
-NOUR change schedule dates to "Feb 11" in html
-TEAMKAIANDTIM make program names in schedule link to filtered students, dates too.
-Dates: Feb 11 format
+* extend semitransp white in header to have padding
+* bold small is too fat on some screens
+* Program names in schedule should link
+* NOUR redesign schedule, esp. openings
+* NOUR change schedule dates to "Feb 11" in html
+* TEAMKAIANDTIM make program names in schedule link to filtered students, dates too.
+* Dates: Feb 11 format
 
-   * in schedule, put it in
+   ** in schedule, put it in
 
-   * add JS for duration date (K)
+   ** add JS for duration date (K)
 
 
-"Get directions" in map links
-Fix text link style
-Mark filter and search somewhere...
-New text icon; page with folded corner?
-Clean up text under thumbnail
-On search, push to section
-"Search by name"
-Match footer styles
-Add in links to r and y: richbstudio.com, yingxizhou.info
+* "Get directions" in map links
+* Fix text link style
+* Mark filter and search somewhere...
+* New text icon; page with folded corner?
+* Clean up text under thumbnail
+* On search, push to section
+* "Search by name"
+* Match footer styles
+* Add in links to r and y: richbstudio.com, yingxizhou.info
 
 ## Indiv Student Page Stuff
-Fixed height slideshow
-Not a slideshow when no image or one image
-Style slideshow arrows
-Style icons in left
-Style program people links to be clickable
-Random and next/prev be entire school?
-Move these nav links above name so it doesn't hop
-Think about logo/branding in overlay
+* Fixed height slideshow
+* Not a slideshow when no image or one image
+* Style slideshow arrows
+* Style icons in left
+* Style program people links to be clickable
+* Random and next/prev be entire school?
+* Move these nav links above name so it doesn't hop
+* Think about logo/branding in overlay
