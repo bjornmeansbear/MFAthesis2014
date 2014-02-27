@@ -46,83 +46,47 @@ P    X          F                K       J              F      J     Y      5   
     <main class="container">
 
       <button type="button" class="close"><a href="/">&times;</a></button>
-        <div class="container">
-          <div class="row">
-        
-            <div class="col-xs-12 col-sm-4 col-md-2 student-info">
 
-              <ul class="student-nav nav nav-pills nav-justified">
-                <li><span class="glyphicon glyphicon-chevron-left"></span></li>
-                <li><span class="glyphicon glyphicon-random"></span></li>
-                <li><span class="glyphicon glyphicon-chevron-right"></span></li>
+      <div class="container">
+        <div class="row">
+      
+          <div class="col-xs-12 col-sm-4 col-md-2 student-info">
+
+            <div>
+              <h2>Critical</h2>
+              <h2>Studies</h2>
+              <h2>MA</h2>
+      
+              <ul>
+                <li>Symposium...</li>
+                <li>Walters Art Museum</li>
+                <li>May 3, Time to Time...</li>
               </ul>
 
-              <div>
-                <h2>{{ firstname }}</h2>
-                <h2>{{ middlename }}</h2>
-                <h2>{{ lastname }}</h2>
-        
-                <ul>
-                  <li>{{program}}</li>
-                  <li>{{exhibitionlocation}}</li>
-                  <li>{{showdate}}</li>
-                </ul>
-
-                <ul class="student-links nav nav-pills">
-                  {{#urlofpersonalwebsite}}<li><a target="_blank" href="{{ urlofpersonalwebsite }}"  target="_blank"><span class="glyphicon glyphicon-cloud"></span></a></li>{{/urlofpersonalwebsite}}
-                  {{#personalemail}}<li><a target="_blank" href="mailto:{{ personalemail }}"  target="_blank"><span class="glyphicon glyphicon-send"></span></a></li>{{/personalemail}}
-                </ul>
-        
-              </div>
             </div>
-        
-            <div class="col-xs-12 col-sm-8 col-md-9">
-              <div id="slideshow" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                  {{#slideshowcount}}
-                  <li data-target="#slideshow" data-slide-to="{{.}}"></li>
-                  {{/slideshowcount}}
-                </ol>
-              
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                  {{#slideshow}}
-                  <div class="item">
-                    <img src="http://mfa.cape.io/{{.}}">
-                  </div>
-                  {{/slideshow}}
-                </div>
-                
-                <!-- Controls -->
-                <a class="left carousel-control" href="#slideshow" data-slide="prev">
-                  <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a class="right carousel-control" href="#slideshow" data-slide="next">
-                  <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
-              </div><!-- end SS -->
-
-              <article class="row">
-                <p class="col-xs-12 col-md-9">{{ websitelongstatementupto500words }}</p>
-
-                <div class="clearfix visible-sm"></div>
-                
-                <aside class="col-xs-12 col-md-3 program-list">
-                  <h4>{{program}}</h4>
-                  <ul class="program-peers">
-                    {{#peers}}
-                    <li><a>{{ firstname }} {{ lastname }} <span id="id-{{_id}}" style="display:none" class="id">{{_id}}</span></a></li>
-                    {{/peers}}
-                  </ul>
-                </aside>
-    
-              </article>
-        
-            </div> <!-- end center column with images and texts -->
           </div>
+      
+          <div class="col-xs-12 col-sm-8 col-md-9">
+
+            <article class="row">
+
+              <p class="col-xs-12 col-md-9">Statement about CS program... TK</p>
+
+              <div class="clearfix visible-sm"></div>
+              
+              <aside class="col-xs-12 col-md-3 program-list">
+                <h4>Critical Studies MA</h4>
+                <ul class="program-peers">
+                  <li>List of Students...</li>
+                </ul>
+              </aside>
+  
+            </article>
+      
+          </div> <!-- end center column with images and texts -->
         </div>
-        
+      </div>
+      
       <a href="/"><img class="logo" src="img/logo.png" /></a>
 
     </main>
