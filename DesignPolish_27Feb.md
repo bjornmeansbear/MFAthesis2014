@@ -3,10 +3,10 @@
 * tablet breaking point
 
 ## Content Stuff
-* NOUR Find missing images 
+* _NOUR Find missing images 
 * class to hide students if they freak
 * make the program names all the same
-* how can we push (Emma and nour to tell site to regrab and compile images from DB and data from google)
+* how can we push (Emma and Nour to tell site to regrab and compile images from DB and data from google)
 * make images better
 
 ## Main Page Stuff
@@ -22,7 +22,7 @@
 * _EMMA "Get directions" in map links_
 * _EMMA Fix text link style_
 * Mark filter and search somewhere. In section header, Search: Term or Search: Filter? Or, in left nav?
-* Nour: New text icon; page with folded corner?
+* _Nour: New text icon; page with folded corner?
 * Clean up text under thumbnail
 * On search, scroll page down to section
 * _EMMA "Search by name"_
