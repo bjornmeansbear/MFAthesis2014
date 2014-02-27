@@ -625,11 +625,21 @@ footer p, footer p a, footer li, footer li a {
   margin-top: 5px;
   }
 
-
+/* Student Overlay Slideshow Shite */
 
 #slideshow {
   margin-bottom: 30px;
-}
+  }
+  
+.carousel-control.left, .carousel-control.right {
+  background-image: 0;
+  background-color: rgba (255, 255, 255, 0);
+  }
+  
+.carousel-control.left:focus, .carousel-control.right:focus {
+  background-image: 0;
+  background-color: rgba (255, 255, 255, 0.75);
+  }
 
 
 
