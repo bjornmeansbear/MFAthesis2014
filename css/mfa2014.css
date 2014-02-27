@@ -537,7 +537,6 @@ footer p, footer p a, footer li, footer li a {
   
 }
 
-
 /* Overlay related styles */
 
 .student-overlay {
@@ -555,10 +554,18 @@ footer p, footer p a, footer li, footer li a {
   }
 
 .student-overlay img.logo {
-  position: fixed;
-  left: 45px;
-  bottom: 45px;
-  }
+  position: static;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+@media (min-width: 768px) {
+  .student-overlay img.logo {
+    position: fixed;
+    left: 45px;
+    bottom: 45px;
+    }
+}
 
 .student-overlay .close {
   float: none;
