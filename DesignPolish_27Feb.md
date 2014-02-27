@@ -17,11 +17,11 @@
 * NOUR change schedule dates to "Feb 11" in html
 * TEAMKAIANDTIM make program names in schedule link to filtered students, dates too.
 * Dates: Feb 11 format
-  * EMMA in schedule, put it in
+  * _EMMA in schedule, put it in_
   * add JS for duration date (K)
 * _EMMA "Get directions" in map links_
 * _EMMA Fix text link style_
-* Mark filter and search somewhere...
+* Mark filter and search somewhere. In desction header, Search: Term or Search: Filter? Or, in left nav?
 * New text icon; page with folded corner?
 * Clean up text under thumbnail
 * On search, push to section
@@ -30,6 +30,7 @@
 * _EMMA Add in links to r and y: richbstudio.com, yingxizhou.info_
 
 ## Indiv Student Page Stuff
+EMMA is starting on this shit
 * Fixed height slideshow
 * Not a slideshow when no image or one image
 * Style slideshow arrows
