@@ -13,8 +13,8 @@
 * -extend semitransp white in header to have padding-
 * bold small is too fat on some screens
 * Program names in schedule should link
-* NOUR redesign schedule, esp. openings
-* NOUR change schedule dates to "Feb 11" in html
+* _NOUR redesign schedule, esp. openings
+* _NOUR change schedule dates to "Feb 11" in html
 * TEAMKAIANDTIM make program names in schedule link to filtered students, dates too.
 * Dates: Feb 11 format
   * -in schedule, put it in-

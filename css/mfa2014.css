@@ -414,12 +414,16 @@ main article {
 	margin: 0; 
 	color:black;
 	font-size: 20px;
+		line-height:26px;
+
 }
 
 #schedule .lead {
 	margin: 0; 
+	padding-top:0px;
 	font-size:20px;
-	line-height:21px;
+	line-height:26px;
+	
 }
 
 #schedule .small {
@@ -465,7 +469,6 @@ ul.grid-display .thumb {
 ul.grid-display .thumb .block {
   background: transparent;
   font-size: 1em;
-  text-transform: uppercase;
   overflow: hidden;
   position: relative;
 }
@@ -474,6 +477,13 @@ ul.grid-display .thumb .block .info {
   padding: 15px 0;
   position: relative;
 }
+
+#students h4 {
+	font-weight:700;
+	letter-spacing:2px;
+	padding-bottom:5px;		
+}
+
 
 .thumb .block img {
   width: 100%;
@@ -689,3 +699,10 @@ footer p, footer p a, footer li, footer li a {
   
 .carousel-control .glyphicon-chevron-left {left: 10%;}
 .carousel-control .glyphicon-chevron-right {right: 10%;}
+
+::selection {
+	background: #FF4C47; /* Safari */
+	}
+::-moz-selection {
+	background: #FF4C47; /* Firefox */
+}
