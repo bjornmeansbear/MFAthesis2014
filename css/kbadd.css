@@ -60,3 +60,10 @@ body { padding-top: 60px; }
 }
 
 li.add-top { margin-top: 7px; }
+
+@media (max-width: 767px) {
+  #schedule .text-right {
+    text-align: left;
+  }
+}
+
