@@ -627,26 +627,31 @@ footer p, footer p a, footer li, footer li a {
 
 /* Student Overlay Slideshow Shite */
 
-div.carousel-inner {
-  height: 
-  }
-
 #slideshow {
   margin-bottom: 30px;
   }
+  
+div.carousel-inner {
+  height: 600px;
+  }
+  
+div.carousel-inner img {
+  max-height: 100%;
+  }
+
+
   
 .carousel-control {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
-  width: 15%;
+  width: 10%;
   font-size: 20px;
   color: #000;
   text-align: center;
   filter: alpha(opacity=75);
   opacity: .75;
-  text-align: center;
   }
   
 @media screen and (min-width: 768px) {
@@ -662,7 +667,7 @@ div.carousel-inner {
 .carousel-control.left, .carousel-control.right {
   background-image: none;
   background-color: rgba(255, 255, 255, 0);
-    text-shadow: 0 0 10px rgba(255, 255, 255, .75);
+  text-shadow: 0 0 10px rgba(255, 255, 255, .75);
   }
   
 .carousel-control.left:hover, .carousel-control.right:hover {
