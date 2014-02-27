@@ -43,53 +43,91 @@ P    X          F                K       J              F      J     Y      5   
   
   <body data-spy="scroll" data-target=".mainnav" data-offset="160">
 
-    <nav class="navbar navbar-default visible-xs" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top visible-xs" role="navigation">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gs-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Brand</a>
+          <a class="brand" href="#"><img src="img/apple-touch-icon-72x72.png" /></a> <!-- make this take you back to the top of the page... -->
         </div>
     
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse" id="gs-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Link</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
+            <li><a href="#intro">Welcome</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#galleries">Galleries</a></li>
+            <li><a href="#students">Students</a>
+              <ul> <!-- this submenu only shows up when in students area -->
+                <li>
+                  <div class="input-group">
+                    <input id="search-students" type="text" class="form-control" placeholder="Search <3">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                    </span>
+                  </div><!-- /input-group -->
+                </li> <!-- Here's to hoping. -->
+                <li><a href="#" class="sort-studentlist" data-type="all">All Projects</a></li>
+                <li>
+                  <div class="btn-group">
+                    <button type="button" data-type="gallery" class="btn btn-default sort-studentlist" data-toggle="dropdown">
+                      <a href="#">Program </a><span class="caret"></span>
+                    </button>
+                    <ul class="" id="program-filter">
+                      <li><a href="#" data-program="Community Arts">Community Arts</a></li>
+                      <li><a href="#" data-program="Critical Studies">Critical Studies</a></li>
+                      <li><a href="#" data-program="Curatorial">Curatorial</a></li>
+                      <li><a href="#" data-program="Graphic Design">Graphic Design</a></li>
+                      <li><a href="#" data-program="Hoffberger">Hoffberger</a></li>
+                      <li><a href="#" data-program="Illustration Practice">Illustration Practice</a></li>
+                      <li><a href="#" data-program="MA Teaching">MA Teaching</a></li>
+                      <li><a href="#" data-program="Mount Royal">Mount Royal</a></li>
+                      <li><a href="#" data-program="Photo & Electronic Media">Photo & Electronic Media</a></li>
+                      <li><a href="#" data-program="Post Bac FA">Post Bac FA</a></li>
+                      <li><a href="#" data-program="Post Bac GD">Post Bac GD</a></li>
+                      <li><a href="#" data-program="Rinehart">Rinehart</a></li>
+                      <li><a href="#" data-program="Social Design">Social Design</a></li> 
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="btn-group ">
+                    <button type="button" data-type="gallery" class="btn btn-default sort-studentlist" data-toggle="dropdown">
+                      <a href="#">Gallery </a><span class="caret"></span>
+                    </button>
+                    <ul class="" id="gallery-filter">
+                      <li><a href="#" data-gallery="D center">D Center</a></li>
+                      <li><a href="#" data-gallery="Decker">Decker</a></li>
+                      <li><a href="#" data-gallery="Fox">Fox 3</a></li>
+                      <li><a href="#" data-gallery="Leidy">Leidy</a></li>
+                      <li><a href="#" data-gallery="Meyerhoff">Meyerhoff</a></li>
+                      <li><a href="#" data-gallery="Pinkard">Pinkard</a></li>
+                      <li><a href="#" data-gallery="Riggs">Riggs/Leidy</a></li>
+                      <li><a href="#" >Off Campus</a></li><!-- this needs to be the curatorial practice students -->
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="btn-group ">
+                    <button type="button" data-type="gallery" class="btn btn-default sort-studentlist" data-toggle="dropdown">
+                      <a href="#">Show Date </a><span class="caret"></span>
+                    </button>
+                    <ul class="" id="showdate-filter">
+                      <li><a href="#" data-showdate="1/24/2014">1/24/2014</a></li>
+                      <li><a href="#" data-showdate="1/31/2014">1/31/2014</a></li>
+                      <li><a href="#" data-showdate="3/28/2014">3/28/2014</a></li>
+                      <li><a href="#" data-showdate="4/11/2014">4/11/2014</a></li>
+                      <li><a href="#" data-showdate="4/23/2014">4/23/2014</a></li>
+                      <li><a href="#" data-showdate="4/25/2014">4/25/2014</a></li>
+                      <li><a href="#" data-showdate="5/3/2014">5/3/2014</a></li>
+                    </ul>
+                  </div>
+                </li>
               </ul>
             </li>
           </ul>
