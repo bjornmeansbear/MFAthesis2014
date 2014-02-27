@@ -632,13 +632,13 @@ footer p, footer p a, footer li, footer li a {
   }
   
 .carousel-control.left, .carousel-control.right {
-  background-image: 0;
-  background-color: rgba (255, 255, 255, 0);
+  background-image: none;
+  background-color: rgba(255, 255, 255, 0);
   }
   
 .carousel-control.left:focus, .carousel-control.right:focus {
-  background-image: 0;
-  background-color: rgba (255, 255, 255, 0.75);
+  background-image: none;
+  background-color: rgba(255, 255, 255, 0.75);
   }
 
 
