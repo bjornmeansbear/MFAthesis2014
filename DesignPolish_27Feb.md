@@ -1,5 +1,5 @@
 ## Responsive Stuff
-* Mobile: navbar
+* KRISTIAN Mobile: navbar
 * tablet breaking point
 
 ## Content Stuff
@@ -29,9 +29,9 @@
 * New text icon; page with folded corner?
 * Clean up text under thumbnail
 * On search, push to section
-* "Search by name"
-* Match footer styles
-* Add in links to r and y: richbstudio.com, yingxizhou.info
+* EMMA "Search by name"
+* EMMA Match footer styles
+* EMMA Add in links to r and y: richbstudio.com, yingxizhou.info
 
 ## Indiv Student Page Stuff
 * Fixed height slideshow
