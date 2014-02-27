@@ -1,8 +1,27 @@
 
 /* mobile nav styling */
 
+#intro { padding-top: 0 !important; }
+
+body {padding-top: 72px;}
+
 .navbar-default {
     background-color: white;
     border-color: #FE625A;
 }
 
+.navbar-toggle {
+  padding: 10px;
+  margin: 18px;
+}
+
+.navbar-toggle .icon-bar {
+  width: 40px;
+  height: 3px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #FE625A;
+}
