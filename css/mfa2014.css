@@ -713,6 +713,8 @@ footer p, footer p a, footer li, footer li a {
 #slideshow {
   margin-bottom: 30px;
   text-align: center;
+  min-height: 200px;
+  max-height: 600px;
   }
   
 .carousel-inner > .item {
