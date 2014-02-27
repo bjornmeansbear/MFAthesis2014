@@ -516,11 +516,11 @@ P    X          F                K       J              F      J     Y      5   
 
                 <div class="clearfix visible-sm"></div>
                 
-                <aside class="col-xs-12 col-md-3">
+                <aside class="col-xs-12 col-md-3 program-list">
                   <h4>{{program}}</h4>
                   <ul class="program-peers">
                     {{#peers}}
-                    <li>{{ firstname }} {{ lastname }} <span id="id-{{_id}}" style="display:none" class="id">{{_id}}</span></li>
+                    <li><a>{{ firstname }} {{ lastname }} <span id="id-{{_id}}" style="display:none" class="id">{{_id}}</span></a></li>
                     {{/peers}}
                   </ul>
                 </aside>
