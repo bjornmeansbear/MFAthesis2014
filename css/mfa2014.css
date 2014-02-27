@@ -411,19 +411,19 @@ main article {
 
 #schedule ul {padding: 0;}
 #schedule ul h3 {
-	margin: 0; 
-	color:black;
-	font-size: 20px;
-		line-height:26px;
+  margin: 0; 
+  color:black;
+  font-size: 20px;
+    line-height:26px;
 
 }
 
 #schedule .lead {
-	margin: 0; 
-	padding-top:0px;
-	font-size:20px;
-	line-height:26px;
-	
+  margin: 0; 
+  padding-top:0px;
+  font-size:20px;
+  line-height:26px;
+  
 }
 
 #schedule .small {
@@ -479,9 +479,9 @@ ul.grid-display .thumb .block .info {
 }
 
 #students h4 {
-	font-weight:700;
-	letter-spacing:2px;
-	padding-bottom:5px;		
+  font-weight:700;
+  letter-spacing:2px;
+  padding-bottom:5px;    
 }
 
 
@@ -758,14 +758,13 @@ footer p, footer p a, footer li, footer li a {
 .carousel-control .glyphicon-chevron-right {right: 10%;}
 
 ::selection {
-	background: #FF4C47; /* Safari */
-	color:white;
-	}
+  background: #FF4C47; /* Safari */
+  color:white;
+  }
 ::-moz-selection {
-	background: #FF4C47; /* Firefox */
-	color:white;
-	}
-
+  background: #FF4C47; /* Firefox */
+  color:white;
+  }
 
 a.menu_links {
   cursor: pointer;
