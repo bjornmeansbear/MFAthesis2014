@@ -478,13 +478,18 @@ footer {
   padding-top: 4em;
   padding-bottom: 6em;
   text-align: left;
-  color: rgb(51, 51, 51);
-  font-weight: 500;
 }
 
 footer img, footer p, footer ul {
   margin-bottom: 20px;
 }
+
+footer p, footer p a, footer li {
+  color: rgb(51, 51, 51);
+  font-weight: 500; 
+  }
+  
+  
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
