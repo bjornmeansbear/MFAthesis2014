@@ -485,7 +485,7 @@ footer img, footer p, footer ul {
 }
 
 footer p, footer p a, footer li, footer li a {
-  color: rgb(100);
+  color: rgb(100,100,100);
   font-weight: 500; 
   }
   
