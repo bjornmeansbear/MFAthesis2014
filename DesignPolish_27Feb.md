@@ -35,7 +35,7 @@
 * Not a slideshow when no image or one image
 * -Style slideshow arrows-
 * EMMA Style icons in left
-* -Style program people links to be clickable_
+* -Style program people links to be clickable-
 * Random and next/prev be entire school?
 * -Move these nav links above name so it doesn't hop-
 * Think about logo/branding in overlay
