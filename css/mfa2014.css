@@ -645,28 +645,28 @@ footer p, footer p a, footer li, footer li a {
    height:21px; 
    }
 
-.overlay-nav-icon .previous {
+.overlay-nav-icon .next {
+  background-image:url('../img/icon_next.png');
+  }
   
+.overlay-nav-icon .next:hover, .overlay-nav-icon .next:active {
+  background-image:url('../img/icon_next_over.png');  
   }
   
 .overlay-nav-icon .previous {
-  
+  background-image:url('../img/icon_previous.png');  
   }
   
-.overlay-nav-icon .previous {
-  
+.overlay-nav-icon .previous:hover, .overlay-nav-icon .previous:active {
+  background-image:url('../img/icon_previous_over.png');  
   }
   
-.overlay-nav-icon .previous {
-  
+.overlay-nav-icon .random {
+  background-image:url('../img/icon_random.png');  
   }
   
-.overlay-nav-icon .previous {
-  
-  }
-  
-.overlay-nav-icon .previous {
-  
+.overlay-nav-icon .random:hover, .overlay-nav-icon .random:active {
+  background-image:url('../img/icon_random_over.png');  
   }
   
   
