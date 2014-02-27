@@ -477,7 +477,7 @@ ul.grid-display .thumb .block .info p {
   letter-spacing: 1px;
 }
 
-#intro { padding-top: 2em; }
+#intro { padding-top: 0; }
 @media (min-width: 768px) {
   #intro { padding-top: .66em; }
 }

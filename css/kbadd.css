@@ -1,9 +1,16 @@
 
 /* mobile nav styling */
 
-#intro { padding-top: 0 !important; }
+body { padding-top: 60px; }
+@media (min-width: 768px) {
+  body { padding-top: 0; }
+}
 
-body {padding-top: 72px;}
+.navbar a.brand img {
+  height: 50px;
+  width: 50px;
+  margin: 5px;
+}
 
 .navbar-default {
     background-color: white;
@@ -11,8 +18,9 @@ body {padding-top: 72px;}
 }
 
 .navbar-toggle {
+  margin: 10px;
   padding: 10px;
-  margin: 18px;
+  height: 40px;
 }
 
 .navbar-toggle .icon-bar {
@@ -25,3 +33,5 @@ body {padding-top: 72px;}
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #FE625A;
 }
+
+
