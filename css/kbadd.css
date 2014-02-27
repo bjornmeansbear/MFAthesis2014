@@ -2,6 +2,7 @@
 /* mobile nav styling */
 
 body { padding-top: 60px; }
+
 @media (min-width: 768px) {
   body { padding-top: 0; }
 }
@@ -34,4 +35,13 @@ body { padding-top: 60px; }
   background-color: #FE625A;
 }
 
+.navbar-fixed-top ul.nav {
+  margin-top: 0;
+  padding: 0 13px;
+}
+.navbar-fixed-top ul.nav > li > a {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #FF4C47;
+}
 
