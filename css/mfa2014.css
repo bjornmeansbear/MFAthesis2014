@@ -580,6 +580,20 @@ footer p, footer p a, footer li, footer li a {
   margin-bottom: .66em;
   }
   
+.student-overlay .student-info ul.nav-pills {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+.student-overlay .student-info ul.student-links li:first-child {
+  margin-right: .5em;
+}
+
+.student-overlay .student-info ul.student-nav li {
+  margin-right: 1em;
+  cursor: pointer;
+}
+  
 .student-statement {
   padding-right: 5%;
   padding-bottom: 30px;
@@ -618,16 +632,4 @@ footer p, footer p a, footer li, footer li a {
 }
 
 
-.student-overlay .student-info ul.nav-pills {
-  font-size: 1.5em;
-  margin-bottom: 1em;
-}
 
-.student-overlay .student-info ul.student-links li:first-child {
-  margin-right: .5em;
-}
-
-.student-overlay .student-info ul.student-nav li {
-  margin-right: 1em;
-  cursor: pointer;
-}
