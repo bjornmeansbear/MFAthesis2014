@@ -30,12 +30,12 @@
 * _EMMA Add in links to r and y: richbstudio.com, yingxizhou.info_
 
 ## Indiv Student Page Stuff
-EMMA is starting on this shit
-* Fixed height slideshow
+* _Fixed height slideshow_
+* Make images center and look nice in fixed height slideshow
 * Not a slideshow when no image or one image
-* Style slideshow arrows
-* Style icons in left
-* Style program people links to be clickable
+* _Style slideshow arrows_
+* EMMA Style icons in left
+* _Style program people links to be clickable_
 * Random and next/prev be entire school?
-* Move these nav links above name so it doesn't hop
+* _Move these nav links above name so it doesn't hop_
 * Think about logo/branding in overlay
