@@ -29,15 +29,16 @@ Mark filter and search somewhere...
 New text icon; page with folded corner?
 Clean up text under thumbnail
 On search, push to section
-search by name > text
+"Search by name"
 Match footer styles
 Add in links to r and y: richbstudio.com, yingxizhou.info
 
 ## Indiv Student Page Stuff
 Fixed height slideshow
-Should it stop at end?
-Customize arrows, icons in left
-Style people links
-Can random and next/perv be entire school?
-move nav links above name so it doesn't hop
-Think about logo in overlay
+Not a slideshow when no image or one image
+Style slideshow arrows
+Style icons in left
+Style program people links to be clickable
+Random and next/prev be entire school?
+Move these nav links above name so it doesn't hop
+Think about logo/branding in overlay
