@@ -484,8 +484,8 @@ footer img, footer p, footer ul {
   margin-bottom: 20px;
 }
 
-footer p, footer p a, footer li {
-  color: rgb(51, 51, 51);
+footer p, footer p a, footer li, footer li a {
+  color: rgb(100);
   font-weight: 500; 
   }
   
