@@ -658,8 +658,8 @@ footer p, footer p a, footer li, footer li a {
   }
   
   
-.glyphicon-chevron-left {left: 10%;}
-.glyphicon-chevron-right {right: 10%;}
+.carousel-control .glyphicon-chevron-left {left: 10%;}
+.carousel-control .glyphicon-chevron-right {right: 10%;}
 
 
 
