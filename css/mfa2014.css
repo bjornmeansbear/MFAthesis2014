@@ -362,9 +362,17 @@ div.input-group {margin: 10px 0;}
   padding: 0;
   }
   
-#galleries p {
+#galleries ul li p {
   margin: 0;
   padding: 0;
+  }
+
+#galleries ul {
+  margin-top:5px;
+  }
+    
+#galleries ul:first-child {
+  margin-top:-15px;
   }
 
 /* Main Content Styles ******************/
