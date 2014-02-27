@@ -1,5 +1,4 @@
 ## Responsive Stuff
-* _KRISTIAN Mobile: navbar_ « styled nicely, but breaks overlay.
 * tablet breaking point
 
 ## Content Stuff
@@ -12,13 +11,9 @@
 
 ## Main Page Stuff
 * bold small is too fat on some screens
-<<<<<<< HEAD
 * Program names in schedule should link
 * _NOUR redesign schedule, esp. openings
 * _NOUR change schedule dates to "Feb 11" in html
-=======
-* TEAMKAIANDTIM Program names in schedule should link
->>>>>>> 4b507a32cd5c5a0eed4e89b750657f3f2f7cedf6
 * TEAMKAIANDTIM make program names in schedule link to filtered students, dates too.
 * Dates: Feb 11 format
   * add JS for duration date (K)
