@@ -1,4 +1,3 @@
-/** STILL TO DO After 21 Feb *******/
 /* Create some indication of Gallery filters so you know you've filtered it */
 /* Have a nicely eased scroll down to anchors from the nav */
 
@@ -409,25 +408,34 @@ main article {
   }
 }
 
+/* Schedule Styles ********/
+
 #schedule ul {padding: 0;}
 #schedule ul h3 {
 	margin: 0; 
 	color:black;
 	font-size: 20px;
-		line-height:26px;
-
-}
-
+	line-height:26px;
+	}
+		
 #schedule .lead {
 	margin: 0; 
+	margin-top:-2px;
 	padding-top:0px;
 	font-size:20px;
 	line-height:26px;
-	
+	margin-bottom: 4px;
+	}
+#schedule p {padding-right: 90px;}
+
+#schedule .small.red {
+color: #FF4C47;
+padding-right: 0;
 }
 
 #schedule .small {
-color: #FF4C47;
+color: #000;
+padding-right: 90px;
 }
 
 ul.grid-display {
