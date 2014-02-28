@@ -45,6 +45,7 @@ $(document).ready(function() {
     // Function for getting a list of other people in the same program
     var sameProgram = function(program) {
       var students = this;
+      program = (_.isUndefined(program)) ? '':program;
       program = program.replace('&amp;','&');
       return _.sortBy(_.where(students, { program: program }), 'firstname');
     }
@@ -68,12 +69,30 @@ $(document).ready(function() {
       return r;
     }
 
+    var nextStudent = function(id) {
+      var students = this;
+      var sorted = _.pluck(_.sortBy(students, 'firstname'), '_id');
+      var pos = _.indexOf(sorted, id);
+      if (pos == sorted.length-1) return sorted[0];
+      return sorted[pos+1];
+    }
+
+    var prevStudent = function(id) {
+      var students = this;
+      var sorted = _.pluck(_.sortBy(students, 'firstname'), '_id');
+      var pos = _.indexOf(sorted, id);
+      if (pos == 0) return sorted[sorted.length-1];
+      return sorted[pos-1];
+    }
+
     // Map our showDate() function to a binding of showdates and the program name
     _.map(data.students, function(student) {
       student.showdate = _.bind(showDate, showdates, student.program);
       student.peers = _.bind(sameProgram, data.students, student.program);
       student.slideshow = _.bind(slideShow, data.slideshow, student._id);
       student.slideshowcount = _.bind(slideShowcount, data.slideshow, student._id);
+      student.nextid = _.bind(nextStudent, data.students, student._id);
+      student.previd = _.bind(prevStudent, data.students, student._id);
     });
 
     // Compile templates for the list and the overlay
@@ -92,8 +111,6 @@ $(document).ready(function() {
       $('ul.program-peers li').removeClass('active');
       // Get the active element and previous and next for button usage
       var $active = $('span[id="id-'+sessionStorage.activestudent+'"]');
-      var previous_id = $active.parent().prev().find('.id:hidden').html();
-      var next_id = $active.parent().next().find('.id:hidden').html();
       $active.parent().addClass('active');
       // When closing the window, revert the body overflow and scroll position
       $('.student-overlay button.close').on('click touch', function(e) {
@@ -112,27 +129,10 @@ $(document).ready(function() {
         }
         $('body').animate({ scrollTop: sessionStorage.scrollpos }, 0);
       });
-      // Navigate to the previous person on the list
-      $('.student-nav span.glyphicon-chevron-left').off().on('click touch', function(e) {
-        if (_.isUndefined(previous_id) == false) {
-          if (_.isUndefined(sessionStorage.overlaypos) == false) {
-            delete(sessionStorage.overlaypos);
-          }
-          hash.add({id:previous_id});
-        }
-      });
-      // Navigate to the next person on the list
-      $('.student-nav span.glyphicon-chevron-right').off().on('click touch', function(e) {
-        if (_.isUndefined(next_id) == false) {
-          if (_.isUndefined(sessionStorage.overlaypos) == false) {
-            delete(sessionStorage.overlaypos);
-          }
-          hash.add({id:next_id});
-        }
-      });
       // Navigate to a random person in the list
-      $('.student-nav span.glyphicon-random').off().on('click touch', function(e) {
-        var random_id = $('.program-peers li:nth-of-type('+_.random(1,$('.program-peers li').length)+')').find('.id:hidden').html();
+      $('.student-nav span.random').off().on('click touch', function(e) {
+        var ids = _.pluck(data.students, '_id');
+        var random_id = ids[_.random(0,ids.length-1)];
         hash.add({id:random_id});
       });
       // Create click handlers for each person in the same program
