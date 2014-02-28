@@ -462,9 +462,9 @@ P    X          F                K       J              F      J     Y      5   
             <div class="col-xs-12 col-sm-4 col-md-3 student-info">
 
               <ul class="student-nav nav nav-pills nav-justified">
-                <li><a href="/#id={{previd}}"><span class="overlay-nav-icon previous"></span></a></li>
-                <li><span class="overlay-nav-icon random"></span></li>
-                <li><a href="/#id={{nextid}}"><span class="overlay-nav-icon next"></span></a></li>
+                <li class="previous"><a href="/#id={{previd}}" class="overlay-nav-icon"></a></li>
+                <li class="random"><p class="overlay-nav-icon"></p></li>
+                <li class="next"><a href="/#id={{nextid}}" class="overlay-nav-icon"></a></li>
               </ul>
 
               <div>
@@ -478,7 +478,7 @@ P    X          F                K       J              F      J     Y      5   
                   <li>{{showdate}}</li>
                 </ul>
 
-                <ul class="student-links nav">
+                <ul class="student-links">
                   {{#urlofpersonalwebsite}}<li><a target="_blank" href="{{ urlofpersonalwebsite }}" target="_blank">View Website</a></li>{{/urlofpersonalwebsite}}
                   {{#personalemail}}<li><a target="_blank" href="mailto:{{ personalemail }}" target="_blank">Contact via Email</a></li>{{/personalemail}}
                 </ul>
