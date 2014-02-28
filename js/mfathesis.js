@@ -69,6 +69,7 @@ $(document).ready(function() {
       return r;
     }
 
+    // Function to determine whether we have images for an id
     var slideShowimages = function(id) {
       var slideshow = this;
       var r = [];
@@ -80,6 +81,19 @@ $(document).ready(function() {
       return r.length > 0;
     }
 
+    // Function to determine whether we have images for an id
+    var slideShowsingle = function(id) {
+      var slideshow = this;
+      var r = [];
+      if (_.isUndefined(slideshow[id]) == false) {
+        for (var i=0; i<slideshow[id].length; i++) {
+          r.push(i);
+        }
+      }
+      return r.length > 1;
+    }
+
+    // Get the id of the next student
     var nextStudent = function(id) {
       var students = this;
       var sorted = _.pluck(_.sortBy(students, 'firstname'), '_id');
@@ -88,6 +102,7 @@ $(document).ready(function() {
       return sorted[pos+1];
     }
 
+    // Get the id of the previous student
     var prevStudent = function(id) {
       var students = this;
       var sorted = _.pluck(_.sortBy(students, 'firstname'), '_id');
@@ -103,6 +118,7 @@ $(document).ready(function() {
       student.slideshow = _.bind(slideShow, data.slideshow, student._id);
       student.slideshowcount = _.bind(slideShowcount, data.slideshow, student._id);
       student.slideshowimages = _.bind(slideShowimages, data.slideshow, student._id);
+      student.slideshowsingle = _.bind(slideShowsingle, data.slideshow, student._id);
       student.nextid = _.bind(nextStudent, data.students, student._id);
       student.previd = _.bind(prevStudent, data.students, student._id);
     });

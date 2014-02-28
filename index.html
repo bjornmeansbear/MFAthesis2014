@@ -489,33 +489,40 @@ P    X          F                K       J              F      J     Y      5   
             <div class="col-xs-12 col-sm-8 col-md-9">
             
               {{#slideshowimages}}
-              <div id="slideshow" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                  {{#slideshowcount}}
-                  <li data-target="#slideshow" data-slide-to="{{.}}"></li>
-                  {{/slideshowcount}}
-                </ol>
-              
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                  {{#slideshow}}
-                  <div class="item">
-                    <img src="http://mfa.cape.io/{{.}}">
-                  </div>
-                  {{/slideshow}}
-                </div>
+                {{#slideshowsingle}}
+                <div id="slideshow" class="carousel slide" data-ride="carousel">
+                  <!-- Indicators -->
+                  <ol class="carousel-indicators">
+                    {{#slideshowcount}}
+                    <li data-target="#slideshow" data-slide-to="{{.}}"></li>
+                    {{/slideshowcount}}
+                  </ol>
                 
-                <!-- Controls -->
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner">
+                    {{#slideshow}}
+                    <div class="item">
+                      <img src="http://mfa.cape.io/{{.}}">
+                    </div>
+                    {{/slideshow}}
+                  </div>
+                  
+                  <!-- Controls -->
+                  {{#slideshow}}
+                  <a class="left carousel-control" href="#slideshow" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                  </a>
+                  <a class="right carousel-control" href="#slideshow" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                  </a>
+                  {{/slideshow}}
+                </div><!-- end SS -->
+                {{/slideshowsingle}}
+                {{^slideshowsingle}}
                 {{#slideshow}}
-                <a class="left carousel-control" href="#slideshow" data-slide="prev">
-                  <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a class="right carousel-control" href="#slideshow" data-slide="next">
-                  <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
+                <img src="http://mfa.cape.io/{{.}}">
                 {{/slideshow}}
-              </div><!-- end SS -->
+                {{/slideshowsingle}}
               {{/slideshowimages}}
               {{^slideshowimages}}
               <h2>No Images</h2>
