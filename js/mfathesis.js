@@ -237,6 +237,8 @@ $(document).ready(function() {
           return item.values().name.length > 1;
         });
       }
+      var pos = $('#students').offset();
+      $('body').animate({ scrollTop: pos.top-150 });
     });
     // Process gallery filter
     $('#gallery-filter a').on('click touch', function(e) {
@@ -265,7 +267,6 @@ $(document).ready(function() {
       e.preventDefault();
       var program = decodeURIComponent($(this).data('program'));
       studentlist.filter(function(item) {
-        console.log(program, decodeURIComponent(item.values().program)); 
         return item.values().program.replace('&amp;','&').toLowerCase().indexOf(program.toLowerCase()) >= 0;
       });
       var pos = $('#students').offset();
