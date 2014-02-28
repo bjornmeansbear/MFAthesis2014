@@ -158,7 +158,7 @@ $(document).ready(function() {
         $('body').animate({ scrollTop: sessionStorage.scrollpos }, 0);
       });
       // Navigate to a random person in the list
-      $('.student-nav span.random').off().on('click touch', function(e) {
+      $('.student-nav li.random').off().on('click touch', function(e) {
         var ids = _.pluck(data.students, '_id');
         var random_id = ids[_.random(0,ids.length-1)];
         hash.add({id:random_id});
@@ -299,6 +299,16 @@ $(document).ready(function() {
       $(window).trigger('hashchange');
     }
   });
+
+  // Navigation menu
+  $('ul.nav > li > a').on('click touch', function(e) {
+    e.preventDefault();
+    offset = $(this.hash).offset().top - 150;
+    if ($(this).attr('href') == '#intro') offset = 0;
+    $('html, body').stop().animate({
+      scrollTop: offset
+    }, 400);
+  });
 });
 
 // Parallax Scrolling for the SiteName -->
@@ -313,13 +323,4 @@ $(window).scroll(function(){
   else {
     $('header .ontop .pattern').removeClass('sticky');
   }
-
-  $('ul.nav > li > a').on('click touch', function(e) {
-    e.preventDefault();
-    offset = $(this.hash).offset().top - 150;
-    if ($(this).attr('href') == '#intro') offset = 0;
-    $('html, body').stop().animate({
-      scrollTop: offset
-    }, 400);
-  });
 });
