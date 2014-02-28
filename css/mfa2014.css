@@ -426,27 +426,22 @@ main article {
 	line-height:26px;
 	margin-bottom: 4px;
 	}
-#schedule p {padding-right: 90px;}
 
-#schedule .small.red {
-	color: #FF4C47;
-	padding-right: 0;
+#schedule .small {
+	padding-right: 90px;
   	margin: 0; 
   	color:black;
-  	font-size: 20px;
-    line-height:26px;
 	}
+	
+#schedule .red  {	
+	color: #FF4C47;
+	padding-right: 0;}
 	
 #schedule .lead {
   margin: 0; 
   padding-top:0px;
   font-size:20px;
   line-height:26px;
-}
-
-#schedule .small {
-color: #000;
-padding-right: 90px;
 }
 
 ul.grid-display {
