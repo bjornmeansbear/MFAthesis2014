@@ -152,6 +152,10 @@ $(document).ready(function() {
         $('body').append(StudentOverlay.render(s));
         $('html,body').css('overflow','hidden').height($(window).height());
         $('div.carousel-inner div.item:nth-of-type(1)').addClass('active');
+        $('.student-nav a').on('click touch', function() {
+          console.log("pos");
+          sessionStorage.overlaypos = $('.student-overlay').scrollTop();
+        });
         $('#slideshow ol.carousel-indicators li:nth-of-type(1)').addClass('active');
         if (_.isUndefined(sessionStorage.overlaypos) == false) {
           $('.student-overlay').animate({ scrollTop: sessionStorage.overlaypos }, 0);
