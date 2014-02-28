@@ -61,12 +61,23 @@ $(document).ready(function() {
     var slideShowcount = function(id) {
       var slideshow = this;
       var r = [];
-      if (_.isUndefined(slideshow[id] == false)) {
+      if (_.isUndefined(slideshow[id]) == false) {
         for (var i=0; i<slideshow[id].length; i++) {
           r.push(i);
         }
       }
       return r;
+    }
+
+    var slideShowimages = function(id) {
+      var slideshow = this;
+      var r = [];
+      if (_.isUndefined(slideshow[id]) == false) {
+        for (var i=0; i<slideshow[id].length; i++) {
+          r.push(i);
+        }
+      }
+      return r.length > 0;
     }
 
     var nextStudent = function(id) {
@@ -91,6 +102,7 @@ $(document).ready(function() {
       student.peers = _.bind(sameProgram, data.students, student.program);
       student.slideshow = _.bind(slideShow, data.slideshow, student._id);
       student.slideshowcount = _.bind(slideShowcount, data.slideshow, student._id);
+      student.slideshowimages = _.bind(slideShowimages, data.slideshow, student._id);
       student.nextid = _.bind(nextStudent, data.students, student._id);
       student.previd = _.bind(prevStudent, data.students, student._id);
     });
