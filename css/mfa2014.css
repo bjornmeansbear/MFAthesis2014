@@ -749,30 +749,30 @@ footer p, footer a, footer li {
 }
 
 .next .overlay-nav-icon {
-  background-image:url('icon_next.png');
+  background-image:url('../img/icon_next.png');
 }
   
 .next .overlay-nav-icon:hover,
 .next .overlay-nav-icon:active {
-  background-image:url('icon_next_over.png');  
+  background-image:url('../img/icon_next_over.png');  
 }
   
 .previous .overlay-nav-icon {
-  background-image:url('icon_prev.png');  
+  background-image:url('../img/icon_prev.png');  
 }
   
 .previous .overlay-nav-icon:hover,
 .previous .overlay-nav-icon:active {
-  background-image:url('icon_prev_over.png');  
+  background-image:url('../img/icon_prev_over.png');  
 }
   
 .random .overlay-nav-icon {
-  background-image:url('icon_random.png');  
+  background-image:url('../img/icon_random.png');  
   }
   
 .random .overlay-nav-icon:hover,
 .random .overlay-nav-icon:active {
-  background-image:url('icon_random_over.png');  
+  background-image:url('../img/icon_random_over.png');  
 }
   
 .student-statement {
