@@ -412,6 +412,7 @@ main article {
 
 #schedule ul {padding: 0;}
 #schedule ul h3 {
+<<<<<<< HEAD
 	margin: 0; 
 	color:black;
 	font-size: 20px;
@@ -431,6 +432,21 @@ main article {
 #schedule .small.red {
 color: #FF4C47;
 padding-right: 0;
+=======
+  margin: 0; 
+  color:black;
+  font-size: 20px;
+    line-height:26px;
+
+}
+
+#schedule .lead {
+  margin: 0; 
+  padding-top:0px;
+  font-size:20px;
+  line-height:26px;
+  
+>>>>>>> f8b8620cee9d67601d664a9e4a2a3ce656476936
 }
 
 #schedule .small {
@@ -487,9 +503,9 @@ ul.grid-display .thumb .block .info {
 }
 
 #students h4 {
-	font-weight:700;
-	letter-spacing:2px;
-	padding-bottom:5px;		
+  font-weight:700;
+  letter-spacing:2px;
+  padding-bottom:5px;    
 }
 
 
@@ -544,8 +560,7 @@ footer p, footer p a, footer li, footer li a {
   }
   
 }
-
-
+  
 /* Overlay related styles */
 
 .student-overlay {
@@ -563,10 +578,18 @@ footer p, footer p a, footer li, footer li a {
   }
 
 .student-overlay img.logo {
-  position: fixed;
-  left: 45px;
-  bottom: 45px;
-  }
+  position: static;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+@media (min-width: 768px) {
+  .student-overlay img.logo {
+    position: fixed;
+    left: 45px;
+    bottom: 45px;
+    }
+}
 
 .student-overlay .close {
   float: none;
@@ -616,17 +639,9 @@ footer p, footer p a, footer li, footer li a {
   margin-bottom: 1em;
 }
 
-.student-overlay .student-info ul.student-links li:first-child {
-  margin-right: .5em;
-}
-
 .student-overlay .student-info ul.student-nav li {
-  margin-right: 1em;
-  cursor: pointer;
-  
+  cursor: pointer;  
 }
-
-.nav-pills > li {float: none;}
 
 .student-overlay ul.nav > li > a {
   color: #000;
@@ -634,47 +649,51 @@ footer p, footer p a, footer li, footer li a {
   padding-top: 16px;
   border-bottom: 2px solid #bebebe;
   letter-spacing: 0;
+  background-color: transparent;
   }
   
 .student-overlay ul.nav > li > a:hover {
   color:inherit;
   text-decoration: none;
   border-bottom: 2px solid #FF4C47;
+  background-color: transparent;
   }
   
 .student-overlay ul.nav > li > a:active {
   color:#FF4C47;
   text-decoration: none;
   border-bottom: 2px solid #FF4C47;
+  background-color: transparent;
   }
   
 .overlay-nav-icon {
+  display: block;
    width:43px;
    height:21px; 
    }
 
-.overlay-nav-icon .next {
-  background-image:url('../img/icon_next.png');
+.overlay-nav-icon.next {
+  background-image:url('icon_next.png');
   }
   
-.overlay-nav-icon .next:hover, .overlay-nav-icon .next:active {
-  background-image:url('../img/icon_next_over.png');  
+.overlay-nav-icon.next:hover, .overlay-nav-icon.next:active {
+  background-image:url('icon_next_over.png');  
   }
   
 .overlay-nav-icon .previous {
-  background-image:url('../img/icon_previous.png');  
+  background-image:url('icon_previous.png');  
   }
   
-.overlay-nav-icon .previous:hover, .overlay-nav-icon .previous:active {
-  background-image:url('../img/icon_previous_over.png');  
+.overlay-nav-icon.previous:hover, .overlay-nav-icon.previous:active {
+  background-image:url('icon_previous_over.png');  
   }
   
 .overlay-nav-icon .random {
-  background-image:url('../img/icon_random.png');  
+  background-image:url('icon_random.png');  
   }
   
-.overlay-nav-icon .random:hover, .overlay-nav-icon .random:active {
-  background-image:url('../img/icon_random_over.png');  
+.overlay-nav-icon.random:hover, .overlay-nav-icon.random:active {
+  background-image:url('icon_random_over.png');  
   }
   
   
@@ -714,6 +733,8 @@ footer p, footer p a, footer li, footer li a {
 #slideshow {
   margin-bottom: 30px;
   text-align: center;
+  min-height: 200px;
+  max-height: 600px;
   }
   
 .carousel-inner > .item {
@@ -766,15 +787,14 @@ footer p, footer p a, footer li, footer li a {
 .carousel-control .glyphicon-chevron-right {right: 10%;}
 
 ::selection {
-	background: #FF4C47; /* Safari */
-	color:white;
-	}
+  background: #FF4C47; /* Safari */
+  color:white;
+  }
 ::-moz-selection {
-	background: #FF4C47; /* Firefox */
-	color:white;
-	}
-
+  background: #FF4C47; /* Firefox */
+  color:white;
+  }
 
 a.menu_links {
-    cursor: pointer;
+  cursor: pointer;
 }
