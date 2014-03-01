@@ -688,7 +688,7 @@ footer p, footer a, footer li {
 }
 
 .critical .student-overlay {
-  position: static;
+  position: absolute;
   overflow: auto;
   min-height: 100%;
   height: 100%;

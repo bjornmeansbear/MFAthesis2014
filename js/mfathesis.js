@@ -347,3 +347,18 @@ $(window).scroll(function(){
     $('header .ontop .pattern').removeClass('sticky');
   }
 });
+
+    // Some KB js magic attempts
+    /*
+    var sd01 = 'Jan 24-Feb 16, 2014';
+    var sd02 = 'Jan 31-Feb 16, 2014';
+    var sd03 = 'Feb 01-May 09, 2014';
+    var sd04 = 'Mar 28-Apr 06, 2014';
+    var sd05 = 'Apr 11-Apr 20, 2014';
+    var sd06 = 'Apr 23-May 04, 2014';
+    var sd07 = 'Apr 25-May 04, 2014';
+    var sd08 = 'May 03, 2014';
+    var sd09 = 'Jun 28-Jul 12, 2014';
+    var sd10 = 'Jul 27-Aug 01, 2014';
+    */
+
