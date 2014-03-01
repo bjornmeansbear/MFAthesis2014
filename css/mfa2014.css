@@ -861,6 +861,7 @@ footer p, footer a, footer li {
 /* Student Overlay Slideshow */
 #slideshow,
 #singleimg {
+  margin-left: 0px;
   margin-bottom: 50px;
   text-align: center;
   min-height: 200px;
