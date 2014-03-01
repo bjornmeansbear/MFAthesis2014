@@ -1,8 +1,4 @@
-# Nice to have if there is xtra or available time:
-
-## Add Search
-Add a search input field under the Students Nav section. Should take text input and search all fields for students: name, statements, program, date, gallery, etc. 
-Should retun list (in student section) with a header (see below) with the text input as the header.
+# Nice to have if there is time:
 
 ## Add titles to groups within student list
 Especially for filters, so the user knows there's a filter on.
