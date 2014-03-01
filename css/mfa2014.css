@@ -443,6 +443,10 @@ div.input-group {
   margin-top:-15px;
 }
 
+#galleries-data ul {
+  cursor: pointer;
+}
+
 /* Main Content Styles ******************/
 main article {
   padding: 2em 0;
