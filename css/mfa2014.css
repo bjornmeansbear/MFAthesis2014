@@ -422,30 +422,6 @@ div.input-group {
   border-bottom: 1px solid #FF4C47;
 }
 
-/* Gallery Section Styles ******************/
-#galleries img { 
-  width: 100%;
-}
-
-#galleries ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-  
-#galleries ul li p {
-  margin: 0;
-  padding: 0;
-}
-
-#galleries ul {
-  margin-top:18px;
-}
-    
-#galleries ul:first-child {
-  margin-top:-15px;
-}
-
 
 /* Main Content Styles ******************/
 main article {
@@ -552,7 +528,40 @@ main article {
   margin-bottom: 0;
 }
 
+/* Gallery Section Styles ******************/
+#galleries img { 
+  width: 100%;
+}
+
+#galleries ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+  
+#galleries ul li p {
+  margin: 0;
+  padding: 0;
+}
+
+#galleries ul {
+  margin-top:18px;
+}
+    
+#galleries ul:first-child {
+  margin-top:-15px;
+}
+
+@media only screen and (max-width: 768px) {
+#galleries ul:first-child {
+  margin-top:18px;
+  }
+  
+  }
+
+
 .black {color:#000;}
+
 
 ul.grid-display {
   list-style: none;
