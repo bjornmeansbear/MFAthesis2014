@@ -4,30 +4,32 @@ $(document).ready(function() {
   
   $.getJSON('http://mfa.cape.io/items/client_data.json', function(data) {
     // Programs grouped by showdates as taken from the actual data
+
     var showdates = [{
       name: ["Post Bac FA"],
-      date: '1/31/2014'
+      date: 'Jan 31-Feb 16, 2014'
     }, {
       name: ["Graphic Design", "Post Bac GD", "Illustration Practice"],
-      date: '3/28/2014'
+      date: 'Mar 28-Apr 06, 2014'
     }, {
       name: ["Social Design"],
-      date: '4/23/2014'
+      date: 'Apr 23-May 04, 2014'
     }, {
       name: ["Rinehart", "Photo & Electronic Media", "Community Arts"],
-      date: '4/11/2014'
+      date: 'Apr 11-Apr 20, 2014'
     }, {
       name: ["MA Teaching"],
-      date: '1/24/2014'
+      date: 'Jan 24-Feb 16, 2014'
     }, {
       name: ["Mount Royal","Hoffberger"],
-      date: '4/25/2014'
+      date: 'Apr 25-May 04, 2014'
     }, {
       name: ['Curatorial'],
-      date: 'Not available'
+      date: 'Feb 01-May 09, 2014'
     }, {
       name: ["Critical Studies"],
-      date: '5/3/2014'
+      date: 'May 03, 2014'
+      // We are going to need to add Studio Art MFA - Jun 28-Jul 12, 2014, and Art Education MA - Jul 27-Aug 01, 2014
     }];
 
     // Function to convert a program into a showdate
@@ -347,18 +349,4 @@ $(window).scroll(function(){
     $('header .ontop .pattern').removeClass('sticky');
   }
 });
-
-    // Some KB js magic attempts
-    /*
-    var sd01 = 'Jan 24-Feb 16, 2014';
-    var sd02 = 'Jan 31-Feb 16, 2014';
-    var sd03 = 'Feb 01-May 09, 2014';
-    var sd04 = 'Mar 28-Apr 06, 2014';
-    var sd05 = 'Apr 11-Apr 20, 2014';
-    var sd06 = 'Apr 23-May 04, 2014';
-    var sd07 = 'Apr 25-May 04, 2014';
-    var sd08 = 'May 03, 2014';
-    var sd09 = 'Jun 28-Jul 12, 2014';
-    var sd10 = 'Jul 27-Aug 01, 2014';
-    */
 
