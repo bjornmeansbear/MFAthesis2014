@@ -531,6 +531,7 @@ main article {
   }
   }
   
+  
 #schedule .red  {  
   color: #FF4C47;
   padding-right: 0;
@@ -542,6 +543,16 @@ main article {
   font-size:20px;
   line-height:26px;
 }
+
+.showtime {
+  margin-bottom: 20px;
+}
+
+.showtime p.lead {
+  margin-bottom: 0;
+}
+
+.black {color:#000;}
 
 ul.grid-display {
   list-style: none;
@@ -614,13 +625,6 @@ ul.grid-display .thumb .block .info p {
 }
 
 /* ?? */
-.showtime {
-  margin-bottom: 20px;
-}
-
-.showtime p.lead {
-  margin-bottom: 0;
-}
 
 .imgwrap img {
   width: 100%;
