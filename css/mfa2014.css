@@ -816,6 +816,10 @@ footer p, footer a, footer li {
   background-image:url('../img/icon_random_over.png');  
 }
   
+.student-overlay h2.gap {
+  visibility: hidden;
+}
+
 .student-statement {
   padding-right: 5%;
   padding-bottom: 30px;
