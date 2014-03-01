@@ -159,7 +159,11 @@ p a:active, h5 a:active  {
 article p {
   margin-bottom: 15px;
 }
-  
+
+.program-peers p {
+  margin-bottom: 0;
+}
+
 /* General Styles... */
 ::selection {
   background: #FF4C47; /* Safari */
@@ -638,7 +642,6 @@ ul.grid-display .thumb .block .info p {
 .imgwrap img {
   width: 100%;
   max-width: 100%;
-  margin-top: -175px;
 }
 
 /* Footer Styles ************************/
@@ -687,6 +690,9 @@ footer p, footer a, footer li {
 .critical .student-overlay {
   position: static;
   overflow: auto;
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
 }
 
 .student-overlay img.logo {
@@ -815,6 +821,11 @@ footer p, footer a, footer li {
   padding-bottom: 30px;
 }
   
+.critical .program-list h4 {
+  margin-top: 7px;
+  padding: 0;
+}
+
 .program-list ul {
   padding-bottom: 30px;
 }
