@@ -255,6 +255,23 @@ $(document).ready(function() {
       var pos = $('#students').offset();
       $('body').animate({ scrollTop: pos.top-150 });
     });
+    // Process gallery filter
+    $('#galleries-data ul').each(function() {
+      $(this).find('li').slice(0,3).on('click touch', function(e) {
+        e.preventDefault();
+        var gallery = $(this).parent().data('gallery');
+        studentlist.filter(function(item) {
+          var terms = gallery.split(',');
+          var match = false;
+          for (var i = 0; i<terms.length; i++) {
+            if (item.values().exhibitionlocation.replace('&amp;','&').toLowerCase().indexOf(terms[i].toLowerCase()) >= 0) match = true;
+          }
+          return match;      
+        });
+        var pos = $('#students').offset();
+        $('body').animate({ scrollTop: pos.top-150 });
+      });
+    });
 
     // Process the showdate filter
     $('#showdate-filter a').on('click touch', function(e) {
