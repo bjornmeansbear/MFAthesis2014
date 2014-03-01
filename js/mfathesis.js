@@ -248,7 +248,7 @@ $(document).ready(function() {
         var terms = gallery.split(',');
         var match = false;
         for (var i = 0; i<terms.length; i++) {
-          if (item.values().program.replace('&amp;','&').toLowerCase().indexOf(terms[i].toLowerCase()) >= 0) match = true;
+          if (item.values().exhibitionlocation.replace('&amp;','&').toLowerCase().indexOf(terms[i].toLowerCase()) >= 0) match = true;
         }
         return match;      
       });
