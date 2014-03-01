@@ -453,10 +453,9 @@ main article {
   }
 
   .affix-bottom {
-    position: fixed;
-    bottom: 321px;
+    position: absolute;
     top: inherit;
-    width: inherit;
+    width: 165px;
     max-width: 165px;
     z-index: 1;
   }
