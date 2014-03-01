@@ -245,7 +245,12 @@ $(document).ready(function() {
       e.preventDefault();
       var gallery = $(this).data('gallery');
       studentlist.filter(function(item) {
-        return item.values().exhibitionlocation.toLowerCase().indexOf(gallery.toLowerCase()) >= 0;
+        var terms = gallery.split(',');
+        var match = false;
+        for (var i = 0; i<terms.length; i++) {
+          if (item.values().program.replace('&amp;','&').toLowerCase().indexOf(terms[i].toLowerCase()) >= 0) match = true;
+        }
+        return match;      
       });
       var pos = $('#students').offset();
       $('body').animate({ scrollTop: pos.top-150 });
