@@ -260,7 +260,7 @@ $(document).ready(function() {
     // Process gallery filter
     $('#galleries-data ul').each(function() {
       $galleries = $(this).find('li');
-      $galleries.slice(0,$galleries.length-2).on('click touch', function(e) {
+      $galleries.slice(0,($galleries.length-1)).on('click touch', function(e) {
         e.preventDefault();
         var gallery = $(this).parent().data('gallery');
         studentlist.filter(function(item) {
