@@ -277,7 +277,7 @@ $(document).ready(function() {
     });
 
     // Process the showdate filter
-    $('#showdate-filter a').on('click touch', function(e) {
+    $('#showdate-filter a,li.showtime').on('click touch', function(e) {
       e.preventDefault();
       var showdate = $(this).data('showdate');
       studentlist.filter(function(item) {
