@@ -505,6 +505,7 @@ P    X          F                K       J              F      J     Y      5   
                       <img src="http://mfa.cape.io/{{.}}">
                       
                       <!-- THIS IS WHERE THE CAPTIONS SHOULD PRINT OUT IF THERE ARE ANY! -->
+                      <!-- example code i'd like is down at the end of the doc, tried putting it here but it broke the site... -->
                       <!-- /END THIS IS WHERE THE CAPTIONS SHOULD PRINT OUT IF THERE ARE ANY! -->
                       
                     </div>
@@ -563,6 +564,18 @@ P    X          F                K       J              F      J     Y      5   
     <script src="js/hogan.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/mfathesis.js"></script>
+
+<!-- for the captions!
+                      <div class="carousel-caption">
+                        {{#title}<h4>{{title}}</h4>{{/title}}
+                        {{#year}<p class="year">{{year}}</p>{{/year}}
+                        {{#medium}<p class="medium">{{medium}}</p>{{/medium}}
+                        {{#size}<p class="size">{{size}}</p>{{/size}}
+                        {{#caption}<p class="caption">{{.}}</p>{{/year}}
+                        {{#credit}<p class="credit">{{credit}}</p>{{/credit}}
+                      </div>
+-->
+
 
   </body>
 </html>
