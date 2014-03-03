@@ -1036,7 +1036,7 @@ footer p, footer a, footer li {
 }
 
 .carousel-caption {
-  background: rgba(255,76,71,.5);
+  background: rgba(255,76,71,.77);
   display: none;
   right: 0;
   left: 0;
