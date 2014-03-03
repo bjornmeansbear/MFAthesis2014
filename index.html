@@ -511,7 +511,11 @@
                         {{#caption}}
                         <div class="inner">
                           <div class="info">
-                            <h4>{{title}}</h4>
+                            <h4 class="title">{{title}}</h4>
+                            <p class="year">{{year}}</p>
+                            <p class="medium">{{medium}}</p>
+                            <p class="size">{{size}}</p>
+                            <p class="credit">{{credit}}</p>
                           </div>
                         </div>
                         {{/caption}}
@@ -577,18 +581,6 @@
     <script src="js/hogan.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/mfathesis.js"></script>
-
-<!-- for the captions!
-                      <div class="carousel-caption">
-                        {{#title}<h4>{{title}}</h4>{{/title}}
-                        {{#year}<p class="year">{{year}}</p>{{/year}}
-                        {{#medium}<p class="medium">{{medium}}</p>{{/medium}}
-                        {{#size}<p class="size">{{size}}</p>{{/size}}
-                        {{#caption}<p class="caption">{{.}}</p>{{/year}}
-                        {{#credit}<p class="credit">{{credit}}</p>{{/credit}}
-                      </div>
--->
-
 
   </body>
 </html>
