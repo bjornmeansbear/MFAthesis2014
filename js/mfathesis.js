@@ -364,6 +364,7 @@ $(document).ready(function() {
 
     // Process the program filter 
     $('#program-filter a').on('click touch', function(e) {
+      if (_.isUndefined($(this).data('program'))) return true;
       e.preventDefault();
       if (_.isUndefined(sessionStorage.activefilter) == false) {
         delete(sessionStorage.activefilter);
