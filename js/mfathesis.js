@@ -339,7 +339,7 @@ $(document).ready(function() {
           }
           return match;      
         });
-        sessionStorage.activefilter = 'Gallery: ' + g;
+        sessionStorage.activefilter = 'Gallery: ' + gallery;
         $(window).trigger('updateFilter');
         var pos = $('#students').offset();
         $('body').animate({ scrollTop: pos.top-150 });
