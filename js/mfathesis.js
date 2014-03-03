@@ -401,6 +401,7 @@ $(document).ready(function() {
                                                     }
         });
       } else if (type === 'all') {
+        studentlist.filter();
         studentlist.sort('name', {order: 'asc'});
       }
       var pos = $('#students').offset();
