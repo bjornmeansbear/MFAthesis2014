@@ -1037,10 +1037,15 @@ footer p, footer a, footer li {
 
 .carousel-caption {
   background: #FF4C47;
+  display: none;
   right: 0;
   left: 0;
   bottom: 0;
   color: #fff !important;
+}
+
+#slideshow:hover .carousel-caption {
+  display: block;
 }
 
 .carousel-caption h4 {
