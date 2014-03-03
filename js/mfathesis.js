@@ -3,8 +3,8 @@ $(document).ready(function() {
   $('header img.backgroundfill:nth-of-type('+_.random(1,$('header img.backgroundfill').length)+')').show();
   
   $.getJSON('http://mfa.cape.io/items/client_data.json', function(data) {
-    // Programs grouped by showdates as taken from the actual data
 
+    // Programs grouped by showdates as taken from the actual data
     var showdates = [{
       name: ["Post Bac FA"],
       date: 'Jan 31-Feb 16, 2014'
@@ -36,6 +36,7 @@ $(document).ready(function() {
     var showDate = function(program) {
       var showdate = '';
       var shows = this;
+      // Cyclce through available showdates to find a match
       for (var i = 0; i<shows.length; i++) {
         if (_.indexOf(shows[i].name, program) > -1) {
           showdate = shows[i].date;
@@ -49,17 +50,19 @@ $(document).ready(function() {
       var students = this;
       program = (_.isUndefined(program)) ? '':program;
       program = program.replace('&amp;','&');
-      return _.sortBy(_.where(students, { program: program }), 'firstname');
+      // Return sorted list of students from program
+      return _.sortBy(_.where(students, { program: program }), 'name');
     }
 
     // Slideshow items
     var slideShow = function(id) {
       var slideshow = this;
       if (_.isUndefined(slideshow[id])) return [];
+      // Return an array of slides for a given id
       return slideshow[id];
     }
 
-    // Used for the indicators
+    // Returns an array to be used as a counter for mustache templating
     var slideShowcount = function(id) {
       var slideshow = this;
       var r = [];
@@ -83,7 +86,7 @@ $(document).ready(function() {
       return r.length > 0;
     }
 
-    // Function to determine whether we have images for an id
+    // Function to determine whether we have only a single image or multiple images
     var slideShowsingle = function(id) {
       var slideshow = this;
       var r = [];
@@ -98,7 +101,8 @@ $(document).ready(function() {
     // Get the id of the next student
     var nextStudent = function(id) {
       var students = this;
-      var sorted = _.pluck(_.sortBy(students, 'firstname'), '_id');
+      // Pluck id values, sorting the students by name
+      var sorted = _.pluck(_.sortBy(students, 'name'), '_id');
       var pos = _.indexOf(sorted, id);
       if (pos == sorted.length-1) return sorted[0];
       return sorted[pos+1];
@@ -107,27 +111,30 @@ $(document).ready(function() {
     // Get the id of the previous student
     var prevStudent = function(id) {
       var students = this;
-      var sorted = _.pluck(_.sortBy(students, 'firstname'), '_id');
+      var sorted = _.pluck(_.sortBy(students, 'name'), '_id');
       var pos = _.indexOf(sorted, id);
       if (pos == 0) return sorted[sorted.length-1];
       return sorted[pos-1];
     }
 
-    // Map our showDate() function to a binding of showdates and the program name
+    // Map various function bindings to the objects that will be sent to mustache
     _.map(data.students, function(student) {
-      student.showdate = _.bind(showDate, showdates, student.program);
-      student.peers = _.bind(sameProgram, data.students, student.program);
-      student.slideshow = _.bind(slideShow, data.slideshow, student._id);
-      student.slideshowcount = _.bind(slideShowcount, data.slideshow, student._id);
+      console.log(student.urlofpersonalwebsite);
+      student.personalemail        = (_.isUndefined(student.personalemail) || student.personalemail.length == 0) ? false:student.personalemail;
+      student.urlofpersonalwebsite = (_.isUndefined(student.urlofpersonalwebsite) || student.urlofpersonalwebsite.length == 0) ? false:student.urlofpersonalwebsite;
+      student.showdate        = _.bind(showDate, showdates, student.program);
+      student.peers           = _.bind(sameProgram, data.students, student.program);
+      student.slideshow       = _.bind(slideShow, data.slideshow, student._id);
+      student.slideshowcount  = _.bind(slideShowcount, data.slideshow, student._id);
       student.slideshowimages = _.bind(slideShowimages, data.slideshow, student._id);
       student.slideshowsingle = _.bind(slideShowsingle, data.slideshow, student._id);
-      student.nextid = _.bind(nextStudent, data.students, student._id);
-      student.previd = _.bind(prevStudent, data.students, student._id);
+      student.nextid          = _.bind(nextStudent, data.students, student._id);
+      student.previd          = _.bind(prevStudent, data.students, student._id);
     });
 
     // Compile templates for the list and the overlay
     var StudentTemplate = Hogan.compile($('#students-template').html());
-    var StudentOverlay = Hogan.compile($('#overlay-template').html());
+    var StudentOverlay  = Hogan.compile($('#overlay-template').html());
     
     // Render the template for the list and initialize list.js
     $('#projects-demo').html(StudentTemplate.render(data));
@@ -136,12 +143,15 @@ $(document).ready(function() {
     };
     var studentlist = new List('students', options);
 
-    // Event to trigger to link up the peers on the student overlay
+
+    /*** Activate peers ***/
     $(window).on('activatePeers', function() {
       $('ul.program-peers li').removeClass('active');
+
       // Get the active element and previous and next for button usage
       var $active = $('span[id="id-'+sessionStorage.activestudent+'"]');
       $active.parent().addClass('active');
+
       // When closing the window, revert the body overflow and scroll position
       $('.student-overlay button.close').on('click touch', function(e) {
         hash.remove('id');
@@ -151,6 +161,8 @@ $(document).ready(function() {
         }
         $('body').animate({ scrollTop: sessionStorage.scrollpos }, 0);
       });
+
+      // Close the overlay on img.logo click
       $('.student-overlay img.logo').on('click touch', function(e) {
         hash.remove('id');
         $('html,body').css('overflow','auto').css('height', '');
@@ -159,13 +171,15 @@ $(document).ready(function() {
         }
         $('body').animate({ scrollTop: sessionStorage.scrollpos }, 0);
       });
+
       // Navigate to a random person in the list
       $('.student-nav li.random').off().on('click touch', function(e) {
         var ids = _.pluck(data.students, '_id');
         var random_id = ids[_.random(0,ids.length-1)];
         hash.add({id:random_id});
       });
-      // Create click handlers for each person in the same program
+
+      // Click handlers to navigate to peers by id
       $('ul.program-peers li').on('click touch', function(e) {
         var id = $(this).find('.id').html();
         sessionStorage.overlaypos = $('.student-overlay').scrollTop();
@@ -173,20 +187,28 @@ $(document).ready(function() {
       });
     });
 
-    // Process items on hashchange
+
+    /*** Hashchange ***/
     $(window).on('hashchange', function(e) {
       var id = hash.get('id');
+      // If we have an id, open the overlay
       if (_.isUndefined(id) == false) {
+        // Get the student from the original object by id
         var s = _.where(data.students, { _id:id })[0];
+        // Remove any existing overlay
         $('.student-overlay').remove();
+        // Render the new student
         $('body').append(StudentOverlay.render(s));
+        // Hide the scrollbars
         $('html,body').css('overflow','hidden').height($(window).height());
+        // Add the active class to the first slide
         $('div.carousel-inner div.item:nth-of-type(1)').addClass('active');
+        $('#slideshow ol.carousel-indicators li:nth-of-type(1)').addClass('active');
+        // When we navigate, store the scroll position
         $('.student-nav a').on('click touch', function() {
-          console.log("pos");
           sessionStorage.overlaypos = $('.student-overlay').scrollTop();
         });
-        $('#slideshow ol.carousel-indicators li:nth-of-type(1)').addClass('active');
+        // If we have a scroll position, scroll to it
         if (_.isUndefined(sessionStorage.overlaypos) == false) {
           $('.student-overlay').animate({ scrollTop: sessionStorage.overlaypos }, 0);
         }
@@ -202,7 +224,8 @@ $(document).ready(function() {
       }
     });
 
-    // Things to do when the studentlist is updated
+
+    /*** List is updated ***/
     studentlist.on('updated', function() {
       $('li.student').each(function(i,obj) {
         // Retrieve the id for the current list item
@@ -220,6 +243,7 @@ $(document).ready(function() {
         });
       });
     });
+
     // Initially, sort the list by ascending first name
     studentlist.sort('name', { order: 'asc' });
     // Filter out bad results
@@ -242,7 +266,8 @@ $(document).ready(function() {
       var pos = $('#students').offset();
       $('body').animate({ scrollTop: pos.top-150 });
     });
-    // Process gallery filter
+
+    // Process dropdown gallery filter
     $('#gallery-filter a').on('click touch', function(e) {
       e.preventDefault();
       var gallery = $(this).data('gallery');
@@ -257,7 +282,8 @@ $(document).ready(function() {
       var pos = $('#students').offset();
       $('body').animate({ scrollTop: pos.top-150 });
     });
-    // Process gallery filter
+
+    // Process gallery list filter
     $('#galleries-data ul').each(function() {
       $galleries = $(this).find('li');
       $galleries.slice(0,($galleries.length-1)).on('click touch', function(e) {
