@@ -871,8 +871,7 @@ footer p, footer a, footer li {
 }
 
 /* Student Overlay Slideshow */
-#slideshow,
-#singleimg {
+#slideshow {
   margin-left: 0px;
   margin-bottom: 50px;
   text-align: center;
@@ -886,6 +885,22 @@ footer p, footer a, footer li {
   text-align: center;
   }
 
+#singleimg {
+  margin-left: 0px;
+  margin-bottom: 50px;
+  text-align: center;
+  width: 100%;
+  min-height: 200px;
+  max-height: 200px;
+  }
+
+#singleimg img {
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  }
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   #slideshow,
@@ -895,6 +910,8 @@ footer p, footer a, footer li {
     text-align: center;
     min-height: 200px;
     max-height: 400px;
+    height: auto;
+    width: auto;
     }
   
   .carousel-inner,  
@@ -902,7 +919,14 @@ footer p, footer a, footer li {
     height: 400px;
     text-align: center;
     }
-  
+
+  #singleimg img {
+    max-height: 100%;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    }
+
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -941,13 +965,6 @@ footer p, footer a, footer li {
     text-align: center;
     }
 }
-
-#singleimg img {
-  max-height: 100%;
-  max-width: 100%;
-  height: auto;
-  width: auto;
-  }
 
 .carousel-inner > .item:before {
   content: '';
