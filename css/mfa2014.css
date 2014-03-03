@@ -185,7 +185,7 @@ a,
 .student.thumb,
 .program-list li,
 #galleries-data ul li,
-li.showtime,
+li.showtime.active,
 .student-overlay .student-info ul.student-nav li {
   cursor: pointer;
 }
