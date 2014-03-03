@@ -14,16 +14,13 @@ $(document).ready(function() {
 
     var keys = _.keys(data.photo_info);
     _.forEach(keys, function(id) {
-      console.log(id);
       var student = data.photo_info[id];
-      var slides = [];
       if (_.isArray(student)) {
-        captions[id] = _.map(_.values(student), function(item) { 
-                                                  return _.values(item)[0]; 
-                                                });
+        captions[id] = _.map(_.values(student), function(item) { return _.values(item)[0]; });
+      } else {
+        console.log(id);
       }
     });
-    console.log(captions);
 
     data.students = _.filter(data.students, function(student) {
                       return (_.indexOf(filterids, student._id) == -1 && _.isUndefined(student.firstname) == false);
