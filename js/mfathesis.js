@@ -261,10 +261,6 @@ $(document).ready(function() {
 
     // Initially, sort the list by ascending first name
     studentlist.sort('name', { order: 'asc' });
-    // Filter out bad results
-    studentlist.filter(function(item) {
-      return item.values().name.length > 1;
-    });
 
     $(window).on('updateFilter', function () {
       if (_.isUndefined(sessionStorage.activefilter)) {
@@ -276,9 +272,6 @@ $(document).ready(function() {
         $('div#active-filter button').off('click touch').on('click touch', function() {
           delete(sessionStorage.activefilter);
           $('input#search-students').val('');
-          studentlist.filter(function(item) {
-            return item.values().name.length > 1;
-          });
           $(window).trigger('updateFilter');
         });
         $('div#active-filter .attribute').html(sessionStorage.activefilter);
@@ -295,9 +288,6 @@ $(document).ready(function() {
         sessionStorage.activefilter = 'Search: ' + search;
         $(window).trigger('updateFilter');
       } else {
-        studentlist.filter(function(item) {
-          return item.values().name.length > 1;
-        });
         if (_.isUndefined(sessionStorage.activefilter) == false) {
           delete(sessionStorage.activefilter);
         }
@@ -409,9 +399,6 @@ $(document).ready(function() {
                                                     }
         });
       } else if (type === 'all') {
-        studentlist.filter(function(item) {
-          return item.values().name.length > 1;
-        });
         studentlist.sort('name', {order: 'asc'});
       }
       var pos = $('#students').offset();
