@@ -1035,6 +1035,18 @@ footer p, footer a, footer li {
   background-color: #FF4C47;
 }
 
+.carousel-caption {
+  background: #FF4C47;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  color: #fff !important;
+}
+
+.carousel-caption h4 {
+  color: #fff !important;
+}
+
 /* * Filter results printout * */
 #active-filter {
   position: relative;
