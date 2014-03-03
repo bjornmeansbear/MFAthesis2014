@@ -16,7 +16,7 @@ $(document).ready(function() {
         var a = [];
         for (var k=0; k<student[i].length; k++) {
           if (_.isArray(student[i])) {
-            var key = parseInt(_.keys(student[i][k])[0]);
+            var key = parseInt(_.keys(student[i][k])[0])-1;
             var vals = _.values(student[i][k])[0];
             a.splice(key, 0, vals);
           }
@@ -25,9 +25,7 @@ $(document).ready(function() {
       }
     });
   });
-
   $.ajaxSetup({async:true});
-  console.log(captions);
 
   var filterids = ["443278", "437771", "443564", "459986", "440087", "445165", "464062", "464187", "453166", "448744", "453220", "401805", "415768", "524679", "443123", "420845", "361711", "524263", "109518", "524174", "510825", "354221", "538833", "542280", "542281", "155088", "541960", "333264", "500817", "317278", "498556", "481509", "499451", "480908", "463878"] 
   // Show a random header image
@@ -100,10 +98,10 @@ $(document).ready(function() {
     var slideShow = function(id) {
       var slideshow = this;
       var a = [];
-      if (_.isUndefined(slideshow[id])) return [];
+      if (_.isUndefined(slideshow[id])) return false;
       // Return an array of slides for a given id
       for (i=0; i<slideshow[id].length; i++) {
-        var caption = (_.isUndefined(captions[id][i])) ? false:captions[id][i];
+        var caption = (_.isUndefined(captions[id])) ? false:captions[id][i];
         a.push({slide: slideshow[id][i], caption: caption});
       }
       return a;
