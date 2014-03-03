@@ -9,7 +9,7 @@ $(document).ready(function() {
   
   $.getJSON('http://mfa.cape.io/items/client_data.json', function(data) {
     data.students = _.filter(data.students, function(student) {
-                      return _.indexOf(filterids, student._id) == -1;
+                      return (_.indexOf(filterids, student._id) == -1 && _.isUndefined(student.firstname) == false);
                     })
     // Programs grouped by showdates as taken from the actual data
     var showdates = [{
