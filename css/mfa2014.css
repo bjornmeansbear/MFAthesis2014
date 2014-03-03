@@ -881,7 +881,6 @@ footer p, footer a, footer li {
   height: auto;
   width: auto;
   }
-  
 
 .carousel-inner,  
 .carousel-inner > .item {
@@ -900,7 +899,9 @@ footer p, footer a, footer li {
   vertical-align: middle;
   margin-right: -0.25em; /* Adjusts for spacing */
  }
- 
+
+/* http://css-tricks.com/centering-in-the-unknown/ - this is what I used for vertical centering... works like a charm! */
+
 .carousel-inner > .item > img, 
 .carousel-inner > .item > a > img {
   display: inline-block;
