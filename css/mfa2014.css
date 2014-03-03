@@ -890,13 +890,10 @@ footer p, footer a, footer li {
   margin-bottom: 50px;
   text-align: center;
   width: 100%;
-  min-height: 200px;
-  max-height: 200px;
+  height: auto;
   }
 
 #singleimg img {
-  max-height: 100%;
-  max-width: 100%;
   height: auto;
   width: 100%;
   }
