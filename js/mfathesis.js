@@ -10,28 +10,36 @@ $(document).ready(function() {
 
     // Programs grouped by showdates as taken from the actual data
     var showdates = [{
-      name: ["Post Bac FA"],
+      name: [ "Post-Baccalaureate Fine Art",
+              "Post-Baccalaureate Fine Arts" ],
       date: 'Jan 31-Feb 16, 2014'
     }, {
-      name: ["Graphic Design", "Post Bac GD", "Illustration Practice"],
+      name: [ "Graphic Design MFA", 
+              "Post-Baccalaureate Graphic Design", 
+              "Illustration Practice MFA" ],
       date: 'Mar 28-Apr 06, 2014'
     }, {
-      name: ["Social Design"],
+      name: [ "Social Design MA" ],
       date: 'Apr 23-May 04, 2014'
     }, {
-      name: ["Rinehart", "Photo & Electronic Media", "Community Arts"],
+      name: [ "Rinehart School of Sculpture MFA", 
+              "Photographic & Electronic Media MFA",
+              "Photographic & Electronic Media",
+              "Community Arts MFA",
+              "Community Arts MFA MFA" ],
       date: 'Apr 11-Apr 20, 2014'
     }, {
-      name: ["MA Teaching"],
+      name: [ "Teaching MA" ],
       date: 'Jan 24-Feb 16, 2014'
     }, {
-      name: ["Mount Royal","Hoffberger"],
+      name: [ "Mount Royal School of Art MFA",
+              "Leroy E. Hoffberger School of Painting MFA" ],
       date: 'Apr 25-May 04, 2014'
     }, {
-      name: ['Curatorial'],
+      name: [ 'Curatorial Practice MFA' ],
       date: 'Feb 01-May 09, 2014'
     }, {
-      name: ["Critical Studies"],
+      name: [ "Critical Studies MA" ],
       date: 'May 03, 2014'
       // We are going to need to add Studio Art MFA - Jun 28-Jul 12, 2014, and Art Education MA - Jul 27-Aug 01, 2014
     }];
@@ -49,7 +57,7 @@ $(document).ready(function() {
       return showdate;
     }
 
-    console.log(_.uniq(_.pluck(data.students, 'program')).sort().join('\n'));
+    //console.log(_.uniq(_.pluck(data.students, 'program')).sort().join('\n'));
     // Function for getting a list of other people in the same program
     var sameProgram = function(program) {
       var students = this;
