@@ -787,7 +787,7 @@ footer p, footer a, footer li {
 
 .student-nav { margin-bottom: 30px; }
 
-.student-nav .nav-justified > li {
+.student-nav.nav-justified > li {
   display: table-cell;
   width: 1%;
 }
