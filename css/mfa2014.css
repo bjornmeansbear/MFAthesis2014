@@ -164,6 +164,12 @@ article p {
   margin-bottom: 0;
 }
 
+.critical button a {
+  color: inherit;
+  border: none;
+  text-decoration: none;
+}
+
 /* General Styles... */
 ::selection {
   background: #FF4C47; /* Safari */
@@ -883,9 +889,22 @@ footer p, footer a, footer li {
   text-align: center;
   }
 
+.carousel-inner > .item {
+  text-align: center;
+}
+ 
+.carousel-inner > .item:before {
+  content: '';
+  display: inline-block;
+  height: 100%; 
+  vertical-align: middle;
+  margin-right: -0.25em; /* Adjusts for spacing */
+ }
+ 
 .carousel-inner > .item > img, 
 .carousel-inner > .item > a > img {
-  display: block;
+  display: inline-block;
+  vertical-align: middle;
   max-height: 100%;
   max-width: auto;
   height: auto;
