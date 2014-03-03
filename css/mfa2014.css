@@ -787,6 +787,11 @@ footer p, footer a, footer li {
 
 .student-nav { margin-bottom: 30px; }
 
+.student-nav .nav-justified > li {
+  display: table-cell;
+  width: 1%;
+}
+
 .student-nav .overlay-nav-icon {
   display: block;
   width: 43px;
