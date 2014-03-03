@@ -267,6 +267,7 @@ $(document).ready(function() {
         $('div#active-filter .attribute').empty();
         $('input#search-students').val('');
         $('div#active-filter').hide();
+        studentlist.filter();
       } else {
         $('div#active-filter').show();
         $('div#active-filter button').off('click touch').on('click touch', function() {
