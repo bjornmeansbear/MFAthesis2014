@@ -3,11 +3,14 @@ $(document).ready(function() {
     delete(sessionStorage.activefilter);
   }
 
+  var filterids = ["443278", "437771", "443564", "459986", "440087", "445165", "464062", "464187", "453166", "448744", "453220", "401805", "415768", "524679", "443123", "420845", "361711", "524263", "109518", "524174", "510825", "354221", "538833", "542280", "542281", "155088", "541960", "333264", "500817", "317278", "498556", "481509", "499451", "480908", "463878"] 
   // Show a random header image
   $('header img.backgroundfill:nth-of-type('+_.random(1,$('header img.backgroundfill').length)+')').show();
   
   $.getJSON('http://mfa.cape.io/items/client_data.json', function(data) {
-
+    data.students = _.filter(data.students, function(student) {
+                      return _.indexOf(filterids, student._id) == -1;
+                    })
     // Programs grouped by showdates as taken from the actual data
     var showdates = [{
       name: [ "Post-Baccalaureate Fine Art",
