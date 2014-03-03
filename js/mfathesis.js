@@ -3,6 +3,32 @@ $(document).ready(function() {
     delete(sessionStorage.activefilter);
   }
 
+  var captions = {};
+
+  $.ajaxSetup({async:false});
+
+  $.getJSON('http://mfa.cape.io/_view/photo_info/_output', function(data) {
+    var keys = _.keys(data.photo_info);
+    _.forEach(keys, function(id) {
+      var student = data.photo_info[id];
+      var slides = [];
+      for (var i=0; i<student.length; i++) {
+        var a = [];
+        for (var k=0; k<student[i].length; k++) {
+          if (_.isArray(student[i])) {
+            var key = parseInt(_.keys(student[i][k])[0]);
+            var vals = _.values(student[i][k])[0];
+            a.splice(key, 0, vals);
+          }
+        }
+        captions[id] = a;
+      }
+    });
+  });
+
+  $.ajaxSetup({async:true});
+  console.log(captions);
+
   var filterids = ["443278", "437771", "443564", "459986", "440087", "445165", "464062", "464187", "453166", "448744", "453220", "401805", "415768", "524679", "443123", "420845", "361711", "524263", "109518", "524174", "510825", "354221", "538833", "542280", "542281", "155088", "541960", "333264", "500817", "317278", "498556", "481509", "499451", "480908", "463878"] 
   // Show a random header image
   $('header img.backgroundfill:nth-of-type('+_.random(1,$('header img.backgroundfill').length)+')').show();
@@ -73,9 +99,14 @@ $(document).ready(function() {
     // Slideshow items
     var slideShow = function(id) {
       var slideshow = this;
+      var a = [];
       if (_.isUndefined(slideshow[id])) return [];
       // Return an array of slides for a given id
-      return slideshow[id];
+      for (i=0; i<slideshow[id].length; i++) {
+        var caption = (_.isUndefined(captions[id][i])) ? false:captions[id][i];
+        a.push({slide: slideshow[id][i], caption: caption});
+      }
+      return a;
     }
 
     // Returns an array to be used as a counter for mustache templating

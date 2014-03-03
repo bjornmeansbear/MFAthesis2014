@@ -505,7 +505,13 @@
                   <div class="carousel-inner">
                     {{#slideshow}}
                     <div class="item">
-                      <img src="http://mfa.cape.io/{{.}}">
+                      <img src="http://mfa.cape.io/{{slide}}">
+
+                      <div class="carousel-caption">
+                        {{#caption}}
+                        <h4>{{title}}</h4>
+                        {{/caption}}
+                      </div>
                       
                       <!-- THIS IS WHERE THE CAPTIONS SHOULD PRINT OUT IF THERE ARE ANY! -->
                       <!-- example code id like is down at the end of the doc, tried putting it here but it broke the site... -->
