@@ -5,33 +5,26 @@ $(document).ready(function() {
 
   var captions = {};
 
-  $.ajaxSetup({async:false});
-
-  $.getJSON('http://mfa.cape.io/_view/photo_info/_output', function(data) {
-    var keys = _.keys(data.photo_info);
-    _.forEach(keys, function(id) {
-      var student = data.photo_info[id];
-      var slides = [];
-      for (var i=0; i<student.length; i++) {
-        var a = [];
-        for (var k=0; k<student[i].length; k++) {
-          if (_.isArray(student[i])) {
-            var key = parseInt(_.keys(student[i][k])[0])-1;
-            var vals = _.values(student[i][k])[0];
-            a.splice(key, 0, vals);
-          }
-        }
-        captions[id] = a;
-      }
-    });
-  });
-  $.ajaxSetup({async:true});
-
+  var captions = [];
   var filterids = ["443278", "437771", "443564", "459986", "440087", "445165", "464062", "464187", "453166", "448744", "453220", "401805", "415768", "524679", "443123", "420845", "361711", "524263", "109518", "524174", "510825", "354221", "538833", "542280", "542281", "155088", "541960", "333264", "500817", "317278", "498556", "481509", "499451", "480908", "463878"] 
   // Show a random header image
   $('header img.backgroundfill:nth-of-type('+_.random(1,$('header img.backgroundfill').length)+')').show();
   
   $.getJSON('http://mfa.cape.io/items/client_data.json', function(data) {
+
+    var keys = _.keys(data.photo_info);
+    _.forEach(keys, function(id) {
+      console.log(id);
+      var student = data.photo_info[id];
+      var slides = [];
+      if (_.isArray(student)) {
+        captions[id] = _.map(_.values(student), function(item) { 
+                                                  return _.values(item)[0]; 
+                                                });
+      }
+    });
+    console.log(captions);
+
     data.students = _.filter(data.students, function(student) {
                       return (_.indexOf(filterids, student._id) == -1 && _.isUndefined(student.firstname) == false);
                     })
@@ -101,9 +94,11 @@ $(document).ready(function() {
       if (_.isUndefined(slideshow[id])) return false;
       // Return an array of slides for a given id
       for (i=0; i<slideshow[id].length; i++) {
+        //console.log(captions);
         var caption = (_.isUndefined(captions[id])) ? false:captions[id][i];
         a.push({slide: slideshow[id][i], caption: caption});
       }
+      //console.log(a);
       return a;
     }
 
