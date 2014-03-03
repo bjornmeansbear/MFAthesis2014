@@ -953,6 +953,7 @@ footer p, footer a, footer li {
  }
 
 /* http://css-tricks.com/centering-in-the-unknown/ - this is what I used for vertical centering... works like a charm! */
+/* here is some other info too: http://gtwebdev.com/workshop/vcenter/vcenter-inline-css.php */
 
 .carousel-inner > .item > img, 
 .carousel-inner > .item > a > img {
