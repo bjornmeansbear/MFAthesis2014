@@ -369,7 +369,7 @@ $(document).ready(function() {
     });
 
     // Process the showdate filter
-    $('#showdate-filter a,li.showtime').on('click touch', function(e) {
+    $('#showdate-filter a,li.showtime.active').on('click touch', function(e) {
       e.preventDefault();
       if (_.isUndefined(sessionStorage.activefilter) == false) {
         delete(sessionStorage.activefilter);
