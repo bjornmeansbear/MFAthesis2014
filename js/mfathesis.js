@@ -272,6 +272,7 @@ $(document).ready(function() {
         $('div#active-filter button').off('click touch').on('click touch', function() {
           delete(sessionStorage.activefilter);
           $('input#search-students').val('');
+          studentlist.filter();
           $(window).trigger('updateFilter');
         });
         $('div#active-filter .attribute').html(sessionStorage.activefilter);
