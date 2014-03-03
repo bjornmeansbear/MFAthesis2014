@@ -963,7 +963,11 @@ footer p, footer a, footer li {
     }
 }
 
-.carousel-inner > .item:before {
+/* http://css-tricks.com/centering-in-the-unknown/ - this is what I used for vertical centering... works like a charm! */
+/* here is some other info too: http://gtwebdev.com/workshop/vcenter/vcenter-inline-css.php */
+
+.carousel-inner > .item:before,
+.carousel-caption .inner {
   content: '';
   display: inline-block;
   height: 100%; 
@@ -971,11 +975,9 @@ footer p, footer a, footer li {
   margin-right: -0.25em; /* Adjusts for spacing */
  }
 
-/* http://css-tricks.com/centering-in-the-unknown/ - this is what I used for vertical centering... works like a charm! */
-/* here is some other info too: http://gtwebdev.com/workshop/vcenter/vcenter-inline-css.php */
-
 .carousel-inner > .item > img, 
-.carousel-inner > .item > a > img {
+.carousel-inner > .item > a > img,
+.carousel-caption .inner .info {
   display: inline-block;
   vertical-align: middle;
   max-height: 100%;
@@ -1036,12 +1038,14 @@ footer p, footer a, footer li {
 }
 
 .carousel-caption {
-  background: #FF4C47;
+  background: rgba(255,76,71,.5);
   display: none;
+  top:0;
   right: 0;
-  left: 0;
   bottom: 0;
+  left: 0;
   color: #fff !important;
+  text-shadow: none;
 }
 
 .item:hover .carousel-caption {
