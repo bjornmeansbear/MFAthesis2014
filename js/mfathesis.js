@@ -119,17 +119,16 @@ $(document).ready(function() {
 
     // Map various function bindings to the objects that will be sent to mustache
     _.map(data.students, function(student) {
-      console.log(student.urlofpersonalwebsite);
       student.personalemail        = (_.isUndefined(student.personalemail) || student.personalemail.length == 0) ? false:student.personalemail;
       student.urlofpersonalwebsite = (_.isUndefined(student.urlofpersonalwebsite) || student.urlofpersonalwebsite.length == 0) ? false:student.urlofpersonalwebsite;
-      student.showdate        = _.bind(showDate, showdates, student.program);
-      student.peers           = _.bind(sameProgram, data.students, student.program);
-      student.slideshow       = _.bind(slideShow, data.slideshow, student._id);
-      student.slideshowcount  = _.bind(slideShowcount, data.slideshow, student._id);
-      student.slideshowimages = _.bind(slideShowimages, data.slideshow, student._id);
-      student.slideshowsingle = _.bind(slideShowsingle, data.slideshow, student._id);
-      student.nextid          = _.bind(nextStudent, data.students, student._id);
-      student.previd          = _.bind(prevStudent, data.students, student._id);
+      student.showdate             = _.bind(showDate, showdates, student.program);
+      student.peers                = _.bind(sameProgram, data.students, student.program);
+      student.slideshow            = _.bind(slideShow, data.slideshow, student._id);
+      student.slideshowcount       = _.bind(slideShowcount, data.slideshow, student._id);
+      student.slideshowimages      = _.bind(slideShowimages, data.slideshow, student._id);
+      student.slideshowsingle      = _.bind(slideShowsingle, data.slideshow, student._id);
+      student.nextid               = _.bind(nextStudent, data.students, student._id);
+      student.previd               = _.bind(prevStudent, data.students, student._id);
     });
 
     // Compile templates for the list and the overlay
@@ -251,6 +250,25 @@ $(document).ready(function() {
       return item.values().name.length > 1;
     });
 
+    $(window).on('updateFilter', function () {
+      if (_.isUndefined(sessionStorage.activefilter)) {
+        $('div#active-filter .attribute').empty();
+        $('input#search-students').val('');
+        $('div#active-filter').hide();
+      } else {
+        $('div#active-filter').show();
+        $('div#active-filter button').off('click touch').on('click touch', function() {
+          delete(sessionStorage.activefilter);
+          $('input#search-students').val('');
+          studentlist.filter(function(item) {
+            return item.values().name.length > 1;
+          });
+          $(window).trigger('updateFilter');
+        });
+        $('div#active-filter .attribute').html(sessionStorage.activefilter);
+      }
+    });
+
     // Search on input keyup
     $('input#search-students').on('keyup', function() {
       var search = $(this).val();
@@ -258,10 +276,16 @@ $(document).ready(function() {
         studentlist.filter(function (item) {
           return item.values().name.toLowerCase().indexOf(search.toLowerCase()) >= 0;
         });
+        sessionStorage.activefilter = 'Search: ' + search;
+        $(window).trigger('updateFilter');
       } else {
         studentlist.filter(function(item) {
           return item.values().name.length > 1;
         });
+        if (_.isUndefined(sessionStorage.activefilter) == false) {
+          delete(sessionStorage.activefilter);
+        }
+        $(window).trigger('updateFilter');
       }
       var pos = $('#students').offset();
       $('body').animate({ scrollTop: pos.top-150 });
@@ -270,7 +294,12 @@ $(document).ready(function() {
     // Process dropdown gallery filter
     $('#gallery-filter a').on('click touch', function(e) {
       e.preventDefault();
+      if (_.isUndefined(sessionStorage.activefilter) == false) {
+        delete(sessionStorage.activefilter);
+      }
+      $(window).trigger('updateFilter');
       var gallery = $(this).data('gallery');
+      var g = $(this).html();
       studentlist.filter(function(item) {
         var terms = gallery.split(',');
         var match = false;
@@ -279,6 +308,8 @@ $(document).ready(function() {
         }
         return match;      
       });
+      sessionStorage.activefilter = 'Gallery: ' + g;
+      $(window).trigger('updateFilter');
       var pos = $('#students').offset();
       $('body').animate({ scrollTop: pos.top-150 });
     });
@@ -288,6 +319,10 @@ $(document).ready(function() {
       $galleries = $(this).find('li');
       $galleries.slice(0,($galleries.length-1)).on('click touch', function(e) {
         e.preventDefault();
+        if (_.isUndefined(sessionStorage.activefilter) == false) {
+          delete(sessionStorage.activefilter);
+        }
+        $(window).trigger('updateFilter');
         var gallery = $(this).parent().data('gallery');
         studentlist.filter(function(item) {
           var terms = gallery.split(',');
@@ -297,6 +332,8 @@ $(document).ready(function() {
           }
           return match;      
         });
+        sessionStorage.activefilter = 'Gallery: ' + g;
+        $(window).trigger('updateFilter');
         var pos = $('#students').offset();
         $('body').animate({ scrollTop: pos.top-150 });
       });
@@ -305,10 +342,16 @@ $(document).ready(function() {
     // Process the showdate filter
     $('#showdate-filter a,li.showtime').on('click touch', function(e) {
       e.preventDefault();
+      if (_.isUndefined(sessionStorage.activefilter) == false) {
+        delete(sessionStorage.activefilter);
+      }
+      $(window).trigger('updateFilter');
       var showdate = $(this).data('showdate');
       studentlist.filter(function(item) {
         return item.values().showdate.indexOf(showdate) >= 0;
       });
+      sessionStorage.activefilter = 'Showdate: ' + showdate;
+      $(window).trigger('updateFilter');
       var pos = $('#students').offset();
       $('body').animate({ scrollTop: pos.top-150 });
     });
@@ -316,10 +359,17 @@ $(document).ready(function() {
     // Process the program filter 
     $('#program-filter a').on('click touch', function(e) {
       e.preventDefault();
+      if (_.isUndefined(sessionStorage.activefilter) == false) {
+        delete(sessionStorage.activefilter);
+      }
+      $(window).trigger('updateFilter');
       var program = decodeURIComponent($(this).data('program'));
+      var p = $(this).html();
       studentlist.filter(function(item) {
         return item.values().program.replace('&amp;','&').toLowerCase().indexOf(program.toLowerCase()) >= 0;
       });
+      sessionStorage.activefilter = 'Program: ' + p;
+      $(window).trigger('updateFilter');
       var pos = $('#students').offset();
       $('body').animate({ scrollTop: pos.top-150 });
     });
@@ -328,6 +378,10 @@ $(document).ready(function() {
     $('a.sort-studentlist').on('click touch', function(e) {
       e.preventDefault();
       var type = $(this).data('type');
+      if (_.isUndefined(sessionStorage.activefilter) == false) {
+        delete(sessionStorage.activefilter);
+      }
+      $(window).trigger('updateFilter');
       if (type === 'program') {
         studentlist.filter();
         studentlist.sort('program', { sortFunction:  function(a,b) {
