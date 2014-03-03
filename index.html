@@ -542,7 +542,22 @@
                 {{/slideshowsingle}}
                 {{^slideshowsingle}}
                 {{#slideshow}}
-                <div id="singleimg"><img src="http://mfa.cape.io/{{.}}"></div>
+                <div id="singleimg">
+                  <img src="http://mfa.cape.io/{{.}}">
+                  {{#caption}}
+                  <div class="carousel-caption">
+                    <div class="inner">
+                      <div class="info">
+                        <h4 class="title">{{title}}</h4>
+                        <p class="year">{{year}}</p>
+                        <p class="medium">{{medium}}</p>
+                        <p class="size">{{size}}</p>
+                        <p class="credit">{{credit}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {{/caption}}
+                </div>
                 {{/slideshow}}
                 {{/slideshowsingle}}
               {{/slideshowimages}}
