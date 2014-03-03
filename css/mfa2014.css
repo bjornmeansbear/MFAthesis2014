@@ -1044,7 +1044,7 @@ footer p, footer a, footer li {
   color: #fff !important;
 }
 
-#slideshow:hover .carousel-caption {
+.item:hover .carousel-caption {
   display: block;
 }
 
