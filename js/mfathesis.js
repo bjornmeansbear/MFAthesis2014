@@ -1,4 +1,8 @@
 $(document).ready(function() {
+  if (_.isUndefined(sessionStorage.activefilter) == false) {
+    delete(sessionStorage.activefilter);
+  }
+  
   // Show a random header image
   $('header img.backgroundfill:nth-of-type('+_.random(1,$('header img.backgroundfill').length)+')').show();
   
