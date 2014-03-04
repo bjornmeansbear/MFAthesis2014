@@ -1046,7 +1046,8 @@ footer p, footer a, footer li {
   text-shadow: none;
 }
 
-.item:hover .carousel-caption {
+.item:hover .carousel-caption,
+.singleimg:hover .carousel-caption {
   display: block;
 }
 
