@@ -1038,7 +1038,7 @@ footer p, footer a, footer li {
 
 .carousel-caption {
   background: #FF4C47;
-  background: rgba(255,76,71,.77);
+  background: rgba(255,255,255,.77);
   display: none;
   right: 0;
   left: 0;
@@ -1053,7 +1053,13 @@ footer p, footer a, footer li {
 }
 
 .carousel-caption h4 {
-  color: #fff !important;
+  color: #FF4C47 !important;
+  letter-spacing:1px;
+}
+
+.year.medium.size {
+	letter-spacing:1px;
+		
 }
 
 /* * Filter results printout * */
