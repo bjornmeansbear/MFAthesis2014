@@ -1071,15 +1071,10 @@ footer p, footer a, footer li {
   }
 
 #active-filter button {
-  margin-left: 7px;
-<<<<<<< HEAD
+  margin-left: 5px;
   background: none;
   color: #FF4C47;
   border-color: none;
-}
-=======
-  background-color: #ccc;
-  color: #FF4C47;
   border: 0px;
   }
 
@@ -1087,5 +1082,4 @@ footer p, footer a, footer li {
   background-color: #FF4C47;
   color: #fff;
   }
->>>>>>> FETCH_HEAD
 
