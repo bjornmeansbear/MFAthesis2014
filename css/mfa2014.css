@@ -1037,7 +1037,6 @@ footer p, footer a, footer li {
 }
 
 .carousel-caption {
-  background: #FF4C47;
   background: rgba(255,255,255,.77);
   display: none;
   right: 0;
@@ -1057,7 +1056,7 @@ footer p, footer a, footer li {
   letter-spacing:1px;
 }
 
-.year.medium.size {
+.year {
 	letter-spacing:1px;
 		
 }
