@@ -1,39 +1,71 @@
 $(document).ready(function() {
+  if (_.isUndefined(sessionStorage.activefilter) == false) {
+    delete(sessionStorage.activefilter);
+  }
+
+  var captions = {};
+
+  var captions = [];
+  var filterids = ["443278", "437771", "443564", "459986", "440087", "445165", "464062", "464187", "453166", "448744", "453220", "401805", "415768", "524679", "443123", "420845", "361711", "524263", "109518", "524174", "510825", "354221", "538833", "542280", "542281", "155088", "541960", "333264", "500817", "317278", "498556", "481509", "499451", "480908", "463878"] 
   // Show a random header image
   $('header img.backgroundfill:nth-of-type('+_.random(1,$('header img.backgroundfill').length)+')').show();
   
   $.getJSON('http://mfa.cape.io/items/client_data.json', function(data) {
+
+    var keys = _.keys(data.photo_info);
+    _.forEach(keys, function(id) {
+      var student = data.photo_info[id];
+      if (_.isArray(student)) {
+        captions[id] = _.map(_.values(student), function(item) { return _.values(item)[0]; });
+      } else {
+        console.log(id);
+      }
+    });
+
+    data.students = _.filter(data.students, function(student) {
+                      return (_.indexOf(filterids, student._id) == -1 && _.isUndefined(student.firstname) == false);
+                    })
     // Programs grouped by showdates as taken from the actual data
     var showdates = [{
-      name: ["Post Bac FA"],
-      date: '1/31/2014'
+      name: [ "Post-Baccalaureate Fine Art",
+              "Post-Baccalaureate Fine Arts" ],
+      date: 'Jan 31-Feb 16, 2014'
     }, {
-      name: ["Graphic Design", "Post Bac GD", "Illustration Practice"],
-      date: '3/28/2014'
+      name: [ "Graphic Design MFA", 
+              "Post-Baccalaureate Graphic Design", 
+              "Illustration Practice MFA" ],
+      date: 'Mar 28-Apr 06, 2014'
     }, {
-      name: ["Social Design"],
-      date: '4/23/2014'
+      name: [ "Social Design MA" ],
+      date: 'Apr 23-May 04, 2014'
     }, {
-      name: ["Rinehart", "Photo & Electronic Media", "Community Arts"],
-      date: '4/11/2014'
+      name: [ "Rinehart School of Sculpture MFA", 
+              "Photographic & Electronic Media MFA",
+              "Photographic & Electronic Media",
+              "Community Arts MFA",
+              "Community Arts MFA MFA" ],
+      date: 'Apr 11-Apr 20, 2014'
     }, {
-      name: ["MA Teaching"],
-      date: '1/24/2014'
+      name: [ "Teaching MA" ],
+      date: 'Jan 24-Feb 16, 2014'
     }, {
-      name: ["Mount Royal","Hoffberger"],
-      date: '4/25/2014'
+      name: [ "Mount Royal School of Art MFA",
+              "Leroy E. Hoffberger School of Painting MFA" ],
+      date: 'Apr 25-May 04, 2014'
     }, {
-      name: ['Curatorial'],
-      date: 'Not available'
+      name: [ 'Curatorial Practice MFA' ],
+      date: 'Feb 01-May 09, 2014'
     }, {
-      name: ["Critical Studies"],
-      date: '5/3/2014'
+      name: [ "Critical Studies MA" ],
+      date: 'May 03, 2014'
+      // We are going to need to add Studio Art MFA - Jun 28-Jul 12, 2014, and Art Education MA - Jul 27-Aug 01, 2014
     }];
 
     // Function to convert a program into a showdate
     var showDate = function(program) {
       var showdate = '';
       var shows = this;
+      // Cyclce through available showdates to find a match
       for (var i = 0; i<shows.length; i++) {
         if (_.indexOf(shows[i].name, program) > -1) {
           showdate = shows[i].date;
@@ -42,25 +74,36 @@ $(document).ready(function() {
       return showdate;
     }
 
+    //console.log(_.uniq(_.pluck(data.students, 'program')).sort().join('\n'));
     // Function for getting a list of other people in the same program
     var sameProgram = function(program) {
       var students = this;
+      program = (_.isUndefined(program)) ? '':program;
       program = program.replace('&amp;','&');
-      return _.sortBy(_.where(students, { program: program }), 'firstname');
+      // Return sorted list of students from program
+      return _.sortBy(_.where(students, { program: program }), 'name');
     }
 
     // Slideshow items
     var slideShow = function(id) {
       var slideshow = this;
-      if (_.isUndefined(slideshow[id])) return [];
-      return slideshow[id];
+      var a = [];
+      if (_.isUndefined(slideshow[id])) return false;
+      // Return an array of slides for a given id
+      for (i=0; i<slideshow[id].length; i++) {
+        //console.log(captions);
+        var caption = (_.isUndefined(captions[id])) ? false:captions[id][i];
+        a.push({slide: slideshow[id][i], caption: caption});
+      }
+      //console.log(a);
+      return a;
     }
 
-    // Used for the indicators
+    // Returns an array to be used as a counter for mustache templating
     var slideShowcount = function(id) {
       var slideshow = this;
       var r = [];
-      if (_.isUndefined(slideshow[id] == false)) {
+      if (_.isUndefined(slideshow[id]) == false) {
         for (var i=0; i<slideshow[id].length; i++) {
           r.push(i);
         }
@@ -68,17 +111,66 @@ $(document).ready(function() {
       return r;
     }
 
-    // Map our showDate() function to a binding of showdates and the program name
+    // Function to determine whether we have images for an id
+    var slideShowimages = function(id) {
+      var slideshow = this;
+      var r = [];
+      if (_.isUndefined(slideshow[id]) == false) {
+        for (var i=0; i<slideshow[id].length; i++) {
+          r.push(i);
+        }
+      }
+      return r.length > 0;
+    }
+
+    // Function to determine whether we have only a single image or multiple images
+    var slideShowsingle = function(id) {
+      var slideshow = this;
+      var r = [];
+      if (_.isUndefined(slideshow[id]) == false) {
+        for (var i=0; i<slideshow[id].length; i++) {
+          r.push(i);
+        }
+      }
+      return r.length > 1;
+    }
+
+    // Get the id of the next student
+    var nextStudent = function(id) {
+      var students = this;
+      // Pluck id values, sorting the students by name
+      var sorted = _.pluck(_.sortBy(students, 'name'), '_id');
+      var pos = _.indexOf(sorted, id);
+      if (pos == sorted.length-1) return sorted[0];
+      return sorted[pos+1];
+    }
+
+    // Get the id of the previous student
+    var prevStudent = function(id) {
+      var students = this;
+      var sorted = _.pluck(_.sortBy(students, 'name'), '_id');
+      var pos = _.indexOf(sorted, id);
+      if (pos == 0) return sorted[sorted.length-1];
+      return sorted[pos-1];
+    }
+
+    // Map various function bindings to the objects that will be sent to mustache
     _.map(data.students, function(student) {
-      student.showdate = _.bind(showDate, showdates, student.program);
-      student.peers = _.bind(sameProgram, data.students, student.program);
-      student.slideshow = _.bind(slideShow, data.slideshow, student._id);
-      student.slideshowcount = _.bind(slideShowcount, data.slideshow, student._id);
+      student.personalemail        = (_.isUndefined(student.personalemail) || student.personalemail.length == 0) ? false:student.personalemail;
+      student.urlofpersonalwebsite = (_.isUndefined(student.urlofpersonalwebsite) || student.urlofpersonalwebsite.length == 0) ? false:student.urlofpersonalwebsite;
+      student.showdate             = _.bind(showDate, showdates, student.program);
+      student.peers                = _.bind(sameProgram, data.students, student.program);
+      student.slideshow            = _.bind(slideShow, data.slideshow, student._id);
+      student.slideshowcount       = _.bind(slideShowcount, data.slideshow, student._id);
+      student.slideshowimages      = _.bind(slideShowimages, data.slideshow, student._id);
+      student.slideshowsingle      = _.bind(slideShowsingle, data.slideshow, student._id);
+      student.nextid               = _.bind(nextStudent, data.students, student._id);
+      student.previd               = _.bind(prevStudent, data.students, student._id);
     });
 
     // Compile templates for the list and the overlay
     var StudentTemplate = Hogan.compile($('#students-template').html());
-    var StudentOverlay = Hogan.compile($('#overlay-template').html());
+    var StudentOverlay  = Hogan.compile($('#overlay-template').html());
     
     // Render the template for the list and initialize list.js
     $('#projects-demo').html(StudentTemplate.render(data));
@@ -87,14 +179,15 @@ $(document).ready(function() {
     };
     var studentlist = new List('students', options);
 
-    // Event to trigger to link up the peers on the student overlay
+
+    /*** Activate peers ***/
     $(window).on('activatePeers', function() {
       $('ul.program-peers li').removeClass('active');
+
       // Get the active element and previous and next for button usage
       var $active = $('span[id="id-'+sessionStorage.activestudent+'"]');
-      var previous_id = $active.parent().prev().find('.id:hidden').html();
-      var next_id = $active.parent().next().find('.id:hidden').html();
       $active.parent().addClass('active');
+
       // When closing the window, revert the body overflow and scroll position
       $('.student-overlay button.close').on('click touch', function(e) {
         hash.remove('id');
@@ -104,6 +197,8 @@ $(document).ready(function() {
         }
         $('body').animate({ scrollTop: sessionStorage.scrollpos }, 0);
       });
+
+      // Close the overlay on img.logo click
       $('.student-overlay img.logo').on('click touch', function(e) {
         hash.remove('id');
         $('html,body').css('overflow','auto').css('height', '');
@@ -112,30 +207,15 @@ $(document).ready(function() {
         }
         $('body').animate({ scrollTop: sessionStorage.scrollpos }, 0);
       });
-      // Navigate to the previous person on the list
-      $('.student-nav span.glyphicon-chevron-left').off().on('click touch', function(e) {
-        if (_.isUndefined(previous_id) == false) {
-          if (_.isUndefined(sessionStorage.overlaypos) == false) {
-            delete(sessionStorage.overlaypos);
-          }
-          hash.add({id:previous_id});
-        }
-      });
-      // Navigate to the next person on the list
-      $('.student-nav span.glyphicon-chevron-right').off().on('click touch', function(e) {
-        if (_.isUndefined(next_id) == false) {
-          if (_.isUndefined(sessionStorage.overlaypos) == false) {
-            delete(sessionStorage.overlaypos);
-          }
-          hash.add({id:next_id});
-        }
-      });
+
       // Navigate to a random person in the list
-      $('.student-nav span.glyphicon-random').off().on('click touch', function(e) {
-        var random_id = $('.program-peers li:nth-of-type('+_.random(1,$('.program-peers li').length)+')').find('.id:hidden').html();
+      $('.student-nav li.random').off().on('click touch', function(e) {
+        var ids = _.pluck(data.students, '_id');
+        var random_id = ids[_.random(0,ids.length-1)];
         hash.add({id:random_id});
       });
-      // Create click handlers for each person in the same program
+
+      // Click handlers to navigate to peers by id
       $('ul.program-peers li').on('click touch', function(e) {
         var id = $(this).find('.id').html();
         sessionStorage.overlaypos = $('.student-overlay').scrollTop();
@@ -143,16 +223,28 @@ $(document).ready(function() {
       });
     });
 
-    // Process items on hashchange
+
+    /*** Hashchange ***/
     $(window).on('hashchange', function(e) {
       var id = hash.get('id');
+      // If we have an id, open the overlay
       if (_.isUndefined(id) == false) {
+        // Get the student from the original object by id
         var s = _.where(data.students, { _id:id })[0];
+        // Remove any existing overlay
         $('.student-overlay').remove();
+        // Render the new student
         $('body').append(StudentOverlay.render(s));
+        // Hide the scrollbars
         $('html,body').css('overflow','hidden').height($(window).height());
+        // Add the active class to the first slide
         $('div.carousel-inner div.item:nth-of-type(1)').addClass('active');
         $('#slideshow ol.carousel-indicators li:nth-of-type(1)').addClass('active');
+        // When we navigate, store the scroll position
+        $('.student-nav a').on('click touch', function() {
+          sessionStorage.overlaypos = $('.student-overlay').scrollTop();
+        });
+        // If we have a scroll position, scroll to it
         if (_.isUndefined(sessionStorage.overlaypos) == false) {
           $('.student-overlay').animate({ scrollTop: sessionStorage.overlaypos }, 0);
         }
@@ -168,7 +260,8 @@ $(document).ready(function() {
       }
     });
 
-    // Things to do when the studentlist is updated
+
+    /*** List is updated ***/
     studentlist.on('updated', function() {
       $('li.student').each(function(i,obj) {
         // Retrieve the id for the current list item
@@ -186,11 +279,26 @@ $(document).ready(function() {
         });
       });
     });
+
     // Initially, sort the list by ascending first name
     studentlist.sort('name', { order: 'asc' });
-    // Filter out bad results
-    studentlist.filter(function(item) {
-      return item.values().name.length > 1;
+
+    $(window).on('updateFilter', function () {
+      if (_.isUndefined(sessionStorage.activefilter)) {
+        $('div#active-filter .attribute').empty();
+        $('input#search-students').val('');
+        $('div#active-filter').hide();
+        studentlist.filter();
+      } else {
+        $('div#active-filter').show();
+        $('div#active-filter button').off('click touch').on('click touch', function() {
+          delete(sessionStorage.activefilter);
+          $('input#search-students').val('');
+          studentlist.filter();
+          $(window).trigger('updateFilter');
+        });
+        $('div#active-filter .attribute').html(sessionStorage.activefilter);
+      }
     });
 
     // Search on input keyup
@@ -200,42 +308,98 @@ $(document).ready(function() {
         studentlist.filter(function (item) {
           return item.values().name.toLowerCase().indexOf(search.toLowerCase()) >= 0;
         });
+        sessionStorage.activefilter = 'Search: ' + search;
+        $(window).trigger('updateFilter');
       } else {
-        studentlist.filter(function(item) {
-          return item.values().name.length > 1;
-        });
+        if (_.isUndefined(sessionStorage.activefilter) == false) {
+          delete(sessionStorage.activefilter);
+        }
+        $(window).trigger('updateFilter');
       }
-    });
-    // Process gallery filter
-    $('#gallery-filter a').on('click touch', function(e) {
-      e.preventDefault();
-      var gallery = $(this).data('gallery');
-      studentlist.filter(function(item) {
-        return item.values().exhibitionlocation.toLowerCase().indexOf(gallery.toLowerCase()) >= 0;
-      });
       var pos = $('#students').offset();
       $('body').animate({ scrollTop: pos.top-150 });
     });
 
-    // Process the showdate filter
-    $('#showdate-filter a').on('click touch', function(e) {
+    // Process dropdown gallery filter
+    $('#gallery-filter a').on('click touch', function(e) {
       e.preventDefault();
+      if (_.isUndefined(sessionStorage.activefilter) == false) {
+        delete(sessionStorage.activefilter);
+      }
+      $(window).trigger('updateFilter');
+      var gallery = $(this).data('gallery');
+      var g = $(this).html();
+      studentlist.filter(function(item) {
+        var terms = gallery.split(',');
+        var match = false;
+        for (var i = 0; i<terms.length; i++) {
+          if (item.values().exhibitionlocation.replace('&amp;','&').toLowerCase().indexOf(terms[i].toLowerCase()) >= 0) match = true;
+        }
+        return match;      
+      });
+      sessionStorage.activefilter = 'Gallery: ' + g;
+      $(window).trigger('updateFilter');
+      var pos = $('#students').offset();
+      $('body').animate({ scrollTop: pos.top-150 });
+    });
+
+    // Process gallery list filter
+    $('#galleries-data ul').each(function() {
+      $galleries = $(this).find('li');
+      $galleries.slice(0,($galleries.length-1)).on('click touch', function(e) {
+        e.preventDefault();
+        if (_.isUndefined(sessionStorage.activefilter) == false) {
+          delete(sessionStorage.activefilter);
+        }
+        $(window).trigger('updateFilter');
+        var gallery = $(this).parent().data('gallery');
+        studentlist.filter(function(item) {
+          var terms = gallery.split(',');
+          var match = false;
+          for (var i = 0; i<terms.length; i++) {
+            if (item.values().exhibitionlocation.replace('&amp;','&').toLowerCase().indexOf(terms[i].toLowerCase()) >= 0) match = true;
+          }
+          return match;      
+        });
+        sessionStorage.activefilter = 'Gallery: ' + gallery;
+        $(window).trigger('updateFilter');
+        var pos = $('#students').offset();
+        $('body').animate({ scrollTop: pos.top-150 });
+      });
+    });
+
+    // Process the showdate filter
+    $('#showdate-filter a,li.showtime.active').on('click touch', function(e) {
+      e.preventDefault();
+      if (_.isUndefined(sessionStorage.activefilter) == false) {
+        delete(sessionStorage.activefilter);
+      }
+      $(window).trigger('updateFilter');
       var showdate = $(this).data('showdate');
       studentlist.filter(function(item) {
         return item.values().showdate.indexOf(showdate) >= 0;
       });
+      sessionStorage.activefilter = 'Showdate: ' + showdate;
+      $(window).trigger('updateFilter');
       var pos = $('#students').offset();
       $('body').animate({ scrollTop: pos.top-150 });
     });
 
     // Process the program filter 
     $('#program-filter a').on('click touch', function(e) {
+      if (_.isUndefined($(this).data('program'))) return true;
       e.preventDefault();
+      if (_.isUndefined(sessionStorage.activefilter) == false) {
+        delete(sessionStorage.activefilter);
+      }
+      $(window).trigger('updateFilter');
       var program = decodeURIComponent($(this).data('program'));
+      var p = $(this).html();
       studentlist.filter(function(item) {
-        console.log(program, decodeURIComponent(item.values().program)); 
         return item.values().program.replace('&amp;','&').toLowerCase().indexOf(program.toLowerCase()) >= 0;
       });
+      sessionStorage.activefilter = 'Program: ' + p;
+      $(window).trigger('updateFilter');
       var pos = $('#students').offset();
       $('body').animate({ scrollTop: pos.top-150 });
     });
@@ -244,6 +408,10 @@ $(document).ready(function() {
     $('a.sort-studentlist').on('click touch', function(e) {
       e.preventDefault();
       var type = $(this).data('type');
+      if (_.isUndefined(sessionStorage.activefilter) == false) {
+        delete(sessionStorage.activefilter);
+      }
+      $(window).trigger('updateFilter');
       if (type === 'program') {
         studentlist.filter();
         studentlist.sort('program', { sortFunction:  function(a,b) {
@@ -255,9 +423,7 @@ $(document).ready(function() {
                                                     }
         });
       } else if (type === 'all') {
-        studentlist.filter(function(item) {
-          return item.values().name.length > 1;
-        });
+        studentlist.filter();
         studentlist.sort('name', {order: 'asc'});
       }
       var pos = $('#students').offset();
@@ -266,6 +432,16 @@ $(document).ready(function() {
     if (window.location.hash.length > 0) {
       $(window).trigger('hashchange');
     }
+  });
+
+  // Navigation menu
+  $('ul.nav > li > a').on('click touch', function(e) {
+    e.preventDefault();
+    offset = $(this.hash).offset().top - 150;
+    if ($(this).attr('href') == '#intro') offset = 0;
+    $('html, body').stop().animate({
+      scrollTop: offset
+    }, 400);
   });
 });
 
@@ -281,13 +457,5 @@ $(window).scroll(function(){
   else {
     $('header .ontop .pattern').removeClass('sticky');
   }
-
-  $('ul.nav > li > a').on('click touch', function(e) {
-    e.preventDefault();
-    offset = $(this.hash).offset().top - 150;
-    if ($(this).attr('href') == '#intro') offset = 0;
-    $('html, body').stop().animate({
-      scrollTop: offset
-    }, 400);
-  });
 });
+

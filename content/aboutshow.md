@@ -1,3 +1,0 @@
-The Graduate Spring/Summer Exhibition Season 2014 presents work to the MICA community and the public from January 24 - May 4th and resumes June 26 - July 12. The season includes MFA, MA and Post-Baccalaureate Fine Art and Graphic Design exhibitions and critiques, gallery talks and presentations, public programs, and symposium, and student curated installations throughout the city.
-
-The Graduate Exhibition Season showcases the creative achievements of MICA's Graduate Programs—a diverse group of artists, designers, scholars, and curators. It offers the campus community and the general public opportunities to experience and engage with the creative process at MICA.
