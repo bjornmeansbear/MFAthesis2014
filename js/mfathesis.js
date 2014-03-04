@@ -65,7 +65,7 @@ $(document).ready(function() {
     var showDate = function(program) {
       var showdate = '';
       var shows = this;
-      // Cyclce through available showdates to find a match
+      // Cycle through available showdates to find a match
       for (var i = 0; i<shows.length; i++) {
         if (_.indexOf(shows[i].name, program) > -1) {
           showdate = shows[i].date;
@@ -81,7 +81,7 @@ $(document).ready(function() {
       program = (_.isUndefined(program)) ? '':program;
       program = program.replace('&amp;','&');
       // Return sorted list of students from program
-      return _.sortBy(_.where(students, { program: program }), 'name');
+      return _.sortBy(_.where(students, { program: program }), 'firstname');
     }
 
     // Slideshow items
@@ -139,7 +139,7 @@ $(document).ready(function() {
     var nextStudent = function(id) {
       var students = this;
       // Pluck id values, sorting the students by name
-      var sorted = _.pluck(_.sortBy(students, 'name'), '_id');
+      var sorted = _.pluck(_.sortBy(students, 'firstname'), '_id');
       var pos = _.indexOf(sorted, id);
       if (pos == sorted.length-1) return sorted[0];
       return sorted[pos+1];
@@ -148,7 +148,7 @@ $(document).ready(function() {
     // Get the id of the previous student
     var prevStudent = function(id) {
       var students = this;
-      var sorted = _.pluck(_.sortBy(students, 'name'), '_id');
+      var sorted = _.pluck(_.sortBy(students, 'firstname'), '_id');
       var pos = _.indexOf(sorted, id);
       if (pos == 0) return sorted[sorted.length-1];
       return sorted[pos-1];
@@ -306,7 +306,8 @@ $(document).ready(function() {
       var search = $(this).val();
       if (search.length > 0) {
         studentlist.filter(function (item) {
-          return item.values().name.toLowerCase().indexOf(search.toLowerCase()) >= 0;
+          var search_string = item.values().firstname.toLowerCase() + ' ' + item.values().lastname.toLowerCase();
+          return search_string.indexOf(search.toLowerCase()) >= 0;
         });
         sessionStorage.activefilter = 'Search: ' + search;
         $(window).trigger('updateFilter');
@@ -417,8 +418,8 @@ $(document).ready(function() {
         studentlist.sort('program', { sortFunction:  function(a,b) {
                                                       if(a.values().program< b.values().program) return -1;
                                                       if(a.values().program>b.values().program) return 1;
-                                                      if(a.values().name<b.values().name) return -1;
-                                                      if(a.values().name>b.values().name) return 1;
+                                                      if(a.values().firstname<b.values().firstname) return -1;
+                                                      if(a.values().firstname>b.values().firstname) return 1;
                                                       return 0;
                                                     }
         });
