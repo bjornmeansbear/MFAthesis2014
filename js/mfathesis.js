@@ -269,7 +269,7 @@ $(document).ready(function() {
         // Click handler for the list item
         $(this).off('click touch').on('click touch', function(e) {
           // Get the student information from the list
-          var s = _.where(data.students, { id:id })[0];
+          var s = _.where(data.students, { _id:id })[0];
           sessionStorage.activestudent = s._id;
           hash.add({id:s._id});
           // Save the current scroll position
