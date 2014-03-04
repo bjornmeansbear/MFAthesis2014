@@ -1047,7 +1047,7 @@ footer p, footer a, footer li {
 }
 
 .item:hover .carousel-caption,
-.singleimg:hover .carousel-caption {
+#singleimg:hover .carousel-caption {
   display: block;
 }
 
