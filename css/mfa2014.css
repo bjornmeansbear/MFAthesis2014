@@ -886,6 +886,7 @@ footer p, footer a, footer li {
   }
 
 #singleimg {
+  position: relative;
   margin-left: 0px;
   margin-bottom: 30px;
   text-align: center;
