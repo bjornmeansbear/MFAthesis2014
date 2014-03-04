@@ -1028,11 +1028,11 @@ footer p, footer a, footer li {
 }
 
 .carousel-indicators li {
-  border: 1px solid #FF4C47;
   border-radius: 10px;
+  background-color: #ccc;
 }
 
-.carousel-indicators .active {
+.carousel-indicators .active li {
   background-color: #FF4C47;
 }
 
@@ -1072,9 +1072,13 @@ footer p, footer a, footer li {
 
 #active-filter button {
   margin-left: 7px;
-  background: transparent;
+  background-color: #ccc;
   color: #FF4C47;
-  border-color: #FF4C47;
-  border-width: 1px;
+  border: 0px;
+}
+
+#active-filter button:hover, #active-filter button:active {
+  background-color: #FF4C47;
+  color: #fff;
 }
 
