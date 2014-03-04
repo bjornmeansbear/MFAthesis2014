@@ -892,6 +892,7 @@ footer p, footer a, footer li {
   text-align: center;
   width: 100%;
   height: auto;
+  position: relative;
   }
 
 #singleimg img {
@@ -1028,8 +1029,8 @@ footer p, footer a, footer li {
 }
 
 .carousel-indicators li {
-  border: 1px solid #FF4C47;
   border-radius: 10px;
+  background-color: #ccc;
 }
 
 .carousel-indicators .active {
@@ -1037,8 +1038,7 @@ footer p, footer a, footer li {
 }
 
 .carousel-caption {
-  background: #FF4C47;
-  background: rgba(255,76,71,.77);
+  background: rgba(255,255,255,.77);
   display: none;
   right: 0;
   left: 0;
@@ -1053,7 +1053,13 @@ footer p, footer a, footer li {
 }
 
 .carousel-caption h4 {
-  color: #fff !important;
+  color: #FF4C47 !important;
+  letter-spacing:1px;
+}
+
+.year {
+	letter-spacing:1px;
+		
 }
 
 /* * Filter results printout * */
@@ -1063,13 +1069,18 @@ footer p, footer a, footer li {
   font-size: 1.5em;
   font-weight: 700;
   letter-spacing: 1px;
-}
+  }
 
 #active-filter button {
-  margin-left: 7px;
-  background: transparent;
+  margin-left: 5px;
+  background: none;
   color: #FF4C47;
-  border-color: #FF4C47;
-  border-width: 1px;
-}
+  border-color: none;
+  border: 0px;
+  }
+
+#active-filter button:hover, #active-filter button:active {
+  background-color: #FF4C47;
+  color: #fff;
+  }
 
