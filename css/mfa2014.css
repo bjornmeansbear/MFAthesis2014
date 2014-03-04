@@ -1028,8 +1028,8 @@ footer p, footer a, footer li {
 }
 
 .carousel-indicators li {
-  border: 1px solid #FF4C47;
   border-radius: 10px;
+  background-color: #ccc;
 }
 
 .carousel-indicators .active {
@@ -1068,12 +1068,24 @@ footer p, footer a, footer li {
   font-size: 1.5em;
   font-weight: 700;
   letter-spacing: 1px;
-}
+  }
 
 #active-filter button {
   margin-left: 7px;
+<<<<<<< HEAD
   background: none;
   color: #FF4C47;
   border-color: none;
 }
+=======
+  background-color: #ccc;
+  color: #FF4C47;
+  border: 0px;
+  }
+
+#active-filter button:hover, #active-filter button:active {
+  background-color: #FF4C47;
+  color: #fff;
+  }
+>>>>>>> FETCH_HEAD
 
