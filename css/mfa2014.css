@@ -892,6 +892,7 @@ footer p, footer a, footer li {
   text-align: center;
   width: 100%;
   height: auto;
+  position: relative;
   }
 
 #singleimg img {
