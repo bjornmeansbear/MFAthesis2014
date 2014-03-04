@@ -306,7 +306,7 @@ $(document).ready(function() {
       var search = $(this).val();
       if (search.length > 0) {
         studentlist.filter(function (item) {
-          var search_string = item.values().firstname.toLowerCase() + ' ' + item.values().lastname.toLowerCase();
+          var search_string = item.values().name.toLowerCase();
           return search_string.indexOf(search.toLowerCase()) >= 0;
         });
         sessionStorage.activefilter = 'Search: ' + search;
