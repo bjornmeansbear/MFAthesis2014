@@ -492,7 +492,7 @@
         
             <div class="col-xs-12 col-sm-8 col-md-9">
             
-              {{#slideshow}}
+              {{#slideshowimages}}
                 {{#slideshowsingle}}
                 <div id="slideshow" class="carousel slide" data-ride="carousel">
                   <!-- Indicators -->
@@ -557,10 +557,10 @@
                 </div>
                 {{/slideshow}}
                 {{/slideshowsingle}}
-              {{/slideshow}}
-              {{^slideshow}}
+              {{/slideshowimages}}
+              {{^slideshowimages}}
               <h2 class="gap">No Images</h2>
-              {{/slideshow}}
+              {{/slideshowimages}}
 
               <article class="row">
                 <p class="col-xs-12 col-md-9 student-statement {{^slideshowimages}}lead{{/slideshowimages}}">{{ websitelongstatementupto500words }}</p>
