@@ -436,16 +436,23 @@ $(document).ready(function() {
     if (window.location.hash.length > 0) {
       $(window).trigger('hashchange');
     }
-  });
-
-  // Navigation menu
-  $('ul.nav > li > a').on('click touch', function(e) {
-    e.preventDefault();
-    offset = $(this.hash).offset().top - 150;
-    if ($(this).attr('href') == '#intro') offset = 0;
-    $('html, body').stop().animate({
-      scrollTop: offset
-    }, 400);
+    // Navigation menu
+    $('ul.nav > li > a').on('click touch', function(e) {
+      e.preventDefault();
+      offset = $(this.hash).offset().top - 150;
+      if ($(this).attr('href') == '#intro') offset = 0;
+      if ($(this).attr('href') == '#students') {
+        if (_.isUndefined(sessionStorage.activefilter) == false) {
+          delete(sessionStorage.activefilter);
+        }
+        $('input#search-students').val('');
+        studentlist.filter();
+        $(window).trigger('updateFilter');
+      }
+      $('html, body').stop().animate({
+        scrollTop: offset
+      }, 400);
+    });
   });
 });
 
