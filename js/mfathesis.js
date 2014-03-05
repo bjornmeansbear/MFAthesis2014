@@ -363,7 +363,7 @@ $(document).ready(function() {
             }
             return match;      
           });
-          sessionStorage.activefilter = 'Gallery: ' + gallery;
+          sessionStorage.activefilter = 'Gallery: ' + gallery.split(',').join(', ');
           $(window).trigger('updateFilter');
           var pos = $('#students').offset();
           $('body').animate({ scrollTop: pos.top-150 });
