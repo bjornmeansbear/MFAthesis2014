@@ -21,9 +21,9 @@ $(document).ready(function() {
       }
     });
 
-    data.students = _.filter(data.students, function(student) {
-                      return (_.isUndefined(student.firstname) == false);
-                    })
+    // Remove any bad entries that are missing firstname
+    data.students = _.filter(data.students, function(student) { return (_.isUndefined(student.firstname) == false); })
+
     // Programs grouped by showdates as taken from the actual data
     var showdates = [{
       name: [ "Post-Baccalaureate Fine Art",
@@ -73,7 +73,9 @@ $(document).ready(function() {
       return showdate;
     }
 
-    //console.log(_.uniq(_.pluck(data.students, 'program')).sort().join('\n'));
+    // Print all programs to the console, grouped and sorted
+    // console.log(_.uniq(_.pluck(data.students, 'program')).sort().join('\n'));
+
     // Function for getting a list of other people in the same program
     var sameProgram = function(program) {
       var students = this;
@@ -108,18 +110,6 @@ $(document).ready(function() {
         }
       }
       return r;
-    }
-
-    // Function to determine whether we have images for an id
-    var slideShowimages = function(id) {
-      var slideshow = this;
-      var r = [];
-      if (_.isUndefined(slideshow[id]) == false) {
-        for (var i=0; i<slideshow[id].length; i++) {
-          r.push(i);
-        }
-      }
-      return r.length > 0;
     }
 
     // Function to determine whether we have only a single image or multiple images
@@ -161,7 +151,6 @@ $(document).ready(function() {
       student.peers                = _.bind(sameProgram, data.students, student.program);
       student.slideshow            = _.bind(slideShow, data.slideshow, student._id);
       student.slideshowcount       = _.bind(slideShowcount, data.slideshow, student._id);
-      student.slideshowimages      = _.bind(slideShowimages, data.slideshow, student._id);
       student.slideshowsingle      = _.bind(slideShowsingle, data.slideshow, student._id);
       student.nextid               = _.bind(nextStudent, data.students, student._id);
       student.previd               = _.bind(prevStudent, data.students, student._id);
@@ -230,13 +219,11 @@ $(document).ready(function() {
       if (_.isUndefined(id) == false) {
         // Get the student from the original object by id
         var s = _.where(data.students, { _id:id })[0];
-        // Remove any existing overlay
+        // Remove any existing overlay and render new data
         $('.student-overlay').remove();
-        // Render the new student
         $('body').append(StudentOverlay.render(s));
-        // Hide the scrollbars
         $('html,body').css('overflow','hidden').height($(window).height());
-        // Add the active class to the first slide
+        // Activate the first slide in the slideshow
         $('div.carousel-inner div.item:nth-of-type(1)').addClass('active');
         $('#slideshow ol.carousel-indicators li:nth-of-type(1)').addClass('active');
         // When we navigate, store the scroll position
@@ -282,6 +269,7 @@ $(document).ready(function() {
     // Initially, sort the list by ascending first name
     studentlist.sort('name', { order: 'asc' });
 
+    // Update the content of the active filters div
     $(window).on('updateFilter', function () {
       if (_.isUndefined(sessionStorage.activefilter)) {
         $('div#active-filter .attribute').empty();
