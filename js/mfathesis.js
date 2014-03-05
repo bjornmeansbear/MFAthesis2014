@@ -345,27 +345,29 @@ $(document).ready(function() {
 
     // Process gallery list filter
     $('#galleries-data ul').each(function() {
-      $galleries = $(this).find('li');
-      $galleries.slice(0,($galleries.length-1)).on('click touch', function(e) {
-        e.preventDefault();
-        if (_.isUndefined(sessionStorage.activefilter) == false) {
-          delete(sessionStorage.activefilter);
-        }
-        $(window).trigger('updateFilter');
-        var gallery = $(this).parent().data('gallery');
-        studentlist.filter(function(item) {
-          var terms = gallery.split(',');
-          var match = false;
-          for (var i = 0; i<terms.length; i++) {
-            if (item.values().exhibitionlocation.replace('&amp;','&').toLowerCase().indexOf(terms[i].toLowerCase()) >= 0) match = true;
+      if (_.isUndefined($(this).data('gallery')) == false) {
+        $galleries = $(this).find('li');
+        $galleries.slice(0,($galleries.length-1)).on('click touch', function(e) {
+          e.preventDefault();
+          if (_.isUndefined(sessionStorage.activefilter) == false) {
+            delete(sessionStorage.activefilter);
           }
-          return match;      
+          $(window).trigger('updateFilter');
+          var gallery = $(this).parent().data('gallery');
+          studentlist.filter(function(item) {
+            var terms = gallery.split(',');
+            var match = false;
+            for (var i = 0; i<terms.length; i++) {
+              if (item.values().exhibitionlocation.replace('&amp;','&').toLowerCase().indexOf(terms[i].toLowerCase()) >= 0) match = true;
+            }
+            return match;      
+          });
+          sessionStorage.activefilter = 'Gallery: ' + gallery;
+          $(window).trigger('updateFilter');
+          var pos = $('#students').offset();
+          $('body').animate({ scrollTop: pos.top-150 });
         });
-        sessionStorage.activefilter = 'Gallery: ' + gallery;
-        $(window).trigger('updateFilter');
-        var pos = $('#students').offset();
-        $('body').animate({ scrollTop: pos.top-150 });
-      });
+      }
     });
 
     // Process the showdate filter
