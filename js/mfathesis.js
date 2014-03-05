@@ -22,7 +22,7 @@ $(document).ready(function() {
     });
 
     data.students = _.filter(data.students, function(student) {
-                      return (_.indexOf(filterids, student._id) == -1 && _.isUndefined(student.firstname) == false);
+                      return (_.isUndefined(student.firstname) == false);
                     })
     // Programs grouped by showdates as taken from the actual data
     var showdates = [{
