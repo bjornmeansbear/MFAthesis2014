@@ -338,7 +338,7 @@ $(document).ready(function() {
         }
         return match;      
       });
-      sessionStorage.activefilter = 'Gallery: ' + g;
+      sessionStorage.activefilter = 'Gallery: ' + g.replace('Gallery', '');
       $(window).trigger('updateFilter');
       var pos = $('#students').offset();
       $('body').animate({ scrollTop: pos.top-150 });
@@ -383,7 +383,7 @@ $(document).ready(function() {
       studentlist.filter(function(item) {
         return item.values().showdate.indexOf(showdate) >= 0;
       });
-      sessionStorage.activefilter = 'Showdate: ' + showdate;
+      sessionStorage.activefilter = 'Show Date: ' + showdate;
       $(window).trigger('updateFilter');
       var pos = $('#students').offset();
       $('body').animate({ scrollTop: pos.top-150 });
