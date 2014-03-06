@@ -1,4 +1,4 @@
-$(document).ready(function() {
+ $(document).ready(function() {
   if (_.isUndefined(sessionStorage.activefilter) == false) {
     delete(sessionStorage.activefilter);
   }
