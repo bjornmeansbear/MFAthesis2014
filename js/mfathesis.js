@@ -18,15 +18,14 @@
         captions[id] = _.map(_.values(student), function(item) { return _.values(item)[0]; });
         _.map(captions[id], function(item) {
           item.size = (_.isUndefined(item.size)) ? 'N/A':item.size;
-          item.size = (item.size.indexOf('N/A') > -1) ? false:item.size;
+          item.size = (item.size.toLowerCase().indexOf('n/a') > -1) ? false:item.size;
           item.medium = (_.isUndefined(item.medium)) ? 'N/A':item.medium;
-          item.medium = (item.medium.indexOf('N/A') > -1) ? false:item.medium;
+          item.medium = (item.medium.toLowerCase().indexOf('n/a') > -1) ? false:item.medium;
         });
       } else {
         console.log(id);
       }
     });
-    console.log(captions);
 
 
     // Remove any bad entries that are missing firstname
