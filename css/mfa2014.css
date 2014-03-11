@@ -849,6 +849,14 @@ footer p, footer a, footer li {
   margin-top: 5px;
 }
 
+.critical .program-list li {
+  margin-bottom: 1em;
+}
+
+.critical .program-list li p {
+  text-indent: -.3em;
+}
+
 .program-list li a {
   border-bottom: 2px solid #bebebe;
   color: #333;
