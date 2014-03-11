@@ -19,7 +19,6 @@
         _.map(captions[id], function(item) {
           item.size = (_.isUndefined(item.size)) ? 'N/A':item.size;
           item.size = (item.size.indexOf('N/A') > -1) ? false:item.size;
-          console.log(item.size);
           item.medium = (_.isUndefined(item.medium)) ? 'N/A':item.medium;
           item.medium = (item.medium.indexOf('N/A') > -1) ? false:item.medium;
         });
@@ -27,6 +26,7 @@
         console.log(id);
       }
     });
+    console.log(captions);
 
 
     // Remove any bad entries that are missing firstname
