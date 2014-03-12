@@ -22,13 +22,13 @@
           item.medium = (_.isUndefined(item.medium)) ? 'N/A':item.medium;
           item.medium = (item.medium.toLowerCase().indexOf('n/a') > -1) ? false:item.medium;
           item.year = (_.isUndefined(item.year)) ? '':item.year;
+          item.year = (item.year.toString().toLowerCase().indexOf('n/a') > -1) ? '':item.year;
           item.year = (item.year.length == 0) ? false:item.year;
         });
       } else {
         console.log(id);
       }
     });
-
 
     // Remove any bad entries that are missing firstname
     data.students = _.filter(data.students, function(student) { return (_.isUndefined(student.firstname) == false); })
