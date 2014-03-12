@@ -21,6 +21,8 @@
           item.size = (item.size.toLowerCase().indexOf('n/a') > -1) ? false:item.size;
           item.medium = (_.isUndefined(item.medium)) ? 'N/A':item.medium;
           item.medium = (item.medium.toLowerCase().indexOf('n/a') > -1) ? false:item.medium;
+          item.year = (_.isUndefined(item.year)) ? '':item.year;
+          item.year = (item.year.length == 0) ? false:item.year;
         });
       } else {
         console.log(id);
