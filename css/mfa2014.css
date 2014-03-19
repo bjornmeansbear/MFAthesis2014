@@ -834,7 +834,14 @@ footer p, footer a, footer li {
 .student-statement {
   padding-bottom: 30px;
 }
-  
+
+.student-statement.lead p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1.4;
+}
+
 .critical .program-list h4 {
   margin-top: 7px;
   padding: 0;
