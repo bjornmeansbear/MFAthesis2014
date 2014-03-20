@@ -905,19 +905,14 @@ footer p, footer a, footer li {
   margin-bottom: 30px;
   text-align: center;
   width: 100%;
-  height: auto;
   position: relative;
   }
 
 #slideshow img,
 #singleimg img {
-  height: auto;
-  width: 100%;
   max-height: 100%;
   max-width: 100%;
   }
-  
-#singleimg img { display: block; margin: 0 auto; }
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
@@ -927,7 +922,7 @@ footer p, footer a, footer li {
     margin-bottom: 50px;
     min-height: 200px;
     max-height: 400px;
-    height: auto;
+    height: 400px;
     width: auto;
     }
   
@@ -935,11 +930,6 @@ footer p, footer a, footer li {
   .carousel-inner > .item {
     height: 400px;
     text-align: center;
-    }
-
-  #singleimg img {
-    height: 100%;
-    width: auto;
     }
 
 }
@@ -953,6 +943,7 @@ footer p, footer a, footer li {
     text-align: center;
     min-height: 200px;
     max-height: 500px;
+    height: 500px
     }
   
   .carousel-inner,  
@@ -972,6 +963,7 @@ footer p, footer a, footer li {
     text-align: center;
     min-height: 200px;
     max-height: 600px;
+    height: 600px;
     }
   
   .carousel-inner,  
