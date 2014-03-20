@@ -891,6 +891,7 @@ footer p, footer a, footer li {
   text-align: center;
   min-height: 200px;
   max-height: 200px;
+  height: 200px;
   }
 
 .carousel-inner,  
@@ -918,12 +919,9 @@ footer p, footer a, footer li {
 @media (min-width: 768px) {
   #slideshow,
   #singleimg {
-    margin-left: 0px;
     margin-bottom: 50px;
     min-height: 200px;
     max-height: 400px;
-    height: 400px;
-    width: auto;
     }
   
   .carousel-inner,  
@@ -931,45 +929,33 @@ footer p, footer a, footer li {
     height: 400px;
     text-align: center;
     }
-
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   #slideshow,
   #singleimg {
-    margin-left: 0px;
-    margin-bottom: 50px;
-    text-align: center;
     min-height: 200px;
     max-height: 500px;
-    height: 500px
     }
   
   .carousel-inner,  
   .carousel-inner > .item {
     height: 500px;
-    text-align: center;
     }
-  
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   #slideshow,
   #singleimg {
-    margin-left: 0px;
-    margin-bottom: 50px;
-    text-align: center;
     min-height: 200px;
     max-height: 600px;
-    height: 600px;
     }
   
   .carousel-inner,  
   .carousel-inner > .item {
     height: 600px;
-    text-align: center;
     }
 }
 
