@@ -891,13 +891,14 @@ footer p, footer a, footer li {
   text-align: center;
   min-height: 200px;
   max-height: 200px;
-  height: 200px;
+  overflow: hidden;
   }
 
 .carousel-inner,  
 .carousel-inner > .item {
   height: 200px;
   text-align: center;
+  overflow: hidden;
   }
 
 #singleimg {
@@ -907,6 +908,7 @@ footer p, footer a, footer li {
   text-align: center;
   width: 100%;
   position: relative;
+  overflow: hidden;
   }
 
 #slideshow img,
@@ -935,7 +937,6 @@ footer p, footer a, footer li {
 @media (min-width: 992px) {
   #slideshow,
   #singleimg {
-    min-height: 200px;
     max-height: 500px;
     }
   
@@ -949,7 +950,6 @@ footer p, footer a, footer li {
 @media (min-width: 1200px) {
   #slideshow,
   #singleimg {
-    min-height: 200px;
     max-height: 600px;
     }
   
