@@ -99,13 +99,12 @@
       var slideshow = this;
       var a = [];
       if (_.isUndefined(slideshow[id])) return false;
+      slideshow[id] = slideshow[id].sort();
       // Return an array of slides for a given id
       for (i=0; i<slideshow[id].length; i++) {
-        //console.log(captions);
         var caption = (_.isUndefined(captions[id])) ? false:captions[id][i];
         a.push({slide: slideshow[id][i], caption: caption});
       }
-      //console.log(a);
       return a;
     }
 
