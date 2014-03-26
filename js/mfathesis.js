@@ -232,7 +232,6 @@
       });
     });
 
-
     /*** Hashchange ***/
     $(window).on('hashchange', function(e) {
       var id = hash.get('id');
@@ -266,7 +265,6 @@
         $('body').animate({ scrollTop: sessionStorage.scrollpos }, 0);
       }
     });
-
 
     /*** List is updated ***/
     studentlist.on('updated', function() {
@@ -461,6 +459,22 @@
         scrollTop: offset
       }, 400);
     });
+
+
+    // this should fix an annoying issue in FF with the single images not fitting their container properly.
+    // except I don't know where to put this! damn!
+    var siih = $('#singleimg img') .height();
+    var siiw = $('#singleimg img') .width();
+    if (siih >= siiw) {
+        var sih = $('#singleimg') .height();
+        $('#singleimg img') .height(sih);
+    }
+    if (siih <= siiw) {
+        var siw = $('#singleimg') .width();
+        $('#singleimg img') .width(siw);
+    }
+
+
   });
 });
 
@@ -477,4 +491,3 @@ $(window).scroll(function(){
     $('header .ontop .pattern').removeClass('sticky');
   }
 });
-
