@@ -288,12 +288,9 @@ button.btn.btn-default.dropdown-toggle.sort-studentlist {
 }
   
 .btn-group.open .dropdown-toggle a {
-  box-shadow-inset: 0;
-  -moz-box-shadow-inset: 0;
-  -webkit-box-shadow-inset: 0;
-  box-shadow: inset 0;
-  -moz-box-shadow: inset 0;
-  -webkit-box-shadow: inset 0;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
   color: #FF4C47; 
 }
   
@@ -891,7 +888,6 @@ footer p, footer a, footer li {
   text-align: center;
   min-height: 200px;
   max-height: 200px;
-  overflow: hidden;
   }
 
 .carousel-inner,  
@@ -911,7 +907,6 @@ footer p, footer a, footer li {
   overflow: hidden;
   }
 
-#slideshow img,
 #singleimg img {
   max-height: 100%;
   max-width: 100%;
@@ -967,7 +962,7 @@ footer p, footer a, footer li {
   display: inline-block;
   height: 100%; 
   vertical-align: middle;
-  margin-right: -0.25em; /* Adjusts for spacing */
+  margin: -2px; /* Adjusts for spacing */
  }
 
 .carousel-inner > .item > img, 
@@ -975,9 +970,9 @@ footer p, footer a, footer li {
   display: inline-block;
   vertical-align: middle;
   max-height: 100%;
-  max-width: auto;
+  max-width: 98%;
   height: auto;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .carousel-control {
@@ -989,8 +984,8 @@ footer p, footer a, footer li {
   font-size: 20px;
   color: #000;
   text-align: center;
-  filter: alpha(opacity=75);
   opacity: .75;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
   }
   
 @media screen and (min-width: 768px) {
@@ -1012,7 +1007,7 @@ footer p, footer a, footer li {
   color: #FF4C47;
   background-image: none;
   background-color: rgba(255, 255, 255, 0.75);
-   text-shadow: 0;
+  text-shadow: none;
 }
 
 .carousel-control .glyphicon-chevron-left {left: 10%;}
@@ -1069,7 +1064,7 @@ footer p, footer a, footer li {
   margin-left: 5px;
   background: none;
   color: #FF4C47;
-  border-color: none;
+  border-color: transparent;
   border: 0px;
   }
 
