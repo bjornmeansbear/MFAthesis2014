@@ -962,7 +962,7 @@ footer p, footer a, footer li {
   display: inline-block;
   height: 100%; 
   vertical-align: middle;
-  margin: -2px; /* Adjusts for spacing */
+  /* margin: -0.1em; */ /* Adjusts for spacing */
  }
 
 .carousel-inner > .item > img, 
