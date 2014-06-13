@@ -54,7 +54,8 @@
               "Community Arts MFA MFA" ],
       date: 'Apr 11-Apr 20, 2014'
     }, {
-      name: [ "Teaching MA" ],
+      name: [ "Teaching MA",
+              "Teaching" ],
       date: 'Jan 24-Feb 16, 2014'
     }, {
       name: [ "Mount Royal School of Art MFA",
@@ -66,7 +67,15 @@
     }, {
       name: [ "Critical Studies MA" ],
       date: 'May 03, 2014'
+    }, {
       // We are going to need to add Studio Art MFA - Jun 28-Jul 12, 2014, and Art Education MA - Jul 27-Aug 01, 2014
+      name: [ "Studio Art MFA",
+              "Studio Art" ],
+      date: 'Jun 28-Jul 12, 2014'
+    }, {
+      name: [ "Art Education MA",
+              "Art Education" ],
+      date: 'Jul 27-Aug 01, 2014'
     }];
 
     // Function to convert a program into a showdate
@@ -460,20 +469,18 @@
       }, 400);
     });
 
-
     // this should fix an annoying issue in FF with the single images not fitting their container properly.
     // except I don't know where to put this! damn!
-    var siih = $('#singleimg img') .height();
-    var siiw = $('#singleimg img') .width();
+    var siih = $('#singleimg img').height();
+    var siiw = $('#singleimg img').width();
     if (siih >= siiw) {
-        var sih = $('#singleimg') .height();
-        $('#singleimg img') .height(sih);
+        var sih = $('#singleimg').height();
+        $('#singleimg img').height(sih);
     }
     if (siih <= siiw) {
-        var siw = $('#singleimg') .width();
-        $('#singleimg img') .width(siw);
+        var siw = $('#singleimg').width();
+        $('#singleimg img').width(siw);
     }
-
 
   });
 });
