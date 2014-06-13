@@ -420,16 +420,16 @@
             <ul class="list row grid-display" id="projects-demo">
               <script id="students-template" type="text/x-mustache-template">
                 {{#students}}
-                <li class="col-xs-6 col-sm-4 col-md-3 student thumb {{id}} {{_id}}">
+                <li class="col-xs-6 col-sm-4 col-md-3 student thumb {{id}} {{studentid}}">
                   <div class="block">
-                    <img src="img/thumbnails/{{_id}}.jpg" /> <!-- decent start to thumbnails -->
+                    <img src="img/thumbnails/{{studentid}}.jpg" /> <!-- decent start to thumbnails -->
                     <div class="info">
                       <h4 class="name">{{firstname}} {{lastname}}</h4>
                       <p class="program">{{program}}</p>
                       <p class="exhibitionlocation">{{exhibitionlocation}}</p>
                       <p class="show-date showdate">{{showdate}}</p>
-                      <p class="id" style="display:none">{{_id}}</p>
-<!--                       <p class="studentid">{{_id}}</p> -->
+                      <p class="id" style="display:none">{{studentid}}</p>
+<!--                       <p class="studentid">{{studentid}}</p> -->
                     </div>
                   </div>
                 </li>
@@ -572,7 +572,7 @@
                   <h4>{{program}}</h4>
                   <ul class="program-peers">
                     {{#peers}}
-                    <li><a>{{ firstname }} {{ lastname }} <span id="id-{{_id}}" style="display:none" class="id">{{_id}}</span></a></li>
+                    <li><a>{{ firstname }} {{ lastname }} <span id="id-{{studentid}}" style="display:none" class="id">{{studentid}}</span></a></li>
                     {{/peers}}
                   </ul>
                 </aside>
