@@ -8,7 +8,7 @@
   // Show a random header image
   $('header img.backgroundfill:nth-of-type('+_.random(1,$('header img.backgroundfill').length)+')').show();
 
-  $.getJSON('http://mfa.cape.io/items/client_data.json', function(data) {
+  $.getJSON('http://mfa.cape.io/items/data.json', function(data) {
 
     // Correct the caption data structure
     var keys = _.keys(data.photo_info);
