@@ -68,7 +68,6 @@
       name: [ "Critical Studies MA" ],
       date: 'May 03, 2014'
     }, {
-      // We are going to need to add Studio Art MFA - Jun 28-Jul 12, 2014, and Art Education MA - Jul 27-Aug 01, 2014
       name: [ "Studio Art MFA",
               "Studio Art" ],
       date: 'Jun 28-Jul 12, 2014'
