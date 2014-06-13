@@ -7,7 +7,7 @@
 
   // Show a random header image
   $('header img.backgroundfill:nth-of-type('+_.random(1,$('header img.backgroundfill').length)+')').show();
-  
+
   $.getJSON('http://mfa.cape.io/items/client_data.json', function(data) {
 
     // Correct the caption data structure
@@ -39,15 +39,15 @@
               "Post-Baccalaureate Fine Arts" ],
       date: 'Jan 31-Feb 16, 2014'
     }, {
-      name: [ "Graphic Design MFA", 
-              "Post-Baccalaureate Graphic Design", 
+      name: [ "Graphic Design MFA",
+              "Post-Baccalaureate Graphic Design",
               "Illustration Practice MFA" ],
       date: 'Mar 28-Apr 06, 2014'
     }, {
       name: [ "Social Design MA" ],
       date: 'Apr 23-May 04, 2014'
     }, {
-      name: [ "Rinehart School of Sculpture MFA", 
+      name: [ "Rinehart School of Sculpture MFA",
               "Photographic & Electronic Media MFA",
               "Photographic & Electronic Media",
               "Community Arts MFA",
@@ -180,7 +180,7 @@
     // Compile templates for the list and the overlay
     var StudentTemplate = Hogan.compile($('#students-template').html());
     var StudentOverlay  = Hogan.compile($('#overlay-template').html());
-    
+
     // Render the template for the list and initialize list.js
     $('#projects-demo').html(StudentTemplate.render(data));
     var options = {
@@ -288,7 +288,7 @@
     // Initially, sort the list by ascending first name
     studentlist.sort('name', { order: 'asc' });
 
-    // Update the content of the active filters div 
+    // Update the content of the active filters div
     $(window).on('updateFilter', function () {
       if (_.isUndefined(sessionStorage.activefilter)) {
         $('div#active-filter .attribute').empty();
@@ -342,7 +342,7 @@
         for (var i = 0; i<terms.length; i++) {
           if (item.values().exhibitionlocation.replace('&amp;','&').toLowerCase().indexOf(terms[i].toLowerCase()) >= 0) match = true;
         }
-        return match;      
+        return match;
       });
       sessionStorage.activefilter = 'Gallery: ' + g.replace('Gallery', '');
       $(window).trigger('updateFilter');
@@ -367,7 +367,7 @@
             for (var i = 0; i<terms.length; i++) {
               if (item.values().exhibitionlocation.replace('&amp;','&').toLowerCase().indexOf(terms[i].toLowerCase()) >= 0) match = true;
             }
-            return match;      
+            return match;
           });
           sessionStorage.activefilter = 'Gallery: ' + gallery.split(',').join(', ');
           $(window).trigger('updateFilter');
@@ -395,7 +395,7 @@
       $('body').animate({ scrollTop: pos.top-150 });
     });
 
-    // Process the program filter 
+    // Process the program filter
     $('#program-filter a').on('click touch', function(e) {
       if (_.isUndefined($(this).data('program'))) return true;
       e.preventDefault();
