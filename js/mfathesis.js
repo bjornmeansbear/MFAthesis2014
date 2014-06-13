@@ -148,7 +148,7 @@
     var nextStudent = function(id) {
       var students = this;
       // Pluck id values, sorting the students by name
-      var sorted = _.pluck(_.sortBy(students, 'firstname'), '_id');
+      var sorted = _.pluck(_.sortBy(students, 'firstname'), 'studentid');
       var pos = _.indexOf(sorted, id);
       if (pos == sorted.length-1) return sorted[0];
       return sorted[pos+1];
@@ -157,7 +157,7 @@
     // Get the id of the previous student
     var prevStudent = function(id) {
       var students = this;
-      var sorted = _.pluck(_.sortBy(students, 'firstname'), '_id');
+      var sorted = _.pluck(_.sortBy(students, 'firstname'), 'studentid');
       var pos = _.indexOf(sorted, id);
       if (pos == 0) return sorted[sorted.length-1];
       return sorted[pos-1];
@@ -169,12 +169,12 @@
       student.urlofpersonalwebsite = (_.isUndefined(student.urlofpersonalwebsite) || student.urlofpersonalwebsite.length == 0) ? false:student.urlofpersonalwebsite;
       student.showdate             = _.bind(showDate, showdates, student.program);
       student.peers                = _.bind(sameProgram, data.students, student.program);
-      student.slideshow            = _.bind(slideShow, data.slideshow, student._id);
-      student.slideshowcount       = _.bind(slideShowcount, data.slideshow, student._id);
-      student.slideshowsingle      = _.bind(slideShowsingle, data.slideshow, student._id);
-      student.slideshowimages      = _.bind(slideShowimages, data.slideshow, student._id);
-      student.nextid               = _.bind(nextStudent, data.students, student._id);
-      student.previd               = _.bind(prevStudent, data.students, student._id);
+      student.slideshow            = _.bind(slideShow, data.slideshow, student.studentid);
+      student.slideshowcount       = _.bind(slideShowcount, data.slideshow, student.studentid);
+      student.slideshowsingle      = _.bind(slideShowsingle, data.slideshow, student.studentid);
+      student.slideshowimages      = _.bind(slideShowimages, data.slideshow, student.studentid);
+      student.nextid               = _.bind(nextStudent, data.students, student.studentid);
+      student.previd               = _.bind(prevStudent, data.students, student.studentid);
     });
 
     // Compile templates for the list and the overlay
@@ -219,7 +219,7 @@
 
       // Navigate to a random person in the list
       $('.student-nav li.random').off().on('click touch', function(e) {
-        var ids = _.pluck(data.students, '_id');
+        var ids = _.pluck(data.students, 'studentid');
         var random_id = ids[_.random(0,ids.length-1)];
         hash.add({id:random_id});
       });
@@ -238,7 +238,7 @@
       // If we have an id, open the overlay
       if (_.isUndefined(id) == false) {
         // Get the student from the original object by id
-        var s = _.where(data.students, { _id:id })[0];
+        var s = _.where(data.students, { studentid:id })[0];
         // Remove any existing overlay and render new data
         $('.student-overlay').remove();
         $('body').append(StudentOverlay.render(s));
@@ -254,7 +254,7 @@
         if (_.isUndefined(sessionStorage.overlaypos) == false) {
           $('.student-overlay').animate({ scrollTop: sessionStorage.overlaypos }, 0);
         }
-        sessionStorage.activestudent = s._id;
+        sessionStorage.activestudent = s.studentid;
         $(window).trigger('activatePeers');
       } else {
         $('.student-overlay').remove();
@@ -274,9 +274,9 @@
         // Click handler for the list item
         $(this).off('click touch').on('click touch', function(e) {
           // Get the student information from the list
-          var s = _.where(data.students, { _id:id })[0];
-          sessionStorage.activestudent = s._id;
-          hash.add({id:s._id});
+          var s = _.where(data.students, { studentid:id })[0];
+          sessionStorage.activestudent = s.studentid;
+          hash.add({id:s.studentid});
           // Save the current scroll position
           sessionStorage.scrollpos = document.body.scrollTop;
           // When we close the window, rest the body overflow and scroll position
