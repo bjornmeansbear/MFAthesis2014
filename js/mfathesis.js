@@ -174,6 +174,7 @@
 
     // Map various function bindings to the objects that will be sent to mustache
     _.map(data.students, function(student) {
+      student.studentid            = student.studentid;
       student.personalemail        = (_.isUndefined(student.personalemail) || student.personalemail.length == 0) ? false:student.personalemail;
       student.urlofpersonalwebsite = (_.isUndefined(student.urlofpersonalwebsite) || student.urlofpersonalwebsite.length == 0) ? false:student.urlofpersonalwebsite;
       student.showdate             = _.bind(showDate, showdates, student.program);
