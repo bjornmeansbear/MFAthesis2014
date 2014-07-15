@@ -1073,3 +1073,11 @@ footer p, footer a, footer li {
   color: #fff;
   }
 
+.backgroundfill,
+.map,
+.thumb img,
+#slideshow img {
+  background: transparent url('../img/loading.gif') center center no-repeat;
+  background-size: 50px 50px;
+}
+
