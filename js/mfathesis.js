@@ -74,7 +74,7 @@
     }, {
       name: [ "Art Education MA",
               "Art Education" ],
-      date: 'Jul 27-Aug 01, 2014'
+      date: 'Jul 29-Aug 1, 2014'
     }];
 
     // Function to convert a program into a showdate
